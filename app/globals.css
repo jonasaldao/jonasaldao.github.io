@@ -1,0 +1,252 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Amira Brand Colors */
+  --background: #F8FFFE;
+  --foreground: #1C2B2B;
+  --card: #FFFFFF;
+  --card-foreground: #1C2B2B;
+  --popover: #FFFFFF;
+  --popover-foreground: #1C2B2B;
+  --primary: #0D9488;
+  --primary-foreground: #FFFFFF;
+  --secondary: #CCFBF1;
+  --secondary-foreground: #0F766E;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #F97316;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #0D9488;
+
+  /* Custom Amira tokens */
+  --teal: #0D9488;
+  --teal-dark: #0F766E;
+  --teal-light: #CCFBF1;
+  --teal-mist: #F0FDFA;
+  --off-white: #F8FFFE;
+  --navy: #1C2B2B;
+  --coral: #F97316;
+  --ink: #05201D;
+  --ink-2: #0A2E2A;
+  --sand: #FBF7EF;
+  --sand-2: #F3ECDD;
+
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-teal: var(--teal);
+  --color-teal-dark: var(--teal-dark);
+  --color-teal-light: var(--teal-light);
+  --color-teal-mist: var(--teal-mist);
+  --color-off-white: var(--off-white);
+  --color-navy: var(--navy);
+  --color-coral: var(--coral);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-sand: var(--sand);
+  --color-sand-2: var(--sand-2);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Native smooth scroll fallback when Lenis is not active (e.g. on touchscreen devices) */
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  /* All headings in Fraunces */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: #CCFBF1;
+    color: #0F766E;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll animations are GSAP-driven (see components/amira/landing-fx.tsx).
+   Elements marked with data-reveal / data-split / data-stagger are fully
+   visible by default — GSAP applies the hidden "from" state only when it
+   actually runs, so no JS (or reduced motion) can never leave blanks.   */
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+/* Hero entrance (load-time, pure CSS, always ends visible)            */
+/* ------------------------------------------------------------------ */
+.hero-rise {
+  animation: amira-rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--rise-delay, 0s);
+}
+@keyframes amira-rise {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Ambient motion                                                      */
+/* ------------------------------------------------------------------ */
+@keyframes amira-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+.breathe {
+  animation: amira-breathe 5s ease-in-out infinite;
+}
+
+@keyframes amira-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -32px) scale(1.08); }
+  66% { transform: translate(-20px, 18px) scale(0.94); }
+}
+.blob {
+  animation: amira-blob 14s ease-in-out infinite;
+}
+.blob-slow {
+  animation: amira-blob 22s ease-in-out infinite reverse;
+}
+
+@keyframes amira-float {
+  0%, 100% { transform: translateY(0) rotate(var(--float-tilt, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--float-tilt, 0deg)); }
+}
+.float-gentle {
+  animation: amira-float 6s ease-in-out infinite;
+}
+.float-gentle-alt {
+  animation: amira-float 7.5s ease-in-out 1.2s infinite;
+}
+
+/* Pure-CSS marquee: no JS dependency, so it can't be taken down by GSAP/Lenis
+   failing to initialize on a given device. Always-on baseline. */
+@keyframes amira-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: amira-marquee 24s linear infinite;
+}
+
+@keyframes amira-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+.typing-dot {
+  animation: amira-dot 1.3s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.18s; }
+.typing-dot:nth-child(3) { animation-delay: 0.36s; }
+
+@keyframes amira-aurora {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(-6%, 8%) rotate(8deg) scale(1.15); }
+}
+.aurora {
+  animation: amira-aurora 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breathe, .blob, .blob-slow, .float-gentle, .float-gentle-alt,
+  .typing-dot, .aurora, .hero-rise, .marquee-track {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Texture & finish                                                    */
+/* ------------------------------------------------------------------ */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+/* Film-grain overlay across the whole section (subtle, 5%). Sits above the
+   section's own children; never force position on children — that collapses
+   absolutely-positioned background wrappers. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Organic image mask */
+.blob-mask {
+  border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%;
+}
+
+/* Italic serif accent inside headings */
+.accent-italic {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------------ */
+/* Mobile / Touchscreen Optimizations                                 */
+/* ------------------------------------------------------------------ */
+@media (pointer: coarse) {
+  /* Disable backdrop-filter blur on touchscreens to fix repaint bugs in Chrome on Android and boost performance */
+  .backdrop-blur-xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Increase navbar opacity on touchscreens for readability without backdrop blur */
+  .bg-white\/75 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
