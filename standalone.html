@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amira — Tu espacio cuando lo necesitás</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0f172a',
+            teal: {
+              DEFAULT: '#14b8a6',
+              dark: '#0f766e',
+              light: '#ccfbf1',
+              mist: '#f0fdfa',
+            },
+            sand: '#fdfcf7',
+            ink: '#0a0f1d',
+            coral: '#f43f5e',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for animations and tweaks -->
+  <style>
+    /* Breathing animation */
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.4); opacity: 0.2; }
+    }
+    .breathe {
+      animation: breathe 3s ease-in-out infinite;
+    }
+
+    /* Marquee animation */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Custom grain bg effect */
+    .grain {
+      background-image: radial-gradient(rgba(20, 184, 166, 0.15) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+  </style>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP Core and ScrollTrigger for reveal effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-sand font-sans text-navy antialiased overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative h-16 rounded-full flex items-center justify-between px-6 transition-all duration-300" id="nav-container">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <span class="font-serif italic font-semibold text-2xl tracking-tight transition-colors duration-500 text-white" id="nav-logo">
+            Amira
+          </span>
+        </a>
+
+        <!-- CTA -->
+        <a href="#pricing" class="rounded-full px-6 py-2.5 text-sm font-semibold transition-all duration-300 bg-white/20 hover:bg-white/30 text-white ring-1 ring-white/40 shadow-sm" id="nav-btn">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[92vh] flex items-center pt-32 pb-20 bg-ink text-white overflow-hidden grain">
+    <!-- Dynamic Auroras -->
+    <div class="absolute inset-0 pointer-events-none opacity-40">
+      <div class="absolute -top-32 right-1/4 w-[35rem] h-[35rem] rounded-full bg-teal/20 blur-[120px]"></div>
+      <div class="absolute -bottom-40 -left-20 w-[30rem] h-[30rem] rounded-full bg-teal-dark/30 blur-[100px]"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold leading-tight tracking-tight mb-8">
+        Tu espacio cuando <br>
+        <span class="accent-italic text-teal italic font-normal">lo necesitás.</span>
+      </h1>
+      
+      <p class="max-w-2xl mx-auto text-white/80 text-lg md:text-xl leading-relaxed mb-10">
+        Acompañamiento cotidiano con IA supervisada clínicamente y conexión con psicólogos reales cuando estés listo.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#como-funciona" class="bg-teal hover:bg-teal-dark text-navy font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-teal/10 hover:shadow-teal/20 w-full sm:w-auto">
+          Probá gratis ahora
+        </a>
+        <a href="#como-funciona" class="text-white/80 hover:text-white flex items-center gap-2 py-3 transition-colors">
+          <span>Ver cómo funciona</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Section -->
+  <div class="bg-teal-dark text-white py-6 overflow-hidden border-y border-white/10 select-none">
+    <div class="marquee-container flex">
+      <div class="marquee-track flex gap-12 text-lg md:text-xl font-medium uppercase tracking-wider">
+        <span>IA guiada clínicamente</span>
+        <span class="text-white/40">•</span>
+        <span>Acompañamiento 24/7</span>
+        <span class="text-white/40">•</span>
+        <span>Privacidad Garantizada</span>
+        <span class="text-white/40">•</span>
+        <span>Profesionales Verificados</span>
+        <span class="text-white/40">•</span>
+        
+        <!-- Duplicated for seamless loop -->
+        <span>IA guiada clínicamente</span>
+        <span class="text-white/40">•</span>
+        <span>Acompañamiento 24/7</span>
+        <span class="text-white/40">•</span>
+        <span>Privacidad Garantizada</span>
+        <span class="text-white/40">•</span>
+        <span>Profesionales Verificados</span>
+        <span class="text-white/40">•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bento Features Section -->
+  <section class="py-24 md:py-32 bg-sand overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 md:mb-20 text-balance fade-up">
+        Un espacio que te acompaña <span class="accent-italic text-teal-dark italic font-normal">todos los días.</span>
+      </h2>
+
+      <!-- Bento grid -->
+      <div class="grid md:grid-cols-3 gap-6 grid-stagger">
+        <!-- Card 1 — IA, spans 2 columns -->
+        <div class="group md:col-span-2 relative bg-ink text-white rounded-[2rem] p-8 md:p-10 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-sm hover:shadow-lg">
+          <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-teal/20 blur-3xl" aria-hidden="true"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-teal rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+              <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
+            </div>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3">
+              IA disponible <span class="accent-italic text-teal italic font-normal">cuando la necesitás</span>
+            </h3>
+            <p class="text-white/70 text-lg leading-relaxed max-w-lg">
+              Accedé a acompañamiento emocional en cualquier momento. Supervisado por psicólogos reales.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 — Check-ins -->
+        <div class="group bg-white rounded-[2rem] p-8 shadow-sm ring-1 ring-teal/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+          <div class="w-14 h-14 bg-teal-light rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+            <i data-lucide="bar-chart-3" class="w-7 h-7 text-teal-dark"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-semibold text-navy mb-3">
+            Check-ins emocionales
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+            Entendé cómo te sentís día a día. Observá tu evolución en el tiempo y empezá a conocerte mejor.
+          </p>
+        </div>
+
+        <!-- Card 3 — Herramientas -->
+        <div class="group bg-teal-light/50 rounded-[2rem] p-8 ring-1 ring-teal/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+            <i data-lucide="leaf" class="w-7 h-7 text-teal"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-semibold text-teal-dark mb-3">
+            Herramientas para el momento exacto
+          </h3>
+          <p class="text-teal-dark/75 leading-relaxed">
+            Respiración guiada, micro-ejercicios, caja de herramientas de emergencia. Para el momento en que lo necesitás.
+          </p>
+        </div>
+
+        <!-- Card 4 — Profesionales, spans 2 columns -->
+        <div class="group md:col-span-2 bg-white rounded-[2rem] p-8 md:p-10 shadow-sm ring-1 ring-teal/5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg flex flex-col sm:flex-row sm:items-center gap-6">
+          <div class="w-14 h-14 shrink-0 bg-coral/10 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+            <i data-lucide="user-check" class="w-7 h-7 text-coral"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl md:text-3xl font-semibold text-navy mb-3">
+              Acceso a profesionales
+            </h3>
+            <p class="text-slate-600 text-lg leading-relaxed">
+              Cuando estés listo, conectá con psicólogos verificados a través de la plataforma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Differentiator Section -->
+  <section class="py-24 md:py-32 bg-white overflow-hidden border-y border-teal/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-4 mb-16 fade-stagger">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-navy/30 leading-tight">No es una app de meditación.</h2>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-navy/30 leading-tight">No es un chatbot genérico.</h2>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-navy/30 leading-tight text-teal-dark/90">No reemplaza a un profesional.</h2>
+      </div>
+
+      <div class="flex items-center gap-4 mb-10 fade-up">
+        <div class="h-px flex-1 max-w-24 bg-teal"></div>
+        <p class="font-serif text-2xl sm:text-3xl text-teal-dark italic">
+          Amira combina tres cosas que normalmente están separadas:
+        </p>
+      </div>
+
+      <div class="space-y-5 fade-stagger">
+        <div class="flex items-start gap-4 bg-teal-mist rounded-2xl px-6 py-5 ring-1 ring-teal/5">
+          <span class="w-8 h-8 shrink-0 rounded-full bg-teal flex items-center justify-center mt-0.5">
+            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+          </span>
+          <span class="text-navy text-lg sm:text-xl leading-relaxed">Acompañamiento continuo con IA supervisada clínicamente</span>
+        </div>
+        <div class="flex items-start gap-4 bg-teal-mist rounded-2xl px-6 py-5 ring-1 ring-teal/5">
+          <span class="w-8 h-8 shrink-0 rounded-full bg-teal flex items-center justify-center mt-0.5">
+            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+          </span>
+          <span class="text-navy text-lg sm:text-xl leading-relaxed">Seguimiento emocional longitudinal — tu historia, no solo hoy</span>
+        </div>
+        <div class="flex items-start gap-4 bg-teal-mist rounded-2xl px-6 py-5 ring-1 ring-teal/5">
+          <span class="w-8 h-8 shrink-0 rounded-full bg-teal flex items-center justify-center mt-0.5">
+            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+          </span>
+          <span class="text-navy text-lg sm:text-xl leading-relaxed">Acceso a especialistas cuando estés listo/a</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="como-funciona" class="relative py-24 md:py-32 bg-teal-mist/50 overflow-hidden">
+    <div class="absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-teal-light/40 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 md:mb-24 text-balance fade-up">
+        Empezar es <span class="accent-italic text-teal-dark italic font-normal">rápido y sencillo.</span>
+      </h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-6 relative z-10 grid-stagger">
+        <!-- Step 1 -->
+        <div class="group flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-teal/10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+            <span class="font-serif italic text-teal text-2xl font-semibold">01</span>
+          </div>
+          <h3 class="font-serif font-semibold text-navy text-xl mb-2">Creá tu cuenta.</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Sin tarjeta, sin formularios largos.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="group flex flex-col items-center text-center md:translate-y-8">
+          <div class="w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-teal/10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+            <span class="font-serif italic text-teal text-2xl font-semibold">02</span>
+          </div>
+          <h3 class="font-serif font-semibold text-navy text-xl mb-2">Contanos cómo te sentís.</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Un check-in inicial de 2 minutos.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="group flex flex-col items-center text-center">
+          <div class="w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-teal/10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+            <span class="font-serif italic text-teal text-2xl font-semibold">03</span>
+          </div>
+          <h3 class="font-serif font-semibold text-navy text-xl mb-2">Acompañamiento.</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">IA + herramientas adaptadas a vos.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="group flex flex-col items-center text-center md:translate-y-8">
+          <div class="w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-teal/10 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+            <span class="font-serif italic text-teal text-2xl font-semibold">04</span>
+          </div>
+          <h3 class="font-serif font-semibold text-navy text-xl mb-2">Construí tu espacio.</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Tu historial, tu ritmo, tu bienestar.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-24 text-center fade-up">
+        <a href="#pricing" class="bg-teal-dark hover:bg-teal text-white rounded-full px-9 py-4.5 text-lg font-semibold shadow-lg shadow-teal/20 transition-all duration-300 inline-block">
+          Probá gratis ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="relative bg-ink py-24 md:py-32 overflow-hidden grain">
+    <!-- Auroras -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-32 right-1/4 w-[32rem] h-[32rem] rounded-full bg-teal/15 blur-[110px]"></div>
+      <div class="absolute -bottom-40 -left-24 w-[26rem] h-[26rem] rounded-full bg-teal-dark/25 blur-[100px]"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4">
+          Probá Amira <span class="accent-italic text-teal-light italic font-normal">gratis durante 30 días.</span>
+        </h2>
+        <p class="text-white/60 text-lg">Sin tarjeta de crédito. Sin compromiso.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start grid-stagger">
+        <!-- Free Plan -->
+        <div class="bg-white/[0.05] backdrop-blur-md rounded-[2rem] p-8 ring-1 ring-white/10 text-white">
+          <div class="mb-7">
+            <span class="inline-block bg-teal-light/10 text-teal-light font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
+              Gratis · 30 días
+            </span>
+            <h3 class="font-serif text-3xl font-semibold mt-4">Prueba gratuita</h3>
+          </div>
+
+          <div class="space-y-4 mb-9 text-white/85">
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-teal flex-shrink-0 mt-0.5"></i>
+              <span>Check-in emocional diario</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-teal flex-shrink-0 mt-0.5"></i>
+              <span>Diario emocional guiado</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-teal flex-shrink-0 mt-0.5"></i>
+              <span>Caja de herramientas de emergencia</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-teal flex-shrink-0 mt-0.5"></i>
+              <span>Contenido psicoeducativo</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-teal flex-shrink-0 mt-0.5"></i>
+              <span>Acceso al directorio de psicólogos</span>
+            </div>
+          </div>
+
+          <a href="#" class="w-full text-center bg-white/10 hover:bg-white/20 text-white ring-1 ring-white/20 rounded-full py-4 text-lg font-semibold transition-all duration-300 block">
+            Empezar gratis
+          </a>
+          <p class="text-center text-white/40 text-sm mt-4">Sin tarjeta de crédito requerida.</p>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="relative bg-white rounded-[2rem] p-8 shadow-2xl shadow-teal/20 md:-mt-6">
+          <!-- Popular Badge -->
+          <div class="absolute -top-4 right-8">
+            <span class="bg-coral text-white px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-1.5 shadow-lg shadow-coral/25">
+              <i data-lucide="star" class="w-4 h-4 fill-white text-white"></i>
+              MÁS POPULAR
+            </span>
+          </div>
+
+          <div class="mb-7">
+            <span class="font-serif text-teal-dark text-4xl font-semibold">
+              USD 12<span class="text-lg font-sans font-normal text-slate-500"> /mes</span>
+            </span>
+            <h3 class="font-serif text-3xl font-semibold text-navy mt-3">Plan Amira</h3>
+          </div>
+
+          <div class="space-y-4 mb-9 text-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 shrink-0 rounded-full bg-teal-light flex items-center justify-center mt-0.5">
+                <i data-lucide="check" class="w-3 h-3 text-teal-dark"></i>
+              </span>
+              <span>Todo lo incluido en la prueba gratuita</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 shrink-0 rounded-full bg-teal-light flex items-center justify-center mt-0.5">
+                <i data-lucide="check" class="w-3 h-3 text-teal-dark"></i>
+              </span>
+              <span>IA conversacional ilimitada con supervisión clínica</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 shrink-0 rounded-full bg-teal-light flex items-center justify-center mt-0.5">
+                <i data-lucide="check" class="w-3 h-3 text-teal-dark"></i>
+              </span>
+              <span>Seguimiento longitudinal completo</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 shrink-0 rounded-full bg-teal-light flex items-center justify-center mt-0.5">
+                <i data-lucide="check" class="w-3 h-3 text-teal-dark"></i>
+              </span>
+              <span>Contenido psicoeducativo personalizado</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-5 h-5 shrink-0 rounded-full bg-teal-light flex items-center justify-center mt-0.5">
+                <i data-lucide="check" class="w-3 h-3 text-teal-dark"></i>
+              </span>
+              <span>Micro-ejercicios situacionales</span>
+            </div>
+          </div>
+
+          <a href="#" class="w-full text-center bg-teal-dark hover:bg-teal text-white rounded-full py-4 text-lg font-semibold shadow-lg shadow-teal/20 transition-all duration-300 block">
+            Comenzar con el plan
+          </a>
+        </div>
+      </div>
+
+      <p class="text-center text-white/40 text-sm mt-12">
+        Las consultas con psicólogos/as son independientes de la suscripción, al honorario del profesional.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 fade-up">
+        Preguntas frecuentes
+      </h2>
+
+      <!-- Accordion -->
+      <div class="space-y-4 border-t border-teal/10 fade-stagger">
+        <!-- FAQ 1 -->
+        <div class="faq-item border-b border-teal/10 py-5">
+          <button class="faq-trigger flex items-center justify-between w-full text-left font-serif text-lg md:text-xl font-semibold text-navy hover:text-teal-dark transition-colors py-2 focus:outline-none">
+            <span>¿Amira reemplaza a la terapia tradicional?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-teal transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed pt-2">
+              No. Amira es la capa de continuidad entre sesiones — un espacio de acompañamiento cotidiano. Cuando lo necesitás, te conecta con psicólogos verificados.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item border-b border-teal/10 py-5">
+          <button class="faq-trigger flex items-center justify-between w-full text-left font-serif text-lg md:text-xl font-semibold text-navy hover:text-teal-dark transition-colors py-2 focus:outline-none">
+            <span>¿Cómo funciona la supervisión clínica de la IA?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-teal transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed pt-2">
+              Nuestro modelo de IA está entrenado bajo protocolos validados de terapia cognitivo-conductual y cada interacción clave es supervisada por un comité de profesionales de salud mental.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item border-b border-teal/10 py-5">
+          <button class="faq-trigger flex items-center justify-between w-full text-left font-serif text-lg md:text-xl font-semibold text-navy hover:text-teal-dark transition-colors py-2 focus:outline-none">
+            <span>¿Mis datos están seguros y privados?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-teal transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed pt-2">
+              Absolutamente. Usamos encriptación de extremo a extremo. Tus check-ins y conversaciones son 100% privados y no se comparten con terceros.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="bg-teal-mist py-24 md:py-32 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-navy mb-8 leading-tight fade-up">
+        Un espacio de apoyo diario, <br>
+        <span class="accent-italic text-teal-dark italic font-normal">hecho a tu medida.</span>
+      </h2>
+      <div class="fade-up">
+        <a href="#pricing" class="bg-teal-dark hover:bg-teal text-white rounded-full px-9 py-4.5 text-lg font-semibold shadow-xl shadow-teal/10 hover:shadow-teal/20 transition-all duration-300 inline-block">
+          Comenzar prueba de 30 días
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-ink text-white/50 py-16 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Logo & Brand info -->
+        <div class="text-center md:text-left">
+          <span class="font-serif italic text-white text-3xl font-semibold block mb-2">Amira</span>
+          <p class="text-sm text-white/40">Tu espacio cuando lo necesitás.</p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
+          <a href="#" class="hover:text-white transition-colors">Inicio</a>
+          <a href="#como-funciona" class="hover:text-white transition-colors">Cómo funciona</a>
+          <a href="#pricing" class="hover:text-white transition-colors">Planes</a>
+          <a href="#" class="hover:text-white transition-colors">Términos</a>
+          <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 mt-12 pt-8 text-center text-xs text-white/30">
+        <p>Copyright © 2026 Amira. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Logic: GSAP Scroll Animations & Accordion script -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const navContainer = document.getElementById('nav-container');
+    const navLogo = document.getElementById('nav-logo');
+    const navBtn = document.getElementById('nav-btn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 24) {
+        navContainer.classList.add('bg-white/75', 'backdrop-blur-xl', 'shadow-lg', 'shadow-teal/5', 'ring-1', 'ring-teal/10');
+        navLogo.classList.remove('text-white');
+        navLogo.classList.add('text-teal-dark');
+        navBtn.classList.remove('bg-white/20', 'hover:bg-white/30', 'text-white', 'ring-white/40');
+        navBtn.classList.add('bg-teal-dark', 'hover:bg-teal', 'text-white');
+      } else {
+        navContainer.classList.remove('bg-white/75', 'backdrop-blur-xl', 'shadow-lg', 'shadow-teal/5', 'ring-1', 'ring-teal/10');
+        navLogo.classList.remove('text-teal-dark');
+        navLogo.classList.add('text-white');
+        navBtn.classList.remove('bg-teal-dark', 'hover:bg-teal', 'text-white');
+        navBtn.classList.add('bg-white/20', 'hover:bg-white/30', 'text-white', 'ring-white/40');
+      }
+    }, { passive: true });
+
+    // Accordion interaction
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const parent = trigger.closest('.faq-item');
+        const content = parent.querySelector('.faq-content');
+        const icon = trigger.querySelector('[data-lucide="chevron-down"]');
+        
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        
+        // Close all other items
+        document.querySelectorAll('.faq-content').forEach(item => {
+          item.style.maxHeight = '0px';
+          const otherIcon = item.closest('.faq-item').querySelector('[data-lucide="chevron-down"]');
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        });
+        
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.style.maxHeight = '0px';
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // GSAP scroll animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade-up blocks
+    gsap.utils.toArray('.fade-up').forEach(el => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 25,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true
+        }
+      });
+    });
+
+    // Stagger grids/lists
+    gsap.utils.toArray('.grid-stagger, .fade-stagger').forEach(grid => {
+      gsap.from(grid.children, {
+        opacity: 0,
+        y: 25,
+        duration: 0.55,
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: grid,
+          start: 'top 88%',
+          once: true
+        }
+      });
+    });
+  </script>
+</body>
+</html>
