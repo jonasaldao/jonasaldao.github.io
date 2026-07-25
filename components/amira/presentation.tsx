@@ -30,7 +30,7 @@ export function Presentation() {
 
           {/* Phone Mockup */}
           <div data-reveal="scale" data-parallax="5" className="flex justify-center">
-            <div className="relative float-gentle" style={{ "--float-tilt": "2deg" } as React.CSSProperties}>
+            <div className="relative float-gentle">
               {/* Phone Frame */}
               <div className="w-72 sm:w-80 bg-navy rounded-[3rem] p-3 shadow-2xl ring-1 ring-white/20">
                 {/* Screen */}
