@@ -8,12 +8,13 @@ import { Identification } from "@/components/amira/identification"
 import { Insight } from "@/components/amira/insight"
 import { Presentation } from "@/components/amira/presentation"
 import { Features } from "@/components/amira/features"
+import { Library } from "@/components/amira/library"
+import { Directory } from "@/components/amira/directory"
 import { Differentiator } from "@/components/amira/differentiator"
 import { HowItWorks } from "@/components/amira/how-it-works"
-import { Transformation } from "@/components/amira/transformation"
 import { Privacy } from "@/components/amira/privacy"
 import { Pricing } from "@/components/amira/pricing"
-import { Professionals } from "@/components/amira/professionals"
+import { ProfessionalsTeaser } from "@/components/amira/professionals-teaser"
 import { FAQ } from "@/components/amira/faq"
 import { FinalCTA } from "@/components/amira/final-cta"
 import { Footer } from "@/components/amira/footer"
@@ -43,28 +44,33 @@ export default function AmiraLandingPage() {
       {/* Block 6 - Cómo te Ayuda */}
       <Features />
 
-      {/* Block 7 - El Diferencial */}
+      {/* Block 7 - Biblioteca de bienestar */}
+      <Library />
+
+      {/* Block 8 - Directorio de profesionales.
+          Sits right before the Differentiator: the directory is the bridge that
+          "no reemplaza a un profesional, lo acerca" is talking about. */}
+      <Directory />
+
+      {/* Block 9 - El Diferencial + límites de la IA */}
       <Differentiator />
 
-      {/* Block 8 - Cómo Funciona */}
+      {/* Block 10 - Cómo Funciona */}
       <HowItWorks />
 
-      {/* Block 9 - Transformación */}
-      <Transformation />
-
-      {/* Block 10 - Privacidad */}
+      {/* Block 11 - Privacidad */}
       <Privacy />
 
-      {/* Block 11 - Pricing */}
+      {/* Block 12 - Pricing */}
       <Pricing />
 
-      {/* Block 11B - Para Profesionales */}
-      <Professionals />
+      {/* Block 13 - Teaser profesionales (funnel completo en /profesionales) */}
+      <ProfessionalsTeaser />
 
-      {/* Block 12 - FAQs */}
+      {/* Block 14 - FAQs */}
       <FAQ />
 
-      {/* Block 13 - CTA Final */}
+      {/* Block 15 - CTA Final */}
       <FinalCTA />
 
       {/* Footer */}

@@ -9,9 +9,19 @@ import {
 
 const faqs = [
   {
-    question: "¿Amira reemplaza a un psicólogo?",
+    question: "¿Amira reemplaza a un profesional?",
     answer:
-      "No. Amira es la capa de continuidad entre sesiones — un espacio de acompañamiento cotidiano. Cuando lo necesitás, te conecta con psicólogos verificados.",
+      "No. Amira es la capa de continuidad entre sesiones — un espacio de acompañamiento cotidiano. No realiza diagnósticos ni indica tratamientos. Cuando lo necesitás, te conecta con profesionales verificados.",
+  },
+  {
+    question: "¿Quién puede usar Amira?",
+    answer:
+      "Personas mayores de 18 años que quieran cuidar su bienestar emocional cotidiano, estén o no en tratamiento.",
+  },
+  {
+    question: "¿Qué pasa si estoy atravesando una crisis?",
+    answer:
+      "Amira no es un servicio de emergencias y no puede intervenir en una situación de riesgo inmediato. Si estás en peligro, comunicate con los servicios de emergencia de tu localidad o con una persona de confianza que pueda acompañarte ahora.",
   },
   {
     question: "¿Necesito estar haciendo terapia para usar Amira?",
@@ -21,17 +31,12 @@ const faqs = [
   {
     question: "¿Quién supervisa la IA?",
     answer:
-      "Una cohorte de psicólogos clínicos revisa los flujos de conversación, valida las respuestas ante señales de riesgo y define el marco clínico de la plataforma. No es un chatbot genérico.",
+      "Una cohorte de profesionales clínicos y de salud mental revisa los flujos de conversación, valida las respuestas ante señales de riesgo y define el marco clínico de la plataforma. No es un chatbot genérico.",
   },
   {
     question: "¿Mis conversaciones son privadas?",
     answer:
-      "Sí. Tus datos están encriptados y protegidos. No se comparten con terceros. La privacidad es un principio de diseño, no una función de marketing.",
-  },
-  {
-    question: "¿Cuánto cuesta?",
-    answer:
-      "Los primeros 30 días son completamente gratuitos, sin tarjeta de crédito. Después podés continuar con el plan Amira por USD 12/mes.",
+      "Sí. Tus datos están encriptados, protegidos y anonimizados. No se comparten con terceros — vos decidís cuándo y qué compartir con un profesional. La privacidad es un principio de diseño, no una función de marketing.",
   },
 ]
 

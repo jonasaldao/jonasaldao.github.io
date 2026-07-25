@@ -2,18 +2,18 @@ import { Button } from "@/components/ui/button"
 import { Check, Star } from "lucide-react"
 
 const freeFeatures = [
+  "Chat con IA limitado",
   "Check-in emocional diario",
-  "Diario emocional guiado",
-  "Caja de herramientas de emergencia",
+  "Caja de herramientas útiles",
   "Contenido psicoeducativo",
-  "Acceso al directorio de psicólogos",
+  "Acceso al directorio de profesionales",
 ]
 
 const premiumFeatures = [
   "Todo lo incluido en la prueba gratuita",
   "IA conversacional ilimitada con supervisión clínica",
-  "Seguimiento longitudinal completo",
-  "Contenido psicoeducativo personalizado",
+  "Seguimiento longitudinal completo y más personalizado",
+  "Contenido psicoeducativo adaptado a tu proceso, no genérico",
   "Micro-ejercicios situacionales",
   "Notificaciones personalizadas",
   "Sugerencia activa de derivación a psicólogo/a",

@@ -1,8 +1,24 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { LogIn } from "lucide-react"
+import { LogIn, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
+type NavLink = { href: string; label: string }
+
+const defaultLinks: NavLink[] = [
+  { href: "#como-funciona", label: "Cómo funciona" },
+  { href: "#biblioteca", label: "Biblioteca" },
+  { href: "#directorio", label: "Directorio" },
+  { href: "#privacidad", label: "Privacidad" },
+  { href: "/profesionales", label: "Para profesionales" },
+]
 
 /**
  * Scroll state driven by two independent mechanisms so neither is a single
@@ -48,8 +64,21 @@ function useScrolledPast(threshold: number) {
   return scrolled
 }
 
-export function Navbar() {
-  const scrolled = useScrolledPast(24)
+/**
+ * `solid` pins the bar to its scrolled (light) look — subpages sit on light
+ * backgrounds, where the transparent state would render white-on-white.
+ */
+export function Navbar({
+  solid = false,
+  links = defaultLinks,
+  homeHref = "#",
+}: {
+  solid?: boolean
+  links?: NavLink[]
+  homeHref?: string
+} = {}) {
+  const scrolled = useScrolledPast(24) || solid
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     // translateZ(0) promotes the bar to its own compositor layer up front.
@@ -72,28 +101,97 @@ export function Navbar() {
 
           <div className="relative z-10 flex items-center justify-between h-full px-4 sm:px-6">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group">
-              <span
-                className={`font-serif italic font-semibold text-2xl tracking-tight transition-colors duration-500 ${scrolled ? "text-teal-dark" : "text-white"
-                  }`}
-              >
-                Amira
+            <a href={homeHref} className="flex items-center gap-2 group">
+              <span className="relative h-8 w-[104px] sm:h-9 sm:w-[118px]">
+                <img
+                  src="/amira-logo-blanco.png"
+                  alt="Amira"
+                  className={`absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-100"
+                    }`}
+                />
+                <img
+                  src="/amira-logo-teal.png"
+                  alt="Amira"
+                  className={`absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
+                    }`}
+                />
               </span>
             </a>
 
-            {/* Login (single green CTA) */}
-            <Button
-              asChild
-              className={`rounded-full px-6 transition-colors duration-500 ${scrolled
-                  ? "bg-teal-dark hover:bg-teal text-white"
-                  : "bg-white/20 hover:bg-white/30 text-white ring-1 ring-white/40"
-                }`}
-            >
-              <a href="" className="inline-flex items-center gap-2">
-                <LogIn size={16} />
-                Iniciar sesión
-              </a>
-            </Button>
+            {/* Desktop nav links */}
+            <div className="hidden md:flex items-center gap-8">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-500 ${scrolled
+                      ? "text-navy/70 hover:text-teal-dark"
+                      : "text-white/80 hover:text-white"
+                    }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              {/* Login (single green CTA) */}
+              <Button
+                asChild
+                className={`rounded-full px-6 transition-colors duration-500 ${scrolled
+                    ? "bg-teal-dark hover:bg-teal text-white"
+                    : "bg-white/20 hover:bg-white/30 text-white ring-1 ring-white/40"
+                  }`}
+              >
+                <a href="" className="inline-flex items-center gap-2">
+                  <LogIn size={16} />
+                  Iniciar sesión
+                </a>
+              </Button>
+            </div>
+
+            {/* Mobile hamburger */}
+            <div className="md:hidden">
+              <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+                <SheetTrigger asChild>
+                  <button
+                    type="button"
+                    aria-label="Abrir menú"
+                    className={`inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-500 ${scrolled
+                        ? "text-teal-dark"
+                        : "text-white"
+                      }`}
+                  >
+                    <Menu size={22} />
+                  </button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-3/4 sm:max-w-xs">
+                  <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
+                  <div className="flex flex-col gap-1 px-6 pt-14">
+                    {links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="py-3 text-lg font-medium text-navy hover:text-teal-dark border-b border-navy/5"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                    <Button
+                      asChild
+                      className="mt-6 w-full rounded-full bg-teal-dark hover:bg-teal text-white"
+                    >
+                      <a
+                        href=""
+                        className="inline-flex items-center justify-center gap-2"
+                      >
+                        <LogIn size={16} />
+                        Iniciar sesión
+                      </a>
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>

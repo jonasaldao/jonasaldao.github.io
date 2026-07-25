@@ -28,7 +28,7 @@ export function Features() {
               </h3>
               <p className="text-white/70 text-lg leading-relaxed max-w-lg">
                 Accedé a acompañamiento emocional en cualquier momento. Supervisado
-                por psicólogos reales.
+                por profesionales de la salud.
               </p>
             </div>
           </div>
@@ -56,8 +56,7 @@ export function Features() {
               Herramientas para el momento exacto
             </h3>
             <p className="text-teal-dark/75 leading-relaxed">
-              Respiración guiada, micro-ejercicios, caja de herramientas de
-              emergencia. Para el momento en que lo necesitás.
+              Respiración guiada, micro-ejercicios, caja de herramientas útiles.
             </p>
           </div>
 
@@ -71,8 +70,8 @@ export function Features() {
                 Acceso a profesionales
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Cuando estés listo, conectá con psicólogos verificados a través de
-                la plataforma.
+                Cuando estés listo o cuando quieras, conectá con psicólogos u
+                otros profesionales verificados a través de la plataforma.
               </p>
             </div>
           </div>

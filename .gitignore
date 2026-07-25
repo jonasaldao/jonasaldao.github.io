@@ -13,3 +13,8 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+tsconfig.tsbuildinfo
+
+# Prototipo de producto separado (landing + app + dashboard pro), no forma
+# parte de este build
+amira-v1/

@@ -39,11 +39,7 @@ export function FinalCTA() {
           </Button>
         </div>
 
-        <div
-          data-reveal
-          data-delay="0.3"
-          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-white/75 text-sm"
-        >
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-white/75 text-sm">
           <span className="flex items-center gap-2">
             <Check size={16} className="text-teal-light" />
             Sin tarjeta de crédito

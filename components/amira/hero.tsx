@@ -2,11 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Check, ArrowDown } from "lucide-react"
 import { AuroraCanvas } from "./aurora-canvas"
 
-const trustSignals = [
-  "Sin tarjeta de crédito",
-  "30 días gratis",
-  "Supervisión clínica real",
-]
+const trustSignals = ["Sin tarjeta de crédito", "Sin compromiso"]
 
 const marqueeItems = [
   "Acompañamiento emocional",
@@ -64,7 +60,7 @@ export function Hero() {
 
               <a
                 href="#como-funciona"
-                className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium py-3"
+                className="group lg:hidden inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium py-3"
               >
                 Conocer cómo funciona
                 <ArrowDown
@@ -112,23 +108,14 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-teal-dark/40 via-transparent to-transparent" />
             </div>
 
-            {/* Floating chat bubble */}
-            <div className="float-gentle absolute -left-4 sm:-left-10 top-8 bg-white rounded-2xl rounded-bl-sm shadow-xl px-5 py-3.5">
+            {/* Floating chat bubble — embedded inside the image, bottom-right */}
+            <div className="float-gentle absolute z-10 right-4 bottom-5 sm:right-6 sm:bottom-7 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-5 py-3.5 max-w-[13rem] sm:max-w-[14rem]">
               <p className="text-sm font-medium text-navy">¿Cómo estás hoy?</p>
               <div className="mt-1.5 flex gap-1" aria-hidden="true">
                 <span className="typing-dot w-1.5 h-1.5 rounded-full bg-teal" />
                 <span className="typing-dot w-1.5 h-1.5 rounded-full bg-teal" />
                 <span className="typing-dot w-1.5 h-1.5 rounded-full bg-teal" />
               </div>
-            </div>
-
-            {/* Floating trust badge */}
-            <div
-              className="float-gentle-alt absolute -right-2 sm:-right-8 bottom-10 bg-teal-light text-teal-dark rounded-full shadow-lg px-4 py-2.5 flex items-center gap-2"
-              style={{ "--float-tilt": "2deg" } as React.CSSProperties}
-            >
-              <Check size={15} />
-              <span className="text-sm font-semibold">Supervisión clínica real</span>
             </div>
           </div>
         </div>

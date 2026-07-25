@@ -245,59 +245,23 @@ export function LandingFX() {
 
     })
 
-    // ---- Pinned "Problem" chapter — desktop only ----
-    safeAdd(
-      "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
-      () => {
-        const lines = gsap.utils.toArray<HTMLElement>(".problem-line")
-        const closing = document.querySelector(".problem-closing")
-        if (!lines.length) return
-
-        // Timeline fromTo tweens only apply their start state when reached —
-        // dim every line (and hide the closing) up front so nothing flashes.
-        gsap.set(lines, { opacity: 0.13 })
-        if (closing) gsap.set(closing, { opacity: 0, y: 36 })
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#problema",
-            start: "top top",
-            end: `+=${lines.length * 45 + 60}%`,
-            scrub: 0.8,
-            pin: true,
-            anticipatePin: 1,
-          },
-        })
-        lines.forEach((line) => {
-          tl.fromTo(
-            line,
-            { opacity: 0.13, x: 0 },
-            { opacity: 1, x: 14, duration: 1, ease: "none" }
-          ).to(line, { opacity: 0.4, duration: 0.7, ease: "none" }, "+=0.25")
-        })
-        if (closing) {
-          tl.to(closing, { opacity: 1, y: 0, duration: 1.2, ease: "none" })
-        }
-      }
-    )
-
-    // ---- Mobile fallback for the problem lines (no pin) ----
-    safeAdd(
-      "(max-width: 767px) and (prefers-reduced-motion: no-preference)",
-      () => {
-        gsap.utils
-          .toArray<HTMLElement>(".problem-line, .problem-closing")
-          .forEach((el) => {
-            gsap.from(el, {
-              opacity: 0,
-              y: 28,
-              duration: 0.8,
-              ease: "power3.out",
-              scrollTrigger: { trigger: el, start: "top 90%", once: true },
-            })
+    // ---- "Problem" chapter lines ----
+    // Plain staggered reveal at every breakpoint. This used to pin the section
+    // and scrub the lines on desktop, which swallowed the scroll — the page
+    // stopped advancing while the timeline played out. Removed on purpose.
+    safeAdd("(prefers-reduced-motion: no-preference)", () => {
+      gsap.utils
+        .toArray<HTMLElement>(".problem-line, .problem-closing")
+        .forEach((el) => {
+          gsap.from(el, {
+            opacity: 0,
+            y: 28,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 90%", once: true },
           })
-      }
-    )
+        })
+    })
 
     // ---- Fine-pointer flourishes: magnetic buttons + 3D tilt cards ----
     safeAdd(

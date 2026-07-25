@@ -74,17 +74,24 @@ export function AuroraCanvas({ className }: { className?: string }) {
       depth: false,
       powerPreference: "low-power",
     })
-    if (!gl) return // no WebGL → CSS gradient background underneath stays
+    // A canvas hands back the *same* context object on every getContext call,
+    // so one that was previously lost comes back non-null but dead — every
+    // create* call on it returns null. Check explicitly.
+    if (!gl || gl.isContextLost()) return // no WebGL → CSS gradient underneath stays
 
     const compile = (type: number, src: string) => {
-      const s = gl.createShader(type)!
+      const s = gl.createShader(type)
+      if (!s) return null
       gl.shaderSource(s, src)
       gl.compileShader(s)
       return s
     }
-    const prog = gl.createProgram()!
-    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT))
-    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG))
+    const vert = compile(gl.VERTEX_SHADER, VERT)
+    const frag = compile(gl.FRAGMENT_SHADER, FRAG)
+    const prog = gl.createProgram()
+    if (!vert || !frag || !prog) return
+    gl.attachShader(prog, vert)
+    gl.attachShader(prog, frag)
     gl.linkProgram(prog)
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return
     gl.useProgram(prog)
@@ -123,6 +130,7 @@ export function AuroraCanvas({ className }: { className?: string }) {
     const t0 = performance.now()
 
     const frame = () => {
+      if (gl.isContextLost()) return
       resize()
       gl.uniform2f(uRes, canvas.width, canvas.height)
       gl.uniform1f(uTime, (performance.now() - t0) / 1000)
@@ -130,6 +138,14 @@ export function AuroraCanvas({ className }: { className?: string }) {
       if (!reduced && visible) raf = requestAnimationFrame(frame)
     }
     frame()
+
+    // The GPU can drop the context on its own (tab backgrounded, driver reset).
+    // Preventing the default marks it restorable instead of permanently dead.
+    const onContextLost = (e: Event) => {
+      e.preventDefault()
+      cancelAnimationFrame(raf)
+    }
+    canvas.addEventListener("webglcontextlost", onContextLost)
 
     const io = new IntersectionObserver(([entry]) => {
       const nowVisible = entry.isIntersecting
@@ -147,7 +163,16 @@ export function AuroraCanvas({ className }: { className?: string }) {
       cancelAnimationFrame(raf)
       io.disconnect()
       window.removeEventListener("resize", resize)
-      gl.getExtension("WEBGL_lose_context")?.loseContext()
+      canvas.removeEventListener("webglcontextlost", onContextLost)
+      // Free the GPU objects but leave the context alive: React can reuse this
+      // same canvas element on the next route, and a force-lost context would
+      // poison it for good (createShader would return null on re-init).
+      if (!gl.isContextLost()) {
+        gl.deleteBuffer(buf)
+        gl.deleteProgram(prog)
+        gl.deleteShader(vert)
+        gl.deleteShader(frag)
+      }
     }
   }, [])
 

@@ -12,7 +12,7 @@ export function Presentation() {
           {/* Copy */}
           <div className="text-center lg:text-left">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-7">
-              <span data-split="chars">Conocé</span>{" "}
+              <span data-split="chars">Así te acompaña</span>{" "}
               <span data-split="chars" className="accent-italic text-teal-light">
                 Amira
               </span>
@@ -36,14 +36,12 @@ export function Presentation() {
                 {/* Screen */}
                 <div className="bg-teal-mist rounded-[2.4rem] overflow-hidden">
                   {/* Status Bar */}
-                  <div className="bg-gradient-to-r from-teal-dark to-teal h-12 flex items-center justify-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="breathe absolute inline-flex h-full w-full rounded-full bg-teal-light" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-                    </span>
-                    <span className="text-white text-sm font-serif italic font-medium">
-                      Amira
-                    </span>
+                  <div className="bg-gradient-to-r from-teal-dark to-teal h-12 flex items-center justify-center">
+                    <img
+                      src="/amira-logo-blanco.png"
+                      alt="Amira"
+                      className="h-5 w-auto object-contain"
+                    />
                   </div>
 
                   {/* Chat Interface — messages pop in sequence (data-chat) */}
