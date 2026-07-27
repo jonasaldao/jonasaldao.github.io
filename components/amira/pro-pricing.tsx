@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
+import { WaitlistForm } from "./waitlist-form"
 
 const planFeatures = [
   "Perfil verificado en el directorio público de Amira",
@@ -29,7 +30,7 @@ export function ProPricing() {
               data-delay="0.1"
               className="mt-5 text-lg text-navy/60"
             >
-              Sin comisión por sesión. Sin costo por paciente.
+              Estamos en fase beta. Primeros 3 meses gratuitos al lanzar.
             </p>
           </div>
 
@@ -39,11 +40,8 @@ export function ProPricing() {
                 <h3 className="font-serif text-2xl font-semibold text-navy mb-2">
                   Suscripción profesional
                 </h3>
-                <p className="font-serif accent-italic text-4xl text-teal-dark mb-7">
-                  USD 20
-                  <span className="text-lg not-italic font-sans font-normal text-muted-foreground">
-                    /mes
-                  </span>
+                <p className="text-muted-foreground mb-7">
+                  Precio a confirmar antes del lanzamiento.
                 </p>
 
                 <div className="space-y-3.5 mb-8">
@@ -56,21 +54,12 @@ export function ProPricing() {
                     </div>
                   ))}
                 </div>
-
-                <Button
-                  asChild
-                  data-magnetic
-                  className="w-full bg-teal-dark hover:bg-teal text-white rounded-full py-6 text-lg font-semibold transition-colors duration-300"
-                >
-                  <a href="#signup-pro">Quiero sumarme a la beta</a>
-                </Button>
-
-                <p className="text-center text-muted-foreground text-sm mt-4">
-                  Primeros 3 meses gratuitos para profesionales que se sumen a la
-                  beta.
-                </p>
               </div>
             </div>
+          </div>
+
+          <div className="max-w-md mx-auto mt-6">
+            <WaitlistForm variant="profesionales" id="signup-pro" />
           </div>
 
           <p
@@ -105,12 +94,12 @@ export function ProPricing() {
               data-magnetic
               className="bg-white hover:bg-teal-light text-teal-dark rounded-full px-10 py-7 text-lg font-semibold shadow-2xl shadow-ink/30 transition-colors duration-300"
             >
-              <a href="#signup-pro">Crear mi perfil profesional</a>
+              <a href="#signup-pro">Sumarme a la beta</a>
             </Button>
           </div>
 
           <p className="mt-7 text-white/70 text-sm">
-            3 meses gratis · Sin permanencia
+            3 meses gratis al lanzar · Sin permanencia
           </p>
         </div>
       </section>

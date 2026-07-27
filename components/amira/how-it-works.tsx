@@ -4,7 +4,7 @@ const steps = [
   {
     number: "01",
     title: "Creá tu cuenta.",
-    description: "Sin tarjeta, sin formularios largos. Podés empezar de forma anónima.",
+    description: "Sin tarjeta, sin formularios largos. Tus datos quedan protegidos desde el primer paso.",
   },
   {
     number: "02",

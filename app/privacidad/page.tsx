@@ -30,7 +30,7 @@ export default function PrivacidadPage() {
           {[
             {
               t: "Datos de cuenta",
-              d: "Lo mínimo para identificarte y darte acceso. Podés empezar de forma anónima.",
+              d: "Lo mínimo para identificarte y darte acceso, con permisos limitados a lo estrictamente necesario.",
             },
             {
               t: "Conversaciones con la IA",

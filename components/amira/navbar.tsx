@@ -1,8 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { LogIn, Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Menu } from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -132,20 +131,6 @@ export function Navbar({
                   {link.label}
                 </a>
               ))}
-
-              {/* Login (single green CTA) */}
-              <Button
-                asChild
-                className={`rounded-full px-6 transition-colors duration-500 ${scrolled
-                    ? "bg-teal-dark hover:bg-teal text-white"
-                    : "bg-white/20 hover:bg-white/30 text-white ring-1 ring-white/40"
-                  }`}
-              >
-                <a href="" className="inline-flex items-center gap-2">
-                  <LogIn size={16} />
-                  Iniciar sesión
-                </a>
-              </Button>
             </div>
 
             {/* Mobile hamburger */}
@@ -176,18 +161,6 @@ export function Navbar({
                         {link.label}
                       </a>
                     ))}
-                    <Button
-                      asChild
-                      className="mt-6 w-full rounded-full bg-teal-dark hover:bg-teal text-white"
-                    >
-                      <a
-                        href=""
-                        className="inline-flex items-center justify-center gap-2"
-                      >
-                        <LogIn size={16} />
-                        Iniciar sesión
-                      </a>
-                    </Button>
                   </div>
                 </SheetContent>
               </Sheet>
