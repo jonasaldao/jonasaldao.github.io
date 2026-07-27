@@ -1,0 +1,37 @@
+{
+  "_comment": "Frases exactas aprobadas que contienen términos vetados. Se remueven del texto antes de escanear. Agregar una entrada es una decisión de producto, no de implementación: cada una debilita el verificador.",
+  "approved": [
+    {
+      "text": "Amira no diagnostica, no trata, no previene ni realiza seguimiento de enfermedades",
+      "reason": "Negación central de la cláusula de naturaleza del servicio. Necesaria para el encuadre."
+    },
+    {
+      "text": "No reemplaza la terapia",
+      "reason": "Microcopy del hero. Negación explícita aprobada."
+    },
+    {
+      "text": "Esto no reemplaza a un profesional",
+      "reason": "Copy aprobado de la landing actual."
+    },
+    {
+      "text": "no reemplaza el diagnóstico, tratamiento o asesoramiento de profesionales de la salud mental",
+      "reason": "Disclaimer estándar del sector."
+    },
+    {
+      "text": "tus conversaciones y check-ins no se comparten con los profesionales del directorio",
+      "reason": "Afirmación verdadera bajo la arquitectura del MVP."
+    },
+    {
+      "text": "Las conversaciones no se leen en tiempo real",
+      "reason": "Aclaración obligatoria junto al claim de auditoría profesional."
+    },
+    {
+      "text": "diseñada y auditada por profesionales de la salud mental",
+      "reason": "Formulación aprobada que reemplaza a supervisión clínica."
+    },
+    {
+      "text": "Amira no es un servicio de emergencias",
+      "reason": "Exclusión obligatoria."
+    }
+  ]
+}
