@@ -42,13 +42,13 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-24 md:py-32 bg-teal-mist">
+    <section className="py-24 md:py-32 bg-arena">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           data-reveal
           className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-14 text-balance"
         >
-          Preguntas <span className="accent-italic text-teal-dark">frecuentes</span>
+          Preguntas <span className="accent-italic text-verde-profundo">frecuentes</span>
         </h2>
 
         <Accordion type="single" collapsible className="w-full space-y-4">
@@ -58,11 +58,11 @@ export function FAQ() {
               value={`item-${index}`}
               data-reveal
               data-delay={`${index * 0.07}`}
-              className="bg-white rounded-2xl px-6 border-none shadow-sm ring-1 ring-teal/10 transition-shadow hover:shadow-md data-[state=open]:shadow-md"
+              className="bg-white rounded-2xl px-6 border-none shadow-sm ring-1 ring-verde/10 transition-shadow hover:shadow-md data-[state=open]:shadow-md"
             >
-              <AccordionTrigger className="text-left text-lg font-semibold text-navy hover:text-teal-dark py-6 hover:no-underline gap-4">
+              <AccordionTrigger className="text-left text-lg font-semibold text-navy hover:text-verde-profundo py-6 hover:no-underline gap-4">
                 <span className="flex items-baseline gap-4">
-                  <span className="font-serif italic text-teal/50 text-base shrink-0">
+                  <span className="font-serif italic text-verde/50 text-base shrink-0">
                     0{index + 1}
                   </span>
                   {faq.question}

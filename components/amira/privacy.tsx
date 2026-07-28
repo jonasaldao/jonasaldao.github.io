@@ -17,13 +17,13 @@ export function Privacy() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Lock inside breathing rings */}
         <div data-reveal="scale" className="relative w-24 h-24 mx-auto mb-10">
-          <div className="breathe absolute inset-0 rounded-full bg-teal-light/60" aria-hidden="true" />
+          <div className="breathe absolute inset-0 rounded-full bg-menta/60" aria-hidden="true" />
           <div
-            className="breathe absolute -inset-4 rounded-full border border-teal/20"
+            className="breathe absolute -inset-4 rounded-full border border-verde/20"
             style={{ animationDelay: "1.2s" }}
             aria-hidden="true"
           />
-          <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-teal flex items-center justify-center shadow-lg shadow-teal/30">
+          <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-verde flex items-center justify-center shadow-lg shadow-verde/30">
             <Lock className="w-7 h-7 text-white" />
           </div>
         </div>
@@ -33,7 +33,7 @@ export function Privacy() {
           className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy mb-6 text-balance"
         >
           Tu privacidad es{" "}
-          <span className="accent-italic text-teal-dark">parte del cuidado.</span>
+          <span className="accent-italic text-verde-profundo">parte del cuidado.</span>
         </h2>
 
         <p
@@ -54,9 +54,9 @@ export function Privacy() {
           {badges.map((badge, index) => (
             <div
               key={index}
-              className="flex items-center gap-2.5 bg-white text-teal-dark px-5 py-3 rounded-full shadow-sm ring-1 ring-teal/15"
+              className="flex items-center gap-2.5 bg-white text-verde-profundo px-5 py-3 rounded-full shadow-sm ring-1 ring-verde/15"
             >
-              <badge.icon className="w-5 h-5 text-teal" />
+              <badge.icon className="w-5 h-5 text-verde" />
               <span className="font-semibold">{badge.text}</span>
             </div>
           ))}

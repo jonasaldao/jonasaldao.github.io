@@ -24,7 +24,7 @@ export function Differentiator() {
           className="text-4xl sm:text-5xl md:text-6xl font-semibold text-navy leading-tight text-balance"
         >
           Esto no reemplaza a un profesional.{" "}
-          <span className="accent-italic text-teal-dark">Lo acerca.</span>
+          <span className="accent-italic text-verde-profundo">Lo acerca.</span>
         </h2>
 
         {/* The claim above is a promise — this is the fine print that keeps it honest. */}
@@ -46,9 +46,9 @@ export function Differentiator() {
           {boundaries.map((item) => (
             <span
               key={item.text}
-              className="inline-flex items-center gap-2.5 bg-teal-mist text-teal-dark font-medium text-sm px-5 py-3 rounded-full ring-1 ring-teal/10"
+              className="inline-flex items-center gap-2.5 bg-arena text-verde-profundo font-medium text-sm px-5 py-3 rounded-full ring-1 ring-verde/10"
             >
-              <item.icon className="w-4 h-4 text-teal" />
+              <item.icon className="w-4 h-4 text-verde" />
               {item.text}
             </span>
           ))}

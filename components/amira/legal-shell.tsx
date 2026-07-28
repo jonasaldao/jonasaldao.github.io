@@ -36,7 +36,7 @@ export function LegalShell({
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-navy/50 hover:text-teal-dark transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-navy/50 hover:text-verde-profundo transition-colors"
           >
             <ArrowLeft size={15} />
             Volver al inicio
@@ -44,7 +44,7 @@ export function LegalShell({
 
           <h1 className="mt-6 text-4xl sm:text-5xl font-semibold text-navy leading-tight text-balance">
             {title}{" "}
-            <span className="accent-italic text-teal-dark">{accent}</span>
+            <span className="accent-italic text-verde-profundo">{accent}</span>
           </h1>
 
           <p className="mt-4 text-sm text-navy/45">
@@ -52,9 +52,9 @@ export function LegalShell({
           </p>
 
           {/* Draft notice — these pages are not yet reviewed by counsel. */}
-          <div className="mt-8 flex items-start gap-3 rounded-2xl bg-teal-mist ring-1 ring-teal/15 p-5">
-            <FileText className="w-5 h-5 shrink-0 mt-0.5 text-teal-dark" />
-            <p className="text-sm leading-relaxed text-teal-dark">
+          <div className="mt-8 flex items-start gap-3 rounded-2xl bg-arena ring-1 ring-verde/15 p-5">
+            <FileText className="w-5 h-5 shrink-0 mt-0.5 text-verde-profundo" />
+            <p className="text-sm leading-relaxed text-verde-profundo">
               Este documento es un borrador preliminar y todavía no fue revisado
               por asesoría legal. Describe cómo funciona Amira hoy, pero no
               constituye el texto definitivo.
@@ -83,7 +83,7 @@ export function LegalSection({
   return (
     <section className="mb-12">
       <h2 className="flex items-baseline gap-4 text-2xl font-semibold text-navy mb-4">
-        <span className="font-serif italic text-teal/50 text-lg shrink-0">
+        <span className="font-serif italic text-verde/50 text-lg shrink-0">
           {n}
         </span>
         <span className="text-balance">{title}</span>

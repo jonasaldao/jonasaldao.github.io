@@ -31,17 +31,17 @@ export function ProHow() {
     <>
       <section
         id="como-funciona"
-        className="relative py-24 md:py-32 bg-teal-mist overflow-hidden"
+        className="relative py-24 md:py-32 bg-arena overflow-hidden"
       >
         <div
-          className="blob-slow absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-teal-light/70 blur-3xl pointer-events-none"
+          className="blob-slow absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-menta/70 blur-3xl pointer-events-none"
           aria-hidden="true"
         />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 md:mb-20 text-balance">
             <span data-split>Empezar te lleva</span>{" "}
-            <span data-split className="accent-italic text-teal-dark">
+            <span data-split className="accent-italic text-verde-profundo">
               una tarde.
             </span>
           </h2>
@@ -49,7 +49,7 @@ export function ProHow() {
           <div className="relative">
             {/* Curvy connecting path — desktop only */}
             <svg
-              className="hidden md:block absolute top-10 left-[15%] right-[15%] w-[70%] h-16 text-teal/30"
+              className="hidden md:block absolute top-10 left-[15%] right-[15%] w-[70%] h-16 text-verde/30"
               viewBox="0 0 1000 60"
               fill="none"
               preserveAspectRatio="none"
@@ -72,8 +72,8 @@ export function ProHow() {
                     i === 1 ? "md:translate-y-10" : ""
                   }`}
                 >
-                  <div className="relative z-10 w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-teal/15 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                    <span className="font-serif italic text-teal text-2xl font-semibold">
+                  <div className="relative z-10 w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-verde/15 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                    <span className="font-serif italic text-verde text-2xl font-semibold">
                       {step.number}
                     </span>
                   </div>
@@ -96,10 +96,10 @@ export function ProHow() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             data-reveal="scale"
-            className="relative rounded-[2rem] bg-ink grain overflow-hidden px-6 py-12 sm:px-12 md:py-14"
+            className="relative rounded-[2rem] bg-tinta grain overflow-hidden px-6 py-12 sm:px-12 md:py-14"
           >
             <div
-              className="aurora absolute -top-24 right-0 w-[24rem] h-[24rem] rounded-full bg-teal/25 blur-[100px] pointer-events-none"
+              className="aurora absolute -top-24 right-0 w-[24rem] h-[24rem] rounded-full bg-verde/25 blur-[100px] pointer-events-none"
               aria-hidden="true"
             />
 
@@ -107,7 +107,7 @@ export function ProHow() {
               <div className="max-w-md">
                 <h2 className="text-2xl sm:text-3xl font-semibold text-white text-balance">
                   Confianza y{" "}
-                  <span className="accent-italic text-teal-light">
+                  <span className="accent-italic text-menta">
                     privacidad.
                   </span>
                 </h2>
@@ -125,7 +125,7 @@ export function ProHow() {
                     key={item.label}
                     className="flex flex-col gap-3 rounded-2xl bg-white/[0.07] ring-1 ring-white/12 px-5 py-5"
                   >
-                    <item.icon className="w-5 h-5 shrink-0 text-teal-light" />
+                    <item.icon className="w-5 h-5 shrink-0 text-menta" />
                     <span className="text-sm font-medium text-white/90 leading-snug">
                       {item.label}
                     </span>

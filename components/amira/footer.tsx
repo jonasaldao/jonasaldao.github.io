@@ -17,7 +17,7 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
   ]
 
   return (
-    <footer className="bg-ink py-14 grain">
+    <footer className="bg-tinta py-14 grain">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Tagline */}
@@ -38,14 +38,14 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white/60 hover:text-teal-light text-sm transition-colors"
+                className="text-white/60 hover:text-menta text-sm transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <Link
               href="/profesionales"
-              className="text-white/60 hover:text-teal-light text-sm transition-colors"
+              className="text-white/60 hover:text-menta text-sm transition-colors"
             >
               Para profesionales
             </Link>
@@ -55,7 +55,7 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
           <Button
             asChild
             variant="outline"
-            className="border-teal/50 bg-transparent text-white hover:bg-teal hover:text-white hover:border-teal rounded-full transition-all duration-300"
+            className="border-verde/50 bg-transparent text-white hover:bg-verde-activo hover:text-white hover:border-verde-activo rounded-full transition-all duration-300"
           >
             <a href={`${p}#pricing`}>Empezar gratis</a>
           </Button>
@@ -82,13 +82,13 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-1">
             <Link
               href="/terminos"
-              className="text-white/50 hover:text-teal-light text-sm transition-colors"
+              className="text-white/50 hover:text-menta text-sm transition-colors"
             >
               Términos
             </Link>
             <Link
               href="/privacidad"
-              className="text-white/50 hover:text-teal-light text-sm transition-colors"
+              className="text-white/50 hover:text-menta text-sm transition-colors"
             >
               Política de privacidad
             </Link>

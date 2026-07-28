@@ -44,7 +44,7 @@ export function Library() {
     >
       <div
         data-parallax="10"
-        className="blob absolute -top-24 -left-32 w-[26rem] h-[26rem] rounded-full bg-teal-mist blur-3xl pointer-events-none"
+        className="blob absolute -top-24 -left-32 w-[26rem] h-[26rem] rounded-full bg-arena blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -52,7 +52,7 @@ export function Library() {
         <div className="max-w-2xl mb-14 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-balance">
             <span data-split>Contenido que te acompaña</span>{" "}
-            <span data-split className="accent-italic text-teal-dark">
+            <span data-split className="accent-italic text-verde-profundo">
               en formato corto.
             </span>
           </h2>
@@ -72,9 +72,9 @@ export function Library() {
           {featured.map((item) => (
             <article
               key={item.title}
-              className="group flex flex-col bg-white rounded-[2rem] p-7 ring-1 ring-teal/10 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
+              className="group flex flex-col bg-white rounded-[2rem] p-7 ring-1 ring-verde/10 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
             >
-              <span className="inline-flex w-fit items-center gap-2 bg-teal-light text-teal-dark font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
+              <span className="inline-flex w-fit items-center gap-2 bg-menta text-verde-profundo font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
                 <item.icon className="w-3.5 h-3.5" />
                 {item.format}
               </span>
@@ -86,12 +86,12 @@ export function Library() {
                 {item.description}
               </p>
 
-              <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal-dark/70">
+              <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-verde-profundo/70">
                 <Clock className="w-4 h-4" />
                 {item.duration}
               </p>
 
-              <div className="mt-4 h-1 w-10 rounded-full bg-teal/25 transition-all duration-500 group-hover:w-20 group-hover:bg-teal" />
+              <div className="mt-4 h-1 w-10 rounded-full bg-verde/25 transition-all duration-500 group-hover:w-20 group-hover:bg-verde" />
             </article>
           ))}
         </div>

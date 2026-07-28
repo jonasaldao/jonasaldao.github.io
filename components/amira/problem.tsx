@@ -18,7 +18,7 @@ export function Problem() {
       {/* Oversized ghost quote mark */}
       <span
         data-parallax="10"
-        className="absolute -top-10 left-4 sm:left-10 font-serif text-[16rem] sm:text-[22rem] leading-none text-teal/[0.07] select-none pointer-events-none"
+        className="absolute -top-10 left-4 sm:left-10 font-serif text-[16rem] sm:text-[22rem] leading-none text-verde/[0.07] select-none pointer-events-none"
         aria-hidden="true"
       >
         &ldquo;
@@ -27,7 +27,7 @@ export function Problem() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-navy leading-[1.12] text-balance">
           <span data-split>Hay momentos que pesan.</span>{" "}
-          <span data-split className="accent-italic text-teal-dark">
+          <span data-split className="accent-italic text-verde-profundo">
             Y que merecen un lugar donde procesarlos.
           </span>
         </h2>
@@ -36,7 +36,7 @@ export function Problem() {
           {weights.map((line) => (
             <p
               key={line}
-              className="problem-line not-italic font-serif text-xl sm:text-2xl md:text-3xl text-navy leading-snug border-l-2 border-teal/25 pl-6"
+              className="problem-line not-italic font-serif text-xl sm:text-2xl md:text-3xl text-navy leading-snug border-l-2 border-verde/25 pl-6"
             >
               {line}
             </p>
@@ -47,7 +47,7 @@ export function Problem() {
           <p className="text-xl sm:text-2xl text-navy/70 leading-relaxed">
             A veces no sabés bien qué necesitás.
           </p>
-          <p className="mt-4 font-serif accent-italic text-2xl sm:text-3xl text-teal-dark leading-snug">
+          <p className="mt-4 font-serif accent-italic text-2xl sm:text-3xl text-verde-profundo leading-snug">
             Pero sí sabés que no querés cargarlo en soledad.
           </p>
         </div>

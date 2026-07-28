@@ -21,7 +21,7 @@ export function ProPricing() {
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-balance">
               <span data-split>Un plan,</span>{" "}
-              <span data-split className="accent-italic text-teal-dark">
+              <span data-split className="accent-italic text-verde-profundo">
                 todo incluido.
               </span>
             </h2>
@@ -35,7 +35,7 @@ export function ProPricing() {
           </div>
 
           <div data-reveal="scale" className="max-w-md mx-auto">
-            <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-teal via-teal-light to-coral/60 shadow-xl shadow-teal/15">
+            <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-verde via-menta to-coral/60 shadow-xl shadow-verde/15">
               <div className="bg-white rounded-[calc(2rem-2px)] p-7 md:p-9">
                 <h3 className="font-serif text-2xl font-semibold text-navy mb-2">
                   Suscripción profesional
@@ -47,8 +47,8 @@ export function ProPricing() {
                 <div className="space-y-3.5 mb-8">
                   {planFeatures.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
-                      <span className="w-5 h-5 shrink-0 rounded-full bg-teal-light flex items-center justify-center mt-0.5">
-                        <Check className="w-3 h-3 text-teal-dark" />
+                      <span className="w-5 h-5 shrink-0 rounded-full bg-menta flex items-center justify-center mt-0.5">
+                        <Check className="w-3 h-3 text-verde-profundo" />
                       </span>
                       <span className="text-navy/75">{feature}</span>
                     </div>
@@ -73,16 +73,16 @@ export function ProPricing() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-teal-dark via-teal to-teal-dark grain">
+      <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-verde-profundo via-verde to-verde-profundo grain">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="aurora absolute -top-32 left-1/4 w-[30rem] h-[30rem] rounded-full bg-teal-light/25 blur-[100px]" />
-          <div className="blob-slow absolute -bottom-40 right-1/4 w-[26rem] h-[26rem] rounded-full bg-ink/40 blur-[90px]" />
+          <div className="aurora absolute -top-32 left-1/4 w-[30rem] h-[30rem] rounded-full bg-menta/25 blur-[100px]" />
+          <div className="blob-slow absolute -bottom-40 right-1/4 w-[26rem] h-[26rem] rounded-full bg-tinta/40 blur-[90px]" />
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight mb-8 text-balance">
             <span data-split="chars">Tu próxima sesión,</span>{" "}
-            <span data-split="chars" className="accent-italic text-teal-light">
+            <span data-split="chars" className="accent-italic text-menta">
               con más contexto.
             </span>
           </h2>
@@ -92,7 +92,7 @@ export function ProPricing() {
               asChild
               size="lg"
               data-magnetic
-              className="bg-white hover:bg-teal-light text-teal-dark rounded-full px-10 py-7 text-lg font-semibold shadow-2xl shadow-ink/30 transition-colors duration-300"
+              className="bg-white hover:bg-menta text-verde-profundo rounded-full px-10 py-7 text-lg font-semibold shadow-2xl shadow-tinta/30 transition-colors duration-300"
             >
               <a href="#signup-pro">Sumarme a la beta</a>
             </Button>

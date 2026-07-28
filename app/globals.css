@@ -11,10 +11,10 @@
   --card-foreground: #1C2B2B;
   --popover: #FFFFFF;
   --popover-foreground: #1C2B2B;
-  --primary: #0D9488;
+  --primary: #087f6a;
   --primary-foreground: #FFFFFF;
-  --secondary: #CCFBF1;
-  --secondary-foreground: #0F766E;
+  --secondary: #dff7ef;
+  --secondary-foreground: #075e52;
   --muted: #F1F5F9;
   --muted-foreground: #64748B;
   --accent: #F97316;
@@ -23,18 +23,19 @@
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: #E2E8F0;
   --input: #E2E8F0;
-  --ring: #0D9488;
+  --ring: #087f6a;
 
   /* Custom Amira tokens */
-  --teal: #0D9488;
-  --teal-dark: #0F766E;
-  --teal-light: #CCFBF1;
-  --teal-mist: #F0FDFA;
+  --verde: #087f6a;
+  --verde-activo: #047857;
+  --verde-profundo: #075e52;
+  --menta: #dff7ef;
+  --arena: #fbf8f1;
   --off-white: #F8FFFE;
   --navy: #1C2B2B;
   --coral: #F97316;
-  --ink: #05201D;
-  --ink-2: #0A2E2A;
+  --tinta: #17312d;
+  --tinta-2: #1d3e39;
   --sand: #FBF7EF;
   --sand-2: #F3ECDD;
 
@@ -64,15 +65,16 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-teal: var(--teal);
-  --color-teal-dark: var(--teal-dark);
-  --color-teal-light: var(--teal-light);
-  --color-teal-mist: var(--teal-mist);
+  --color-verde: var(--verde);
+  --color-verde-activo: var(--verde-activo);
+  --color-verde-profundo: var(--verde-profundo);
+  --color-menta: var(--menta);
+  --color-arena: var(--arena);
   --color-off-white: var(--off-white);
   --color-navy: var(--navy);
   --color-coral: var(--coral);
-  --color-ink: var(--ink);
-  --color-ink-2: var(--ink-2);
+  --color-tinta: var(--tinta);
+  --color-tinta-2: var(--tinta-2);
   --color-sand: var(--sand);
   --color-sand-2: var(--sand-2);
   --radius-sm: calc(var(--radius) - 4px);

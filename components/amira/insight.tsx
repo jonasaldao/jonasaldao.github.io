@@ -4,7 +4,7 @@ export function Insight() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy mb-8 text-balance">
           <span data-split>El lugar</span>{" "}
-          <span data-split className="accent-italic text-teal-dark">
+          <span data-split className="accent-italic text-verde-profundo">
             que faltaba.
           </span>
         </h2>

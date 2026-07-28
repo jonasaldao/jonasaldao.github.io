@@ -24,7 +24,7 @@ const highlights = [
 
 export function ProHero() {
   return (
-    <section className="relative overflow-hidden bg-ink grain">
+    <section className="relative overflow-hidden bg-tinta grain">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <AuroraCanvas className="absolute inset-0" />
         <div className="blob absolute -bottom-52 right-1/4 w-[30rem] h-[30rem] rounded-full bg-coral/10 blur-[110px]" />
@@ -35,7 +35,7 @@ export function ProHero() {
           {/* Copy */}
           <div className="text-center lg:text-left">
             <span
-              className="hero-rise inline-block bg-white/10 text-teal-light font-semibold text-xs uppercase tracking-widest px-4 py-2 rounded-full ring-1 ring-white/15"
+              className="hero-rise inline-block bg-white/10 text-menta font-semibold text-xs uppercase tracking-widest px-4 py-2 rounded-full ring-1 ring-white/15"
               style={{ "--rise-delay": "0.05s" } as React.CSSProperties}
             >
               Amira para profesionales
@@ -48,7 +48,7 @@ export function ProHero() {
               <span
                 data-split="chars"
                 data-delay="0.35"
-                className="block accent-italic text-teal-light"
+                className="block accent-italic text-menta"
               >
                 Más tiempo para tus pacientes.
               </span>
@@ -70,7 +70,7 @@ export function ProHero() {
                 asChild
                 size="lg"
                 data-magnetic
-                className="bg-teal hover:bg-teal-light hover:text-teal-dark text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-teal/30 transition-colors duration-300"
+                className="bg-verde-profundo hover:bg-menta hover:text-verde-profundo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/30 transition-colors duration-300"
               >
                 <a href="#plan-pro">Sumarme a la beta</a>
               </Button>
@@ -101,8 +101,8 @@ export function ProHero() {
                 key={item.title}
                 className="flex items-start gap-4 bg-white/[0.06] backdrop-blur-md rounded-3xl p-5 sm:p-6 ring-1 ring-white/12"
               >
-                <span className="w-12 h-12 shrink-0 rounded-2xl bg-teal/25 ring-1 ring-teal-light/20 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-teal-light" />
+                <span className="w-12 h-12 shrink-0 rounded-2xl bg-verde/25 ring-1 ring-menta/20 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-menta" />
                 </span>
                 <div>
                   <p className="font-serif text-lg font-semibold text-white">

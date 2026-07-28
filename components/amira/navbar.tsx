@@ -93,8 +93,8 @@ export function Navbar({
           <div
             aria-hidden="true"
             className={`absolute inset-0 rounded-full transition-all duration-500 ${scrolled
-                ? "bg-white/75 backdrop-blur-xl shadow-lg shadow-teal/5 ring-1 ring-teal/10"
-                : "bg-white/0 shadow-none ring-1 ring-teal/0"
+                ? "bg-white/75 backdrop-blur-xl shadow-lg shadow-verde/5 ring-1 ring-verde/10"
+                : "bg-white/0 shadow-none ring-1 ring-verde/0"
               }`}
           />
 
@@ -124,7 +124,7 @@ export function Navbar({
                   key={link.href}
                   href={link.href}
                   className={`text-sm font-medium transition-colors duration-500 ${scrolled
-                      ? "text-navy/70 hover:text-teal-dark"
+                      ? "text-navy/70 hover:text-verde-profundo"
                       : "text-white/80 hover:text-white"
                     }`}
                 >
@@ -141,7 +141,7 @@ export function Navbar({
                     type="button"
                     aria-label="Abrir menú"
                     className={`inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-500 ${scrolled
-                        ? "text-teal-dark"
+                        ? "text-verde-profundo"
                         : "text-white"
                       }`}
                   >
@@ -156,7 +156,7 @@ export function Navbar({
                         key={link.href}
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
-                        className="py-3 text-lg font-medium text-navy hover:text-teal-dark border-b border-navy/5"
+                        className="py-3 text-lg font-medium text-navy hover:text-verde-profundo border-b border-navy/5"
                       >
                         {link.label}
                       </a>

@@ -25,16 +25,16 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="relative py-24 md:py-32 bg-teal-mist overflow-hidden">
+    <section id="como-funciona" className="relative py-24 md:py-32 bg-arena overflow-hidden">
       <div
-        className="blob-slow absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-teal-light/70 blur-3xl pointer-events-none"
+        className="blob-slow absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-menta/70 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 md:mb-24 text-balance">
           <span data-split>Empezar es</span>{" "}
-          <span data-split className="accent-italic text-teal-dark">
+          <span data-split className="accent-italic text-verde-profundo">
             rápido y sencillo.
           </span>
         </h2>
@@ -43,7 +43,7 @@ export function HowItWorks() {
         <div className="relative">
           {/* Curvy connecting path - Desktop */}
           <svg
-            className="hidden md:block absolute top-10 left-[8%] right-[8%] w-[84%] h-16 text-teal/30"
+            className="hidden md:block absolute top-10 left-[8%] right-[8%] w-[84%] h-16 text-verde/30"
             viewBox="0 0 1000 60"
             fill="none"
             preserveAspectRatio="none"
@@ -67,8 +67,8 @@ export function HowItWorks() {
                 }`}
               >
                 {/* Number Circle */}
-                <div className="relative z-10 w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-teal/15 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                  <span className="font-serif italic text-teal text-2xl font-semibold">
+                <div className="relative z-10 w-20 h-20 rounded-full bg-white shadow-md ring-1 ring-verde/15 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                  <span className="font-serif italic text-verde text-2xl font-semibold">
                     {step.number}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export function HowItWorks() {
             asChild
             size="lg"
             data-magnetic
-            className="bg-teal-dark hover:bg-teal text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-teal/20 transition-colors duration-300"
+            className="bg-verde-profundo hover:bg-verde-activo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/20 transition-colors duration-300"
           >
             <a href="#pricing">Probá gratis ahora</a>
           </Button>

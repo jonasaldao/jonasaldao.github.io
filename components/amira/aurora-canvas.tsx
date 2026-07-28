@@ -7,7 +7,7 @@ attribute vec2 a_pos;
 void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }
 `
 
-// Flowing teal aurora over deep ink, fbm noise. Rendered at reduced resolution
+// Flowing verde aurora over deep tinta, fbm noise. Rendered at reduced resolution
 // (it's intentionally soft), DPR capped, paused when offscreen.
 const FRAG = `
 precision highp float;
@@ -44,19 +44,19 @@ void main() {
   float n2 = fbm(p * 2.2 - vec2(t * 0.7, t * 0.4) + n1 * 1.4);
   float ridge = fbm(p * 0.9 + vec2(-t * 0.3, t * 0.2) + n2);
 
-  vec3 ink   = vec3(0.020, 0.125, 0.114); // #05201D
-  vec3 deep  = vec3(0.045, 0.290, 0.263); // deep teal
-  vec3 teal  = vec3(0.051, 0.580, 0.533); // #0D9488
-  vec3 light = vec3(0.800, 0.984, 0.945); // #CCFBF1
+  vec3 tinta = vec3(0.090, 0.192, 0.176); // #17312D
+  vec3 deep  = vec3(0.043, 0.303, 0.262); // intermedio tinta/verde
+  vec3 verde = vec3(0.031, 0.498, 0.416); // #087F6A
+  vec3 menta = vec3(0.875, 0.969, 0.937); // #DFF7EF
 
-  vec3 col = ink;
+  vec3 col = tinta;
   col = mix(col, deep, smoothstep(0.25, 0.75, n1));
-  col = mix(col, teal * 0.75, smoothstep(0.45, 0.95, n2) * 0.8);
-  col = mix(col, light * 0.5, smoothstep(0.72, 1.0, ridge * n2) * 0.55);
+  col = mix(col, verde * 0.75, smoothstep(0.45, 0.95, n2) * 0.8);
+  col = mix(col, menta * 0.5, smoothstep(0.72, 1.0, ridge * n2) * 0.55);
 
   // soft vignette so edges melt into the section background
   float v = smoothstep(1.25, 0.35, length(uv - vec2(0.5, 0.45)));
-  col = mix(ink, col, v);
+  col = mix(tinta, col, v);
 
   gl_FragColor = vec4(col, 1.0);
 }

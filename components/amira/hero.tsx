@@ -13,8 +13,8 @@ const marqueeItems = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ink grain">
-      {/* WebGL aurora background (falls back to the ink bg if no WebGL) */}
+    <section className="relative overflow-hidden bg-tinta grain">
+      {/* WebGL aurora background (falls back to the tinta bg if no WebGL) */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <AuroraCanvas className="absolute inset-0" />
         <div className="blob absolute -bottom-52 left-1/4 w-[30rem] h-[30rem] rounded-full bg-coral/10 blur-[110px]" />
@@ -26,23 +26,24 @@ export function Hero() {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.25rem] font-semibold text-white leading-[1.04] text-balance">
               <span data-split="chars" data-delay="0.1" className="block">
-                Tu espacio
+                Una nueva forma de cuidar
               </span>
               <span
                 data-split="chars"
                 data-delay="0.35"
-                className="block accent-italic text-teal-light"
+                className="block accent-italic text-menta"
               >
-                cuando lo necesitás.
+                el bienestar emocional
               </span>
             </h1>
 
             <p
-              className="hero-rise mt-7 text-lg sm:text-xl text-white/70 max-w-xl mx-auto lg:mx-0 text-pretty leading-relaxed"
+              className="hero-rise mt-7 text-sm sm:text-base text-white/70 max-w-xl mx-auto lg:mx-0 text-pretty leading-relaxed"
               style={{ "--rise-delay": "0.8s" } as React.CSSProperties}
             >
-              Acompañamiento emocional disponible 24/7, respaldado por
-              profesionales de la salud.
+              Recursos para usuarios y soluciones digitales para profesionales
+              de la salud mental, dentro de una experiencia simple, cercana y
+              segura.
             </p>
 
             <div
@@ -53,7 +54,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 data-magnetic
-                className="bg-teal hover:bg-teal-light hover:text-teal-dark text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-teal/30 transition-colors duration-300"
+                className="bg-verde-profundo hover:bg-menta hover:text-verde-profundo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/30 transition-colors duration-300"
               >
                 <a href="#pricing">Probá Amira gratis por 30 días</a>
               </Button>
@@ -77,7 +78,7 @@ export function Hero() {
             >
               {trustSignals.map((signal) => (
                 <span key={signal} className="flex items-center gap-2">
-                  <Check size={15} className="text-teal-light" />
+                  <Check size={15} className="text-menta" />
                   {signal}
                 </span>
               ))}
@@ -99,22 +100,22 @@ export function Hero() {
               />
             </div>
 
-            <div className="blob-mask relative overflow-hidden shadow-2xl shadow-ink ring-1 ring-white/15">
+            <div className="blob-mask relative overflow-hidden shadow-2xl shadow-tinta ring-1 ring-white/15">
               <img
                 src="/images/hero-young-person.png"
                 alt="Joven sonriendo mientras usa su celular, estudiando o trabajando"
                 className="w-full aspect-[4/5] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-dark/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-verde-profundo/40 via-transparent to-transparent" />
             </div>
 
             {/* Floating chat bubble — embedded inside the image, bottom-right */}
             <div className="float-gentle absolute z-10 right-4 bottom-5 sm:right-6 sm:bottom-7 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-5 py-3.5 max-w-[13rem] sm:max-w-[14rem]">
               <p className="text-sm font-medium text-navy">¿Cómo estás hoy?</p>
               <div className="mt-1.5 flex gap-1" aria-hidden="true">
-                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-teal" />
-                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-teal" />
-                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-teal" />
+                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-verde" />
+                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-verde" />
+                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-verde" />
               </div>
             </div>
           </div>
@@ -128,7 +129,7 @@ export function Hero() {
             (item, i) => (
               <span
                 key={i}
-                className="flex items-center gap-10 text-sm tracking-wide uppercase text-teal-light/70"
+                className="flex items-center gap-10 text-sm tracking-wide uppercase text-menta/70"
               >
                 {item}
                 <span className="text-coral/70" aria-hidden="true">✦</span>

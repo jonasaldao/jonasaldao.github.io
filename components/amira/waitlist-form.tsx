@@ -67,9 +67,9 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
     return (
       <div
         id={id}
-        className="scroll-mt-28 bg-white rounded-[2rem] p-7 sm:p-9 shadow-2xl shadow-teal/20 flex flex-col items-center text-center gap-3"
+        className="scroll-mt-28 bg-white rounded-[2rem] p-7 sm:p-9 shadow-2xl shadow-verde/20 flex flex-col items-center text-center gap-3"
       >
-        <CheckCircle2 className="w-10 h-10 text-teal-dark" aria-hidden="true" />
+        <CheckCircle2 className="w-10 h-10 text-verde-profundo" aria-hidden="true" />
         <p className="font-serif text-xl font-semibold text-navy">
           Listo, ya estás en la lista.
         </p>
@@ -90,7 +90,7 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
       id={id}
       onSubmit={handleSubmit}
       noValidate
-      className="scroll-mt-28 bg-white rounded-[2rem] p-7 sm:p-9 shadow-2xl shadow-teal/20"
+      className="scroll-mt-28 bg-white rounded-[2rem] p-7 sm:p-9 shadow-2xl shadow-verde/20"
     >
       <h3 className="font-serif text-2xl font-semibold text-navy mb-1">
         {variant === "usuarios" ? "Sumarme a la beta" : "Quiero sumarme a la beta"}
@@ -172,11 +172,11 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
           />
           <Label htmlFor={`${variant}-terminos`} className="font-normal leading-snug">
             Acepto los{" "}
-            <Link href="/terminos" className="underline underline-offset-2 hover:text-teal-dark">
+            <Link href="/terminos" className="underline underline-offset-2 hover:text-verde-profundo">
               términos
             </Link>{" "}
             y la{" "}
-            <Link href="/privacidad" className="underline underline-offset-2 hover:text-teal-dark">
+            <Link href="/privacidad" className="underline underline-offset-2 hover:text-verde-profundo">
               política de privacidad
             </Link>
             .
@@ -204,7 +204,7 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
         type="submit"
         disabled={status === "submitting"}
         data-magnetic
-        className="w-full mt-7 bg-teal-dark hover:bg-teal text-white rounded-full py-6 text-lg font-semibold shadow-lg shadow-teal/25 transition-colors duration-300"
+        className="w-full mt-7 bg-verde-profundo hover:bg-verde-activo text-white rounded-full py-6 text-lg font-semibold shadow-lg shadow-verde/25 transition-colors duration-300"
       >
         {status === "submitting" && <Loader2 className="w-4 h-4 mr-2 animate-spin" aria-hidden="true" />}
         {variant === "usuarios" ? "Empezar gratis" : "Sumarme a la beta"}

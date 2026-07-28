@@ -50,7 +50,7 @@ export function ProValue() {
     >
       <div
         data-parallax="10"
-        className="blob absolute top-10 -right-40 w-[26rem] h-[26rem] rounded-full bg-teal-mist blur-3xl pointer-events-none"
+        className="blob absolute top-10 -right-40 w-[26rem] h-[26rem] rounded-full bg-arena blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -58,7 +58,7 @@ export function ProValue() {
         <div className="max-w-2xl mb-14 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy leading-tight text-balance">
             <span data-split>Sostener una práctica online</span>{" "}
-            <span data-split className="accent-italic text-teal-dark">
+            <span data-split className="accent-italic text-verde-profundo">
               no debería ser un segundo trabajo.
             </span>
           </h2>
@@ -82,7 +82,7 @@ export function ProValue() {
               <p className="text-navy/45 text-sm leading-relaxed line-through decoration-navy/20">
                 {point.before}
               </p>
-              <p className="mt-4 text-teal-dark font-medium leading-relaxed">
+              <p className="mt-4 text-verde-profundo font-medium leading-relaxed">
                 {point.after}
               </p>
             </div>
@@ -94,10 +94,10 @@ export function ProValue() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group bg-white rounded-[2rem] p-7 md:p-8 ring-1 ring-teal/10 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
+              className="group bg-white rounded-[2rem] p-7 md:p-8 ring-1 ring-verde/10 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
             >
-              <div className="w-14 h-14 bg-teal-light rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                <feature.icon className="w-6 h-6 text-teal-dark" />
+              <div className="w-14 h-14 bg-menta rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+                <feature.icon className="w-6 h-6 text-verde-profundo" />
               </div>
               <h3 className="font-serif font-semibold text-navy text-xl mb-2.5 text-balance">
                 {feature.title}

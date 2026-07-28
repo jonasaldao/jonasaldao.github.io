@@ -340,7 +340,7 @@ export function LandingFX() {
 
   return (
     <div className="fx-progress fixed top-0 left-0 right-0 z-[60] h-[3px] pointer-events-none">
-      <div className="fx-progress-bar h-full w-full origin-left scale-x-0 bg-gradient-to-r from-teal via-teal-light to-coral" />
+      <div className="fx-progress-bar h-full w-full origin-left scale-x-0 bg-gradient-to-r from-verde via-menta to-coral" />
     </div>
   )
 }

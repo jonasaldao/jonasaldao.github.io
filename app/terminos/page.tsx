@@ -77,7 +77,7 @@ export default function TerminosPage() {
           Ver la{" "}
           <a
             href="/privacidad"
-            className="text-teal-dark font-medium underline underline-offset-4 hover:text-teal transition-colors"
+            className="text-verde-profundo font-medium underline underline-offset-4 hover:text-verde transition-colors"
           >
             política de privacidad
           </a>
@@ -112,7 +112,7 @@ export default function TerminosPage() {
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <span
-                className="mt-2.5 w-1.5 h-1.5 shrink-0 rounded-full bg-teal"
+                className="mt-2.5 w-1.5 h-1.5 shrink-0 rounded-full bg-verde"
                 aria-hidden="true"
               />
               <span>{item}</span>
@@ -150,7 +150,7 @@ export default function TerminosPage() {
           Ante cualquier duda sobre estos términos, escribinos a{" "}
           <a
             href="mailto:hola@amira.app"
-            className="text-teal-dark font-medium underline underline-offset-4 hover:text-teal transition-colors"
+            className="text-verde-profundo font-medium underline underline-offset-4 hover:text-verde transition-colors"
           >
             hola@amira.app
           </a>

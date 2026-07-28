@@ -1,10 +1,10 @@
 export function Presentation() {
   return (
-    <section className="relative bg-ink py-24 md:py-32 overflow-hidden grain">
+    <section className="relative bg-tinta py-24 md:py-32 overflow-hidden grain">
       {/* Aurora */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="aurora absolute top-0 left-1/4 w-[34rem] h-[34rem] rounded-full bg-teal/25 blur-[110px]" />
-        <div className="blob-slow absolute -bottom-40 right-0 w-[28rem] h-[28rem] rounded-full bg-teal-dark/40 blur-[100px]" />
+        <div className="aurora absolute top-0 left-1/4 w-[34rem] h-[34rem] rounded-full bg-verde/25 blur-[110px]" />
+        <div className="blob-slow absolute -bottom-40 right-0 w-[28rem] h-[28rem] rounded-full bg-verde-profundo/40 blur-[100px]" />
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +13,7 @@ export function Presentation() {
           <div className="text-center lg:text-left">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-7">
               <span data-split="chars">Así te acompaña</span>{" "}
-              <span data-split="chars" className="accent-italic text-teal-light">
+              <span data-split="chars" className="accent-italic text-menta">
                 Amira
               </span>
             </h2>
@@ -34,9 +34,9 @@ export function Presentation() {
               {/* Phone Frame */}
               <div className="w-72 sm:w-80 bg-navy rounded-[3rem] p-3 shadow-2xl ring-1 ring-white/20">
                 {/* Screen */}
-                <div className="bg-teal-mist rounded-[2.4rem] overflow-hidden">
+                <div className="bg-arena rounded-[2.4rem] overflow-hidden">
                   {/* Status Bar */}
-                  <div className="bg-gradient-to-r from-teal-dark to-teal h-12 flex items-center justify-center">
+                  <div className="bg-gradient-to-r from-verde-profundo to-verde h-12 flex items-center justify-center">
                     <img
                       src="/amira-logo-blanco.png"
                       alt="Amira"
@@ -55,7 +55,7 @@ export function Presentation() {
 
                     {/* User Message */}
                     <div className="flex justify-end">
-                      <div className="bg-teal text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] shadow-sm">
+                      <div className="bg-verde-profundo text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] shadow-sm">
                         <p className="text-sm">
                           Con mucha ansiedad por el examen de mañana
                         </p>
@@ -75,9 +75,9 @@ export function Presentation() {
                     {/* Typing indicator */}
                     <div className="flex justify-start">
                       <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm flex gap-1.5 items-center">
-                        <span className="typing-dot w-2 h-2 rounded-full bg-teal" />
-                        <span className="typing-dot w-2 h-2 rounded-full bg-teal" />
-                        <span className="typing-dot w-2 h-2 rounded-full bg-teal" />
+                        <span className="typing-dot w-2 h-2 rounded-full bg-verde" />
+                        <span className="typing-dot w-2 h-2 rounded-full bg-verde" />
+                        <span className="typing-dot w-2 h-2 rounded-full bg-verde" />
                       </div>
                     </div>
                   </div>
@@ -93,7 +93,7 @@ export function Presentation() {
 
               {/* Glow Effect */}
               <div
-                className="absolute -inset-8 bg-teal/25 rounded-[4rem] blur-2xl -z-10"
+                className="absolute -inset-8 bg-verde/25 rounded-[4rem] blur-2xl -z-10"
                 aria-hidden="true"
               />
             </div>
