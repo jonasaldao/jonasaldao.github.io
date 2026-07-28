@@ -1,23 +1,44 @@
-import { BadgeCheck, Video, ShieldCheck, Lock, Sparkles } from "lucide-react"
+import { BadgeCheck, Video, Sparkles } from "lucide-react"
 
 const listings = [
-  { area: "Psicología clínica", focus: "Ansiedad y estrés" },
-  { area: "Psicología", focus: "Bienestar y hábitos" },
-  { area: "Acompañamiento terapéutico", focus: "Procesos de cambio" },
+  {
+    nombre: "Lic. Camila Ferreyra",
+    disciplina: "Psicología",
+    enfoque: "Enfoque cognitivo-conductual",
+    especialidad: "Manejo del estrés",
+  },
+  {
+    nombre: "Lic. Tomás Aguirre",
+    disciplina: "Psicología",
+    enfoque: "Enfoque cognitivo-conductual",
+    especialidad: "Vínculos y parejas",
+  },
+  {
+    nombre: "Lic. Julieta Bianchi",
+    disciplina: "Psicología",
+    enfoque: "Enfoque cognitivo-conductual",
+    especialidad: "Hábitos y descanso",
+  },
+  {
+    nombre: "Dr. Nicolás Bertone",
+    disciplina: "Psiquiatría",
+    enfoque: "Adultos",
+    especialidad: "Primera consulta y controles",
+  },
 ]
 
 const guarantees = [
   {
+    icon: Video,
+    text: "Atención online, desde donde estés.",
+  },
+  {
+    icon: Sparkles,
+    text: "Elegís por enfoque y especialidad, sin derivaciones de por medio.",
+  },
+  {
     icon: BadgeCheck,
-    text: "Matrícula verificada antes de aparecer en el directorio.",
-  },
-  {
-    icon: ShieldCheck,
-    text: "Solicitar un turno no vincula tu cuenta con la del profesional.",
-  },
-  {
-    icon: Lock,
-    text: "Tus conversaciones y registros en Amira no se comparten.",
+    text: "Coordinás el turno directo, a tu ritmo.",
   },
 ]
 
@@ -57,9 +78,8 @@ export function Directory() {
               data-delay="0.1"
               className="mt-6 text-lg sm:text-xl text-navy/65 leading-relaxed text-pretty"
             >
-              Un directorio de profesionales de la salud mental con matrícula
-              verificada. Explorá perfiles por enfoque y coordiná un turno cuando
-              vos quieras.
+              Elegí por enfoque, mirá el perfil y coordiná un turno cuando
+              quieras. Rápido y simple.
             </p>
 
             <div data-stagger className="mt-9 space-y-4">
@@ -79,15 +99,21 @@ export function Directory() {
           {/* Directory preview */}
           <div data-reveal="scale" data-parallax="5">
             <div className="bg-white/60 backdrop-blur-sm rounded-[2rem] p-5 sm:p-6 ring-1 ring-verde/10 shadow-xl shadow-verde/5">
-              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-verde-profundo/60 px-2 pb-4">
-                <Sparkles className="w-3.5 h-3.5" />
-                Vista del directorio
-              </p>
+              <div className="px-2 pb-4">
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-verde-profundo/60">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Vista del directorio
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Perfiles de ejemplo. Los profesionales reales, con su
+                  matrícula verificada, se muestran dentro de la app.
+                </p>
+              </div>
 
               <div className="space-y-3">
                 {listings.map((item) => (
                   <div
-                    key={item.area + item.focus}
+                    key={item.nombre}
                     className="group flex items-center gap-4 bg-white rounded-3xl p-4 shadow-sm ring-1 ring-verde/5 transition-all duration-300 hover:shadow-md"
                   >
                     {/* Abstract avatar — the directory is illustrated, not populated */}
@@ -100,10 +126,13 @@ export function Directory() {
 
                     <div className="min-w-0 flex-1">
                       <p className="font-serif font-semibold text-navy leading-snug">
-                        {item.area}
+                        {item.nombre}
                       </p>
-                      <p className="text-sm text-muted-foreground truncate">
-                        {item.focus}
+                      <p className="text-sm text-verde-profundo/80 font-medium mt-0.5">
+                        {item.disciplina} · {item.enfoque}
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-0.5">
+                        {item.especialidad}
                       </p>
                     </div>
 
@@ -114,11 +143,6 @@ export function Directory() {
                   </div>
                 ))}
               </div>
-
-              <p className="text-xs text-navy/40 leading-relaxed px-2 pt-4">
-                Ejemplo ilustrativo de cómo se ven los perfiles. Los profesionales
-                reales se muestran dentro de la app.
-              </p>
             </div>
           </div>
         </div>
