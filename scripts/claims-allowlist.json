@@ -40,6 +40,46 @@
     {
       "text": "¿Y si ya estoy haciendo terapia?",
       "reason": "Pregunta de FAQ que describe la situación de la persona usuaria (si está en terapia con otro profesional), no una función de Amira. La respuesta aclara que Amira no interfiere."
+    },
+    {
+      "text": "Acompañamiento, no diagnóstico",
+      "reason": "Negación; es el encuadre del producto (chip de Differentiator)."
+    },
+    {
+      "text": "no realiza diagnósticos y no es un servicio\r\n          de emergencias",
+      "reason": "Negación obligatoria (parrafo de Differentiator)."
+    },
+    {
+      "text": "sin diagnósticos ni indicaciones médicas",
+      "reason": "Negación (card \"Conversá con Amira\" en Presentation)."
+    },
+    {
+      "text": "no realiza\r\n            diagnósticos y está disponible para personas mayores de 18 años",
+      "reason": "Negación obligatoria (texto de cierre del footer)."
+    },
+    {
+      "text": "No realiza\r\n          diagnósticos, no indica tratamientos ni medicación",
+      "reason": "Negación central del documento (terminos, seccion 01)."
+    },
+    {
+      "text": "no monitorea las conversaciones de forma continua",
+      "reason": "Negación (terminos, seccion 03)."
+    },
+    {
+      "text": "de su encuadre clínico",
+      "reason": "Describe la práctica del profesional independiente, no la de Amira. Decisión de producto ya tomada (terminos, seccion 04)."
+    },
+    {
+      "text": "seguimiento de cobros",
+      "reason": "Administrativo, no de salud (pro-pricing)."
+    },
+    {
+      "text": "reducí el seguimiento manual",
+      "reason": "Administrativo (pro-value)."
+    },
+    {
+      "text": "el enlace de tu propia sala de videollamada",
+      "reason": "La sala es del profesional; Amira solo guarda el enlace como dato de agenda. No es teleasistencia (pro-how)."
     }
   ]
 }

@@ -83,17 +83,25 @@ export default function PrivacidadPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n="05" title="Supervisión clínica y mejora del servicio">
+      <LegalSection n="05" title="Revisión de calidad y seguridad del servicio">
         <p>
-          Un equipo de profesionales de la salud mental revisa los flujos de
-          conversación, valida las respuestas ante señales de riesgo y define el
-          marco clínico de la plataforma.
+          Los contenidos y los protocolos conversacionales de Amira son
+          diseñados y auditados por profesionales de la salud mental. Esa
+          participación es de diseño y control de calidad del producto: no
+          implica lectura de conversaciones en tiempo real ni seguimiento
+          individual de ninguna persona usuaria.
         </p>
         <p>
-          Ese trabajo se hace sobre el diseño del sistema y sobre información
-          agregada o anonimizada, no leyendo conversaciones individuales por
-          curiosidad. Cuando necesitamos revisar un caso puntual por seguridad, se
-          hace de forma acotada y registrada.
+          Para evaluar la calidad y la seguridad del servicio revisamos
+          muestras acotadas de conversaciones de forma seudonimizada, con
+          acceso limitado y registrado{" "}
+          <span className="font-medium text-navy">
+            [PENDIENTE_REVISION_LEGAL: confirmar que el control de acceso
+            limitado y el registro de accesos ya están implementados antes de
+            publicar]
+          </span>
+          . No revisamos conversaciones individuales para evaluar a una
+          persona en particular.
         </p>
       </LegalSection>
 
