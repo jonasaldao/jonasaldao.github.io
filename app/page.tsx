@@ -9,9 +9,7 @@ import { Directory } from "@/components/amira/directory"
 import { Differentiator } from "@/components/amira/differentiator"
 import { HowItWorks } from "@/components/amira/how-it-works"
 import { Pricing } from "@/components/amira/pricing"
-import { ProfessionalsTeaser } from "@/components/amira/professionals-teaser"
 import { FAQ } from "@/components/amira/faq"
-import { FinalCTA } from "@/components/amira/final-cta"
 import { Footer } from "@/components/amira/footer"
 
 export default function AmiraLandingPage() {
@@ -41,17 +39,11 @@ export default function AmiraLandingPage() {
       {/* Block 6 - Confianza y límites */}
       <Differentiator />
 
-      {/* Block 12 - Pricing */}
-      <Pricing />
-
-      {/* Block 13 - Teaser profesionales (funnel completo en /profesionales) */}
-      <ProfessionalsTeaser />
-
-      {/* Block 14 - FAQs */}
+      {/* Block 7 - FAQs */}
       <FAQ />
 
-      {/* Block 15 - CTA Final */}
-      <FinalCTA />
+      {/* Block 8 - Cierre: beta + link a profesionales */}
+      <Pricing />
 
       {/* Footer */}
       <Footer />
