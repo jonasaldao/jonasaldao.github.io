@@ -57,7 +57,7 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
             variant="outline"
             className="border-verde/50 bg-transparent text-white hover:bg-verde-activo hover:text-white hover:border-verde-activo rounded-full transition-all duration-300"
           >
-            <a href={`${p}#pricing`}>Empezar gratis</a>
+            <a href={`${p}#pricing`}>Sumarme a la beta</a>
           </Button>
         </div>
 

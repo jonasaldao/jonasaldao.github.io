@@ -2,12 +2,16 @@ import { Button } from "@/components/ui/button"
 import { Check, ArrowDown } from "lucide-react"
 import { AuroraCanvas } from "./aurora-canvas"
 
-const trustSignals = ["Sin tarjeta de crédito", "Sin compromiso"]
+const trustSignals = [
+  "Para mayores de 18 años",
+  "No reemplaza la terapia",
+  "No es un servicio de emergencias",
+]
 
 const marqueeItems = [
   "Acompañamiento emocional",
   "Disponible 24/7",
-  "Respaldado por profesionales",
+  "Diseñada y auditada por profesionales de la salud mental",
   "Tu espacio cuando lo necesitás",
 ]
 
@@ -56,7 +60,7 @@ export function Hero() {
                 data-magnetic
                 className="bg-verde-profundo hover:bg-menta hover:text-verde-profundo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/30 transition-colors duration-300"
               >
-                <a href="#pricing">Probá Amira gratis por 30 días</a>
+                <a href="#pricing">Sumarme a la beta</a>
               </Button>
 
               <a
@@ -103,7 +107,7 @@ export function Hero() {
             <div className="blob-mask relative overflow-hidden shadow-2xl shadow-tinta ring-1 ring-white/15">
               <img
                 src="/images/hero-young-person.png"
-                alt="Joven sonriendo mientras usa su celular, estudiando o trabajando"
+                alt="Persona usando su celular en un momento tranquilo"
                 className="w-full aspect-[4/5] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-verde-profundo/40 via-transparent to-transparent" />

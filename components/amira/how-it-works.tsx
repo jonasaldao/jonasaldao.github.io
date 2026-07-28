@@ -4,7 +4,7 @@ const steps = [
   {
     number: "01",
     title: "Creá tu cuenta.",
-    description: "Sin tarjeta, sin formularios largos. Tus datos quedan protegidos desde el primer paso.",
+    description: "Un registro corto: email y confirmación de que sos mayor de 18.",
   },
   {
     number: "02",
@@ -88,7 +88,7 @@ export function HowItWorks() {
             data-magnetic
             className="bg-verde-profundo hover:bg-verde-activo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/20 transition-colors duration-300"
           >
-            <a href="#pricing">Probá gratis ahora</a>
+            <a href="#pricing">Sumarme a la beta</a>
           </Button>
         </div>
       </div>

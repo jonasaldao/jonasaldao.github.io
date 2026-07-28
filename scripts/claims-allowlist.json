@@ -80,6 +80,10 @@
     {
       "text": "el enlace de tu propia sala de videollamada",
       "reason": "La sala es del profesional; Amira solo guarda el enlace como dato de agenda. No es teleasistencia (pro-how)."
+    },
+    {
+      "text": "no\r\n          implica lectura de conversaciones en tiempo real ni seguimiento\r\n          individual de ninguna persona usuaria",
+      "reason": "Negación legítima en la política de privacidad (sección 05)."
     }
   ]
 }

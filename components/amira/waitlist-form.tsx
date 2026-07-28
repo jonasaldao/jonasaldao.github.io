@@ -207,7 +207,7 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
         className="w-full mt-7 bg-verde-profundo hover:bg-verde-activo text-white rounded-full py-6 text-lg font-semibold shadow-lg shadow-verde/25 transition-colors duration-300"
       >
         {status === "submitting" && <Loader2 className="w-4 h-4 mr-2 animate-spin" aria-hidden="true" />}
-        {variant === "usuarios" ? "Empezar gratis" : "Sumarme a la beta"}
+        Sumarme a la beta
       </Button>
 
       {status === "error" && (
@@ -215,10 +215,6 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
           No pudimos enviar el formulario. Probá de nuevo en un momento.
         </p>
       )}
-
-      <p className="text-center text-muted-foreground text-sm mt-4">
-        Sin tarjeta de crédito requerida.
-      </p>
     </form>
   )
 }

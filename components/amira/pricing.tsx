@@ -27,7 +27,7 @@ export function Pricing() {
             </span>
           </h2>
           <p data-reveal data-delay="0.1" className="text-white/60 text-lg">
-            Estamos en fase beta. Sin tarjeta de crédito. Sin compromiso.
+            Estamos en fase beta.
           </p>
         </div>
 
