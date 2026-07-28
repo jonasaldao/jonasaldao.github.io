@@ -1,4 +1,4 @@
-import { ShieldCheck, Stethoscope, HeartHandshake } from "lucide-react"
+import { ShieldCheck, Stethoscope, HeartHandshake, Lock, BadgeCheck } from "lucide-react"
 
 const boundaries = [
   {
@@ -13,11 +13,19 @@ const boundaries = [
     icon: ShieldCheck,
     text: "Disponible para mayores de 18 años.",
   },
+  {
+    icon: Lock,
+    text: "Datos encriptados.",
+  },
+  {
+    icon: BadgeCheck,
+    text: "Supervisión clínica activa.",
+  },
 ]
 
 export function Differentiator() {
   return (
-    <section className="py-24 md:py-32 bg-white overflow-hidden">
+    <section id="confianza" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2
           data-reveal
@@ -37,6 +45,16 @@ export function Differentiator() {
           un profesional de la salud, no realiza diagnósticos y no es un servicio
           de emergencias. Sus contenidos y criterios de seguridad son revisados
           por profesionales.
+        </p>
+
+        <p
+          data-reveal
+          data-delay="0.15"
+          className="mt-4 text-lg text-navy/60 leading-relaxed max-w-2xl mx-auto text-pretty"
+        >
+          Tu privacidad es parte del mismo cuidado: tus datos están protegidos y
+          gestionados bajo estándares de seguridad diseñados para información
+          sensible.
         </p>
 
         <div

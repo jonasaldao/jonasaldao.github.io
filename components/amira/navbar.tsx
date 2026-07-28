@@ -15,7 +15,7 @@ const defaultLinks: NavLink[] = [
   { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#que-podes-hacer", label: "Qué podés hacer" },
   { href: "#directorio", label: "Directorio" },
-  { href: "#privacidad", label: "Privacidad" },
+  { href: "#confianza", label: "Confianza" },
   { href: "/profesionales", label: "Para profesionales" },
 ]
 

@@ -8,7 +8,6 @@ import { Presentation } from "@/components/amira/presentation"
 import { Directory } from "@/components/amira/directory"
 import { Differentiator } from "@/components/amira/differentiator"
 import { HowItWorks } from "@/components/amira/how-it-works"
-import { Privacy } from "@/components/amira/privacy"
 import { Pricing } from "@/components/amira/pricing"
 import { ProfessionalsTeaser } from "@/components/amira/professionals-teaser"
 import { FAQ } from "@/components/amira/faq"
@@ -39,11 +38,8 @@ export default function AmiraLandingPage() {
           "no reemplaza a un profesional, lo acerca" is talking about. */}
       <Directory />
 
-      {/* Block 6 - El Diferencial + límites de la IA */}
+      {/* Block 6 - Confianza y límites */}
       <Differentiator />
-
-      {/* Block 11 - Privacidad */}
-      <Privacy />
 
       {/* Block 12 - Pricing */}
       <Pricing />

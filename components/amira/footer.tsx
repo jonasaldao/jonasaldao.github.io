@@ -13,7 +13,7 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
     { href: `${p}#como-funciona`, label: "Cómo funciona" },
     { href: `${p}#que-podes-hacer`, label: "Qué podés hacer" },
     { href: `${p}#directorio`, label: "Directorio" },
-    { href: `${p}#privacidad`, label: "Privacidad" },
+    { href: `${p}#confianza`, label: "Confianza" },
   ]
 
   return (
