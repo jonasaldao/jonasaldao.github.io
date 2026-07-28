@@ -32,6 +32,10 @@
     {
       "text": "Amira no es un servicio de emergencias",
       "reason": "Exclusión obligatoria."
+    },
+    {
+      "text": "No sé si mi problema es tan grave como para hacer terapia",
+      "reason": "Es el pensamiento de la persona usuaria, citado en primera persona en la sección de identificación — habla de NO hacer terapia, no ofrece ni sugiere terapia."
     }
   ]
 }

@@ -3,9 +3,7 @@
 import { LandingFX } from "@/components/amira/landing-fx"
 import { Navbar } from "@/components/amira/navbar"
 import { Hero } from "@/components/amira/hero"
-import { Problem } from "@/components/amira/problem"
 import { Identification } from "@/components/amira/identification"
-import { Insight } from "@/components/amira/insight"
 import { Presentation } from "@/components/amira/presentation"
 import { Features } from "@/components/amira/features"
 import { Library } from "@/components/amira/library"
@@ -29,16 +27,10 @@ export default function AmiraLandingPage() {
       {/* Block 1 - Hero */}
       <Hero />
 
-      {/* Block 2 - El Problema */}
-      <Problem />
-
-      {/* Block 3 - Identificación */}
+      {/* Block 2 - Identificación */}
       <Identification />
 
-      {/* Block 4 - El Insight Central */}
-      <Insight />
-
-      {/* Block 5 - Presentación de Amira */}
+      {/* Block 3 - Presentación de Amira */}
       <Presentation />
 
       {/* Block 6 - Cómo te Ayuda */}
