@@ -24,11 +24,6 @@ const faqs = [
       "Amira no es un servicio de emergencias y no puede intervenir en una situación de riesgo inmediato. Si estás en peligro, comunicate con los servicios de emergencia de tu localidad o con una persona de confianza que pueda acompañarte ahora.",
   },
   {
-    question: "¿Necesito estar haciendo terapia para usar Amira?",
-    answer:
-      "No. Podés usar Amira independientemente de si estás en tratamiento o no. Muchos usuarios la usan como primer paso antes de iniciar terapia.",
-  },
-  {
     question: "¿Quién supervisa la IA?",
     answer:
       "Una cohorte de profesionales clínicos y de salud mental revisa los flujos de conversación, valida las respuestas ante señales de riesgo y define el marco clínico de la plataforma. No es un chatbot genérico.",
@@ -42,7 +37,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-24 md:py-32 bg-arena">
+    <section className="py-16 md:py-24 bg-arena">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           data-reveal

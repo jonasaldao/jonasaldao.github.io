@@ -25,7 +25,7 @@ export function Directory() {
   return (
     <section
       id="directorio"
-      className="relative py-24 md:py-32 bg-arena overflow-hidden"
+      className="relative py-16 md:py-24 bg-arena overflow-hidden"
     >
       <div
         data-parallax="12"

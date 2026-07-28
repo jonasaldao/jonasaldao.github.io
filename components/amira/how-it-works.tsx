@@ -13,26 +13,21 @@ const steps = [
   },
   {
     number: "03",
-    title: "Recibí acompañamiento personalizado.",
-    description: "IA + herramientas adaptadas a vos.",
-  },
-  {
-    number: "04",
-    title: "Construí tu espacio de bienestar.",
-    description: "Tu historial, tus herramientas, tu ritmo.",
+    title: "Empezá tu acompañamiento.",
+    description: "IA, herramientas y tu historial, a tu ritmo.",
   },
 ]
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="relative py-24 md:py-32 bg-arena overflow-hidden">
+    <section id="como-funciona" className="relative py-16 md:py-24 bg-arena overflow-hidden">
       <div
         className="blob-slow absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-menta/70 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 md:mb-24 text-balance">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-center mb-16 md:mb-20 text-balance">
           <span data-split>Empezar es</span>{" "}
           <span data-split className="accent-italic text-verde-profundo">
             rápido y sencillo.
@@ -43,14 +38,14 @@ export function HowItWorks() {
         <div className="relative">
           {/* Curvy connecting path - Desktop */}
           <svg
-            className="hidden md:block absolute top-10 left-[8%] right-[8%] w-[84%] h-16 text-verde/30"
+            className="hidden md:block absolute top-10 left-[15%] right-[15%] w-[70%] h-16 text-verde/30"
             viewBox="0 0 1000 60"
             fill="none"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
             <path
-              d="M0 30 C 125 -10, 210 70, 333 30 S 540 -10, 666 30 S 875 70, 1000 30"
+              d="M0 30 C 165 -10, 335 70, 500 30 S 835 70, 1000 30"
               stroke="currentColor"
               strokeWidth="2.5"
               strokeDasharray="8 10"
@@ -58,12 +53,12 @@ export function HowItWorks() {
             />
           </svg>
 
-          <div data-stagger className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-5">
+          <div data-stagger className="grid sm:grid-cols-3 gap-10 md:gap-6">
             {steps.map((step, i) => (
               <div
                 key={step.number}
                 className={`group relative flex flex-col items-center text-center ${
-                  i % 2 === 1 ? "md:translate-y-10" : ""
+                  i === 1 ? "md:translate-y-10" : ""
                 }`}
               >
                 {/* Number Circle */}
