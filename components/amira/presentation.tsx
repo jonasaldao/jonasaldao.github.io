@@ -1,4 +1,4 @@
-import { BarChart3, MessageCircle, Leaf } from "lucide-react"
+import { BarChart3, MessageCircle, Leaf, UserCheck } from "lucide-react"
 
 const capabilities = [
   {
@@ -17,6 +17,12 @@ const capabilities = [
     title: "Encontrá herramientas",
     description:
       "Ejercicios breves y contenidos educativos sobre bienestar, hábitos y autocuidado.",
+  },
+  {
+    icon: UserCheck,
+    title: "Accedé al directorio",
+    description:
+      "Conectá con profesionales de la salud mental verificados, cuando quieras dar ese paso.",
   },
 ]
 
@@ -48,7 +54,7 @@ export function Presentation() {
                 data-reveal
                 className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0"
               >
-                Tres formas simples de empezar, disponibles cuando las
+                Formas simples de empezar, disponibles cuando las
                 necesites.
               </p>
             </div>

@@ -46,9 +46,9 @@ export function Directory() {
             </span>
 
             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-semibold text-navy leading-tight text-balance">
-              <span data-split>Cuando quieras dar el paso,</span>{" "}
+              <span data-split>Accedé al</span>{" "}
               <span data-split className="accent-italic text-verde-profundo">
-                el siguiente ya está acá.
+                directorio de profesionales.
               </span>
             </h2>
 
@@ -59,7 +59,7 @@ export function Directory() {
             >
               Un directorio de profesionales de la salud mental con matrícula
               verificada. Explorá perfiles por enfoque y coordiná un turno cuando
-              vos quieras — sin esperas, sin derivaciones incómodas.
+              vos quieras.
             </p>
 
             <div data-stagger className="mt-9 space-y-4">
