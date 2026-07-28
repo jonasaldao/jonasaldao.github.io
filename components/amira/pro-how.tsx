@@ -10,13 +10,13 @@ const steps = [
     number: "02",
     title: "Configurá tu atención online.",
     description:
-      "Definí disponibilidad, duración de sesión y tu enlace de videollamada.",
+      "Definí tu disponibilidad, la duración de cada encuentro y el enlace de tu propia sala de videollamada.",
   },
   {
     number: "03",
     title: "Empezá a recibir turnos.",
     description:
-      "Publicás tu perfil en el directorio y gestionás solicitudes, sesiones y cobros.",
+      "Publicás tu perfil en el directorio y gestionás solicitudes, turnos y cobros.",
   },
 ]
 
@@ -31,7 +31,7 @@ export function ProHow() {
     <>
       <section
         id="como-funciona"
-        className="relative py-24 md:py-32 bg-arena overflow-hidden"
+        className="relative py-16 md:py-24 bg-arena overflow-hidden"
       >
         <div
           className="blob-slow absolute -bottom-40 -left-32 w-[28rem] h-[28rem] rounded-full bg-menta/70 blur-3xl pointer-events-none"
@@ -92,11 +92,11 @@ export function ProHow() {
       </section>
 
       {/* Privacy boundary — the separation is the product promise, not a footnote */}
-      <section className="py-20 md:py-24 bg-white overflow-hidden">
+      <section className="py-16 md:py-20 bg-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             data-reveal="scale"
-            className="relative rounded-[2rem] bg-tinta grain overflow-hidden px-6 py-12 sm:px-12 md:py-14"
+            className="relative rounded-[2rem] bg-tinta grain overflow-hidden px-6 py-14 sm:px-12 md:py-16 ring-2 ring-menta/20"
           >
             <div
               className="aurora absolute -top-24 right-0 w-[24rem] h-[24rem] rounded-full bg-verde/25 blur-[100px] pointer-events-none"
@@ -105,16 +105,16 @@ export function ProHow() {
 
             <div className="relative flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-14">
               <div className="max-w-md">
-                <h2 className="text-2xl sm:text-3xl font-semibold text-white text-balance">
+                <h2 className="text-3xl sm:text-4xl font-semibold text-white text-balance">
                   Confianza y{" "}
                   <span className="accent-italic text-menta">
                     privacidad.
                   </span>
                 </h2>
-                <p className="mt-4 text-white/70 leading-relaxed text-pretty">
+                <p className="mt-4 text-lg text-white/70 leading-relaxed text-pretty">
                   La plataforma profesional no accede a las conversaciones ni a
                   los registros emocionales de la app de usuarios. Lo que tu
-                  paciente elige compartir con vos, lo comparte de forma
+                  usuario elige compartir con vos, lo comparte de forma
                   explícita.
                 </p>
               </div>

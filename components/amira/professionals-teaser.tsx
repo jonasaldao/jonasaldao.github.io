@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CalendarClock, Activity, BadgeCheck } from "lucide-react"
+import { ArrowRight, CalendarClock, Bell, BadgeCheck } from "lucide-react"
 
 const highlights = [
   { icon: CalendarClock, label: "Agenda, turnos y cobros" },
-  { icon: Activity, label: "Contexto entre sesiones" },
+  { icon: Bell, label: "Recordatorios automáticos" },
   { icon: BadgeCheck, label: "Perfil verificado" },
 ]
 
@@ -42,9 +42,8 @@ export function ProfessionalsTeaser() {
               </h2>
 
               <p className="mt-5 text-white/70 leading-relaxed text-pretty">
-                Organizá agenda, turnos, sesiones y cobros desde un solo lugar — y
-                llegá a cada consulta sabiendo cómo estuvo la semana de tu
-                paciente.
+                Centralizá tu perfil, agenda, turnos, recordatorios y cobros
+                desde un solo lugar.
               </p>
 
               <ul className="mt-7 flex flex-wrap gap-3">

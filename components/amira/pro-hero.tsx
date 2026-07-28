@@ -11,9 +11,9 @@ const highlights = [
   },
   {
     icon: Video,
-    title: "Turnos y sesiones online",
+    title: "Turnos y encuentros online",
     description:
-      "Solicitudes, reprogramaciones y videollamadas en un mismo lugar.",
+      "Solicitudes, reprogramaciones y tu enlace de reunión en un mismo lugar.",
   },
   {
     icon: CreditCard,
@@ -50,7 +50,7 @@ export function ProHero() {
                 data-delay="0.35"
                 className="block accent-italic text-menta"
               >
-                Más tiempo para tus pacientes.
+                Más tiempo para tu práctica.
               </span>
             </h1>
 
@@ -58,8 +58,8 @@ export function ProHero() {
               className="hero-rise mt-7 text-lg sm:text-xl text-white/70 max-w-xl mx-auto lg:mx-0 text-pretty leading-relaxed"
               style={{ "--rise-delay": "0.8s" } as React.CSSProperties}
             >
-              Agenda, turnos, sesiones y cobros desde un solo lugar — y contexto
-              real de cómo estuvo tu paciente entre consultas.
+              Centralizá tu perfil, agenda, turnos, recordatorios y cobros en
+              un solo lugar.
             </p>
 
             <div

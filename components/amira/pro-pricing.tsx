@@ -5,9 +5,7 @@ import { WaitlistForm } from "./waitlist-form"
 const planFeatures = [
   "Perfil verificado en el directorio público de Amira",
   "Agenda, turnos, reprogramaciones y recordatorios automáticos",
-  "Sesiones online y seguimiento de cobros",
-  "Contexto de tus pacientes entre sesiones",
-  "Alertas ante señales de riesgo, con protocolo de escalada",
+  "Encuentros online y seguimiento de cobros",
 ]
 
 export function ProPricing() {
@@ -81,9 +79,9 @@ export function ProPricing() {
 
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight mb-8 text-balance">
-            <span data-split="chars">Tu próxima sesión,</span>{" "}
+            <span data-split="chars">Tu práctica,</span>{" "}
             <span data-split="chars" className="accent-italic text-menta">
-              con más contexto.
+              un poco más simple.
             </span>
           </h2>
 

@@ -8,15 +8,14 @@ import { ProPricing } from "@/components/amira/pro-pricing"
 import { Footer } from "@/components/amira/footer"
 
 export const metadata: Metadata = {
-  title: "Amira para profesionales — Menos gestión, más tiempo para tus pacientes",
+  title: "Amira para profesionales — Menos gestión, más tiempo para tu práctica",
   description:
-    "Agenda, turnos, sesiones y cobros desde un solo lugar, más contexto real de tus pacientes entre sesiones. Perfil verificado en el directorio de Amira.",
+    "Perfil verificado en el directorio, agenda, turnos, recordatorios y cobros desde un solo lugar.",
   keywords: [
     "psicólogos",
     "gestión de consultorio",
     "agenda online",
-    "salud mental",
-    "telepsicología",
+    "bienestar emocional",
   ],
 }
 

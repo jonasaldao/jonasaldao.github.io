@@ -62,7 +62,7 @@ Aplica a **todo** texto visible o legible por máquina: copy, microcopy, labels,
 |---|---|
 | terapia, terapéutico, sesión | acompañamiento, espacio, conversación |
 | tratamiento, tratar | herramientas, ejercicios, contenidos |
-| paciente | usuario, persona (lado Amira) · consultante (lado profesional) |
+| paciente | usuario, persona |
 | diagnóstico, diagnosticar, cuadro | lo que registrás, cómo te sentís |
 | síntoma | sensación, estado, momento |
 | clínico, clínica | de calidad, de seguridad, profesional |

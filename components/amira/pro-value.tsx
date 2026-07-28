@@ -1,44 +1,23 @@
-import { Activity, CalendarClock, Bell, BadgeCheck } from "lucide-react"
+import { CalendarClock, CreditCard, BadgeCheck, ShieldAlert } from "lucide-react"
 
-const painPoints = [
-  {
-    before: "Notas post-sesión dispersas entre papel y WhatsApp",
-    after: "Todo el historial de tu paciente en un solo lugar",
-  },
-  {
-    before: "Horas no remuneradas coordinando agenda y cobros",
-    after: "Agenda, turnos y cobros automatizados",
-  },
-  {
-    before: "Sin visibilidad de cómo está tu paciente entre consultas",
-    after: "Contexto real de su semana, antes de cada sesión",
-  },
-]
-
-const features = [
-  {
-    icon: Activity,
-    title: "Seguimiento continuo entre sesiones",
-    description:
-      "Tus pacientes hacen check-ins diarios. Llegás a cada sesión con contexto real de cómo estuvo su semana, no con un “¿cómo venís?” a ciegas.",
-  },
+const benefits = [
   {
     icon: CalendarClock,
-    title: "Agenda, turnos y cobros",
+    title: "Agenda más simple",
     description:
-      "Definí tu disponibilidad una vez. Solicitudes, reprogramaciones, videollamadas y estado de pagos se ordenan solos.",
+      "Definí tu disponibilidad, organizá turnos y automatizá recordatorios.",
   },
   {
-    icon: Bell,
-    title: "Alertas clínicas en tiempo real",
+    icon: CreditCard,
+    title: "Cobros organizados",
     description:
-      "La IA detecta señales de riesgo en las conversaciones de tus pacientes y te notifica. Protocolo de escalada definido desde el día uno.",
+      "Consultá el estado de los pagos y reducí el seguimiento manual.",
   },
   {
     icon: BadgeCheck,
-    title: "Perfil verificado en el directorio",
+    title: "Perfil verificado",
     description:
-      "Aparecé en el directorio público de Amira con tu matrícula validada y recibí solicitudes de turno de personas que ya están buscando ayuda.",
+      "Creá un perfil profesional verificado para que nuevas personas puedan encontrarte.",
   },
 ]
 
@@ -46,7 +25,7 @@ export function ProValue() {
   return (
     <section
       id="beneficios"
-      className="relative py-24 md:py-32 bg-sand overflow-hidden"
+      className="relative py-16 md:py-24 bg-sand overflow-hidden"
     >
       <div
         data-parallax="10"
@@ -72,41 +51,42 @@ export function ProValue() {
           </p>
         </div>
 
-        {/* Before → after */}
-        <div data-stagger className="grid md:grid-cols-3 gap-5 mb-16">
-          {painPoints.map((point) => (
+        {/* Benefits */}
+        <div data-stagger className="grid sm:grid-cols-3 gap-5 md:gap-6">
+          {benefits.map((benefit) => (
             <div
-              key={point.before}
-              className="bg-white rounded-3xl p-6 ring-1 ring-navy/5 shadow-sm"
+              key={benefit.title}
+              className="group bg-white rounded-[2rem] p-7 md:p-8 ring-1 ring-verde/10 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
             >
-              <p className="text-navy/45 text-sm leading-relaxed line-through decoration-navy/20">
-                {point.before}
-              </p>
-              <p className="mt-4 text-verde-profundo font-medium leading-relaxed">
-                {point.after}
+              <div className="w-14 h-14 bg-menta rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+                <benefit.icon className="w-6 h-6 text-verde-profundo" />
+              </div>
+              <h3 className="font-serif font-semibold text-navy text-xl mb-2.5 text-balance">
+                {benefit.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {benefit.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Features */}
-        <div data-stagger className="grid sm:grid-cols-2 gap-5 md:gap-6">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group bg-white rounded-[2rem] p-7 md:p-8 ring-1 ring-verde/10 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
-            >
-              <div className="w-14 h-14 bg-menta rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                <feature.icon className="w-6 h-6 text-verde-profundo" />
-              </div>
-              <h3 className="font-serif font-semibold text-navy text-xl mb-2.5 text-balance">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        {/* Scope notice — prominent, not fine print */}
+        <div
+          data-reveal
+          className="mt-10 md:mt-12 flex flex-col sm:flex-row items-start gap-5 bg-white rounded-[2rem] p-7 md:p-8 ring-2 ring-verde-profundo/20 shadow-sm"
+        >
+          <span className="w-12 h-12 shrink-0 rounded-2xl bg-verde-profundo/10 flex items-center justify-center">
+            <ShieldAlert className="w-6 h-6 text-verde-profundo" />
+          </span>
+          <p className="text-lg text-navy/80 leading-relaxed">
+            <strong className="text-navy font-semibold">
+              En esta primera versión, Amira Profesionales es una herramienta
+              administrativa.
+            </strong>{" "}
+            Los profesionales no acceden a conversaciones, check-ins, alertas,
+            resúmenes ni historiales de las personas usuarias.
+          </p>
         </div>
       </div>
     </section>
