@@ -17,8 +17,8 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: 'Amira - Tu espacio cuando lo necesitás',
-  description: 'Acompañamiento emocional disponible 24/7, respaldado por profesionales de la salud. La plataforma de bienestar emocional para jóvenes en Latinoamérica.',
-  keywords: ['bienestar emocional', 'salud mental', 'acompañamiento', 'psicología', 'IA', 'terapia'],
+  description: 'Plataforma digital de bienestar emocional para personas mayores de 18 años en Argentina. Registrá cómo te sentís, conversá con una IA de acompañamiento y accedé a herramientas de bienestar.',
+  keywords: ['bienestar emocional', 'acompañamiento emocional', 'check-in emocional', 'autocuidado', 'salud mental', 'IA'],
 }
 
 export default function RootLayout({

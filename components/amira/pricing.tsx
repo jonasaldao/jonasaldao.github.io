@@ -2,22 +2,11 @@ import Link from "next/link"
 import { Check, ArrowRight } from "lucide-react"
 import { WaitlistForm } from "./waitlist-form"
 
-const freeFeatures = [
-  "Chat con IA limitado",
-  "Check-in emocional diario",
-  "Caja de herramientas útiles",
-  "Contenido psicoeducativo",
+const features = [
+  "Check-in emocional diario y tu historial personal",
+  "Conversación con IA para reflexionar, disponible cuando la necesites",
+  "Ejercicios y contenidos educativos de bienestar",
   "Acceso al directorio de profesionales",
-]
-
-const premiumFeatures = [
-  "Todo lo incluido en la prueba gratuita",
-  "IA conversacional ilimitada con supervisión clínica",
-  "Seguimiento longitudinal completo y más personalizado",
-  "Contenido psicoeducativo adaptado a tu proceso, no genérico",
-  "Micro-ejercicios situacionales",
-  "Notificaciones personalizadas",
-  "Sugerencia activa de derivación a psicólogo/a",
 ]
 
 export function Pricing() {
@@ -29,7 +18,7 @@ export function Pricing() {
         <div className="blob absolute -bottom-40 -left-24 w-[26rem] h-[26rem] rounded-full bg-verde-profundo/40 blur-[100px]" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4 text-balance">
             <span data-split>Tu espacio</span>{" "}
@@ -42,60 +31,25 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
-          {/* Free Plan — glass card */}
-          <div
-            data-reveal
-            className="bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-7 sm:p-9 ring-1 ring-white/15"
-          >
-            <div className="mb-7">
-              <span className="inline-block bg-menta/15 text-menta font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
-                En la beta
-              </span>
-              <h3 className="font-serif text-3xl font-semibold text-white mt-4">
-                Acceso gratuito
-              </h3>
-            </div>
+        <div className="max-w-md mx-auto bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-7 sm:p-9 ring-1 ring-white/15">
+          <span className="inline-block bg-menta/15 text-menta font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
+            En la beta
+          </span>
+          <h3 className="font-serif text-2xl font-semibold text-white mt-4 mb-6">
+            Qué incluye
+          </h3>
 
-            <div className="space-y-3.5">
-              {freeFeatures.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-menta flex-shrink-0 mt-0.5" />
-                  <span className="text-white/75">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Premium Plan — elevated white card */}
-          <div
-            data-reveal
-            data-delay="0.15"
-            className="relative bg-white rounded-[2rem] p-7 sm:p-9 shadow-2xl shadow-verde/20 md:-mt-6"
-          >
-            <div className="mb-7">
-              <span className="inline-block bg-arena text-verde-profundo font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
-                Cuando salga de beta
-              </span>
-              <h3 className="font-serif text-3xl font-semibold text-navy mt-4">
-                Plan Amira
-              </h3>
-            </div>
-
-            <div className="space-y-3.5">
-              {premiumFeatures.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <span className="w-5 h-5 shrink-0 rounded-full bg-menta flex items-center justify-center mt-0.5">
-                    <Check className="w-3 h-3 text-verde-profundo" />
-                  </span>
-                  <span className="text-navy/80">{feature}</span>
-                </div>
-              ))}
-            </div>
+          <div className="space-y-3.5">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-menta flex-shrink-0 mt-0.5" />
+                <span className="text-white/80">{feature}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="max-w-md mx-auto mt-10">
+        <div className="max-w-md mx-auto mt-6">
           <WaitlistForm variant="usuarios" id="signup" />
         </div>
 
