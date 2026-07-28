@@ -11,7 +11,7 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
 
   const navLinks = [
     { href: `${p}#como-funciona`, label: "Cómo funciona" },
-    { href: `${p}#biblioteca`, label: "Biblioteca" },
+    { href: `${p}#que-podes-hacer`, label: "Qué podés hacer" },
     { href: `${p}#directorio`, label: "Directorio" },
     { href: `${p}#privacidad`, label: "Privacidad" },
   ]

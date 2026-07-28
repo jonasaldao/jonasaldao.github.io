@@ -13,7 +13,7 @@ type NavLink = { href: string; label: string }
 
 const defaultLinks: NavLink[] = [
   { href: "#como-funciona", label: "Cómo funciona" },
-  { href: "#biblioteca", label: "Biblioteca" },
+  { href: "#que-podes-hacer", label: "Qué podés hacer" },
   { href: "#directorio", label: "Directorio" },
   { href: "#privacidad", label: "Privacidad" },
   { href: "/profesionales", label: "Para profesionales" },

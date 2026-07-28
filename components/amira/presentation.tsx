@@ -1,6 +1,31 @@
+import { BarChart3, MessageCircle, Leaf } from "lucide-react"
+
+const capabilities = [
+  {
+    icon: BarChart3,
+    title: "Hacé un check-in",
+    description: "Registrá cómo te sentís y llevá un historial personal.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Conversá con Amira",
+    description:
+      "Un espacio de reflexión, sin diagnósticos ni indicaciones médicas.",
+  },
+  {
+    icon: Leaf,
+    title: "Encontrá herramientas",
+    description:
+      "Ejercicios breves y contenidos educativos sobre bienestar, hábitos y autocuidado.",
+  },
+]
+
 export function Presentation() {
   return (
-    <section className="relative bg-tinta py-24 md:py-32 overflow-hidden grain">
+    <section
+      id="que-podes-hacer"
+      className="relative bg-tinta py-16 md:py-24 overflow-hidden grain"
+    >
       {/* Aurora */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="aurora absolute top-0 left-1/4 w-[34rem] h-[34rem] rounded-full bg-verde/25 blur-[110px]" />
@@ -9,23 +34,45 @@ export function Presentation() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Copy */}
-          <div className="text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-7">
-              <span data-split="chars">Así te acompaña</span>{" "}
-              <span data-split="chars" className="accent-italic text-menta">
-                Amira
-              </span>
-            </h2>
+          {/* Copy + cards */}
+          <div>
+            <div className="text-center lg:text-left">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-5 text-balance">
+                <span data-split="chars">Qué</span>{" "}
+                <span data-split="chars" className="accent-italic text-menta">
+                  podés hacer.
+                </span>
+              </h2>
 
-            <p
-              data-reveal
-              className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0"
-            >
-              Una plataforma de acompañamiento emocional diseñada para ayudarte a
-              transitar los momentos difíciles con herramientas prácticas,
-              seguimiento personalizado y respaldo profesional.
-            </p>
+              <p
+                data-reveal
+                className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0"
+              >
+                Tres formas simples de empezar, disponibles cuando las
+                necesites.
+              </p>
+            </div>
+
+            <div data-stagger className="mt-9 space-y-4">
+              {capabilities.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4 bg-white/[0.06] backdrop-blur-md rounded-3xl p-5 sm:p-6 ring-1 ring-white/12"
+                >
+                  <span className="w-12 h-12 shrink-0 rounded-2xl bg-verde/25 ring-1 ring-menta/20 flex items-center justify-center">
+                    <item.icon className="w-6 h-6 text-menta" />
+                  </span>
+                  <div>
+                    <p className="font-serif text-lg font-semibold text-white">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-sm text-white/70 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Phone Mockup */}

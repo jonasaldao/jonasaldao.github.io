@@ -26,7 +26,7 @@ export function LegalShell({
         homeHref="/"
         links={[
           { href: "/#como-funciona", label: "Cómo funciona" },
-          { href: "/#biblioteca", label: "Biblioteca" },
+          { href: "/#que-podes-hacer", label: "Qué podés hacer" },
           { href: "/#directorio", label: "Directorio" },
           { href: "/profesionales", label: "Para profesionales" },
         ]}

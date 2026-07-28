@@ -5,8 +5,6 @@ import { Navbar } from "@/components/amira/navbar"
 import { Hero } from "@/components/amira/hero"
 import { Identification } from "@/components/amira/identification"
 import { Presentation } from "@/components/amira/presentation"
-import { Features } from "@/components/amira/features"
-import { Library } from "@/components/amira/library"
 import { Directory } from "@/components/amira/directory"
 import { Differentiator } from "@/components/amira/differentiator"
 import { HowItWorks } from "@/components/amira/how-it-works"
@@ -30,25 +28,19 @@ export default function AmiraLandingPage() {
       {/* Block 2 - Identificación */}
       <Identification />
 
-      {/* Block 3 - Presentación de Amira */}
+      {/* Block 3 - Qué podés hacer */}
       <Presentation />
 
-      {/* Block 6 - Cómo te Ayuda */}
-      <Features />
+      {/* Block 4 - Cómo Funciona */}
+      <HowItWorks />
 
-      {/* Block 7 - Biblioteca de bienestar */}
-      <Library />
-
-      {/* Block 8 - Directorio de profesionales.
+      {/* Block 5 - Directorio de profesionales.
           Sits right before the Differentiator: the directory is the bridge that
           "no reemplaza a un profesional, lo acerca" is talking about. */}
       <Directory />
 
-      {/* Block 9 - El Diferencial + límites de la IA */}
+      {/* Block 6 - El Diferencial + límites de la IA */}
       <Differentiator />
-
-      {/* Block 10 - Cómo Funciona */}
-      <HowItWorks />
 
       {/* Block 11 - Privacidad */}
       <Privacy />
