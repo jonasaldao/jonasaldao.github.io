@@ -1,13 +1,9 @@
-import { Lock, Stethoscope } from "lucide-react"
+import { Lock } from "lucide-react"
 
 const badges = [
   {
     icon: Lock,
     text: "Datos encriptados",
-  },
-  {
-    icon: Stethoscope,
-    text: "Supervisión clínica activa",
   },
 ]
 

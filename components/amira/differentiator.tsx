@@ -1,25 +1,21 @@
-import { ShieldCheck, Stethoscope, HeartHandshake, Lock, BadgeCheck } from "lucide-react"
+import { ShieldCheck, Stethoscope, HeartHandshake, Lock } from "lucide-react"
 
 const boundaries = [
   {
     icon: HeartHandshake,
-    text: "Acompañamiento, no diagnóstico.",
+    text: "Acompañamiento, no diagnóstico",
   },
   {
     icon: Stethoscope,
-    text: "Criterios revisados por profesionales.",
+    text: "Diseñada y auditada por profesionales",
   },
   {
     icon: ShieldCheck,
-    text: "Disponible para mayores de 18 años.",
+    text: "Para mayores de 18 años",
   },
   {
     icon: Lock,
-    text: "Datos encriptados.",
-  },
-  {
-    icon: BadgeCheck,
-    text: "Supervisión clínica activa.",
+    text: "Datos encriptados",
   },
 ]
 
@@ -43,18 +39,9 @@ export function Differentiator() {
         >
           Amira es una inteligencia artificial de acompañamiento emocional. No es
           un profesional de la salud, no realiza diagnósticos y no es un servicio
-          de emergencias. Sus contenidos y criterios de seguridad son revisados
-          por profesionales.
-        </p>
-
-        <p
-          data-reveal
-          data-delay="0.15"
-          className="mt-4 text-lg text-navy/60 leading-relaxed max-w-2xl mx-auto text-pretty"
-        >
-          Tu privacidad es parte del mismo cuidado: tus datos están protegidos y
-          gestionados bajo estándares de seguridad diseñados para información
-          sensible.
+          de emergencias. Sus contenidos y criterios de seguridad son diseñados y
+          auditados por profesionales de la salud mental, y tus datos se
+          gestionan bajo estándares pensados para información sensible.
         </p>
 
         <div
