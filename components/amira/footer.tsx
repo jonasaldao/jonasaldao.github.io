@@ -74,8 +74,15 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
           {/* Crisis notice */}
           <p className="text-[#94A3B8] text-sm text-center leading-relaxed max-w-2xl mx-auto">
             Amira no es un servicio de emergencias. Si estás en crisis o en peligro
-            inmediato, contactá a los servicios de emergencia de tu localidad o a
-            una persona de confianza.
+            inmediato, contactá a los servicios de emergencia de tu localidad, a
+            una persona de confianza, o entrá a{" "}
+            <Link
+              href="/ayuda-urgente"
+              className="text-menta hover:text-white underline underline-offset-2 transition-colors"
+            >
+              Ayuda urgente
+            </Link>
+            .
           </p>
 
           {/* Legal */}

@@ -36,6 +36,10 @@
     {
       "text": "No sé si mi problema es tan grave como para hacer terapia",
       "reason": "Es el pensamiento de la persona usuaria, citado en primera persona en la sección de identificación — habla de NO hacer terapia, no ofrece ni sugiere terapia."
+    },
+    {
+      "text": "¿Y si ya estoy haciendo terapia?",
+      "reason": "Pregunta de FAQ que describe la situación de la persona usuaria (si está en terapia con otro profesional), no una función de Amira. La respuesta aclara que Amira no interfiere."
     }
   ]
 }

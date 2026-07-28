@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
   Accordion,
   AccordionContent,
@@ -9,29 +10,29 @@ import {
 
 const faqs = [
   {
-    question: "¿Amira reemplaza a un profesional?",
+    question: "¿Y si ya estoy haciendo terapia?",
     answer:
-      "No. Amira es la capa de continuidad entre sesiones — un espacio de acompañamiento cotidiano. No realiza diagnósticos ni indica tratamientos. Cuando lo necesitás, te conecta con profesionales verificados.",
+      "Amira no interfiere. Podés usarla entre consultas para registrar cómo venís y ordenar lo que quieras llevar.",
   },
   {
-    question: "¿Quién puede usar Amira?",
-    answer:
-      "Personas mayores de 18 años que quieran cuidar su bienestar emocional cotidiano, estén o no en tratamiento.",
+    question: "¿Necesito saber qué me pasa para empezar?",
+    answer: "No. Podés empezar sin tener nada claro; para eso está el espacio.",
   },
   {
-    question: "¿Qué pasa si estoy atravesando una crisis?",
-    answer:
-      "Amira no es un servicio de emergencias y no puede intervenir en una situación de riesgo inmediato. Si estás en peligro, comunicate con los servicios de emergencia de tu localidad o con una persona de confianza que pueda acompañarte ahora.",
-  },
-  {
-    question: "¿Quién supervisa la IA?",
-    answer:
-      "Una cohorte de profesionales clínicos y de salud mental revisa los flujos de conversación, valida las respuestas ante señales de riesgo y define el marco clínico de la plataforma. No es un chatbot genérico.",
-  },
-  {
-    question: "¿Mis conversaciones son privadas?",
-    answer:
-      "Sí. Tus datos están encriptados, protegidos y anonimizados. No se comparten con terceros — vos decidís cuándo y qué compartir con un profesional. La privacidad es un principio de diseño, no una función de marketing.",
+    question: "¿Qué pasa si estoy atravesando un momento difícil?",
+    answer: (
+      <>
+        Amira no es un servicio de emergencias. Si estás en una situación de
+        riesgo, entrá a{" "}
+        <Link
+          href="/ayuda-urgente"
+          className="text-verde-profundo underline underline-offset-2 hover:text-verde transition-colors"
+        >
+          Ayuda urgente
+        </Link>{" "}
+        para ver los recursos disponibles.
+      </>
+    ),
   },
 ]
 
