@@ -97,7 +97,7 @@ export function ProPricing() {
           </div>
 
           <p className="mt-7 text-white/70 text-sm">
-            3 meses gratis al lanzar · Sin permanencia
+            Acceso sin cargo durante la beta
           </p>
         </div>
       </section>

@@ -85,19 +85,20 @@ export default function TerminosPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n="05" title="Suscripción, prueba gratuita y cancelación">
+      <LegalSection n="05" title="Acceso durante la beta">
         <p>
-          Podés probar Amira sin cargo durante 30 días, sin tarjeta de crédito.
-          Finalizada la prueba, el acceso completo requiere una suscripción paga.
+          Durante la etapa de beta, el acceso a Amira es sin cargo y por
+          invitación. El modelo de suscripción y sus condiciones se
+          comunicarán antes de su entrada en vigencia, y en ningún caso se
+          aplicarán de forma retroactiva a quienes participen de la beta.
         </p>
-        <p>
-          La suscripción se renueva de forma periódica hasta que la canceles. Podés
-          cancelarla en cualquier momento desde tu cuenta; la cancelación tiene
-          efecto al final del período ya abonado.
-        </p>
-        <p>
-          Los precios pueden cambiar. Si eso ocurre, te avisamos antes de que el
-          cambio te afecte.
+        <p className="font-medium text-navy">
+          [PENDIENTE_REVISION_LEGAL: los párrafos anteriores de esta cláusula
+          sobre renovación periódica, cancelación y cambios de precio asumen
+          una suscripción paga ya activa, lo que contradice el acceso sin
+          cargo de la beta. Definir si corresponden reformulados para cuando
+          termine la beta, o si se sacan hasta que exista un modelo de
+          suscripción confirmado.]
         </p>
       </LegalSection>
 
