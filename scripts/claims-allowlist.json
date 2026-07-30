@@ -84,6 +84,38 @@
     {
       "text": "no\r\n          implica lectura de conversaciones en tiempo real ni seguimiento\r\n          individual de ninguna persona usuaria",
       "reason": "Negación legítima en la política de privacidad (sección 05)."
+    },
+    {
+      "text": "No realiza\n          diagnósticos, no indica tratamientos ni medicación",
+      "reason": "Negación central del encuadre (terminos/usuarios, sección 01)."
+    },
+    {
+      "text": "no realiza diagnósticos ni indica tratamientos",
+      "reason": "Negación (FAQ, respuesta a \"¿La conversación con la IA reemplaza una terapia?\")."
+    },
+    {
+      "text": "¿La conversación con la IA reemplaza una terapia?",
+      "reason": "La pregunta plantea el límite; la respuesta lo niega (FAQ)."
+    },
+    {
+      "text": "seguimiento de\n          cobros",
+      "reason": "Administrativo, no de salud (terminos/profesionales, sección 01)."
+    },
+    {
+      "text": "historia clínica ni una herramienta de supervisión",
+      "reason": "Negación: Amira Profesionales declara expresamente que no es esto (terminos/profesionales, sección 01)."
+    },
+    {
+      "text": "Amira no interviene en el encuadre clínico de tu práctica ni te\n          asigna casos",
+      "reason": "Describe la práctica del profesional independiente, no la de Amira; Amira declara que no interviene en ella. Decisión de producto ya tomada (terminos/profesionales, sección 01)."
+    },
+    {
+      "text": "tu encuadre clínico y del\n          cumplimiento de las normas de tu jurisdicción",
+      "reason": "Describe la práctica del profesional independiente, no la de Amira. Decisión de producto ya tomada (terminos/profesionales, sección 04)."
+    },
+    {
+      "text": "abordaje clínico y\n          no supervisa tu ejercicio profesional",
+      "reason": "Negación: Amira declara que no define el abordaje ni supervisa al profesional independiente (terminos/profesionales, sección 04)."
     }
   ]
 }

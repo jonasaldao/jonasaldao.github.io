@@ -74,7 +74,9 @@ function walk(dir, acc = []) {
   for (const name of readdirSync(dir)) {
     if (SKIP_DIR.has(name) || SKIP_FILE.has(name)) continue;
     if (name.startsWith('__next.')) continue;
-    if (/^(index|404|_not-found)\.(html|txt)$/.test(name)) continue;
+    // Artefactos del build de GitHub Pages: deploy.sh copia out/ a la raíz.
+    // Se regeneran en cada deploy; escanear la fuente, no el compilado.
+    if (dir === ROOT && /\.(html|txt)$/.test(name)) continue;
     const full = join(dir, name);
     const st = statSync(full);
     if (st.isDirectory()) walk(full, acc);
