@@ -90,9 +90,19 @@ export function LandingFX() {
         if (href === "#") {
           e.preventDefault()
           lenis!.scrollTo(0)
-        } else if (document.querySelector(href)) {
+        } else {
+          const target = document.querySelector<HTMLElement>(href)
+          if (!target) return
           e.preventDefault()
-          lenis!.scrollTo(href, { offset: -72 })
+          // Lenis intercepts the click and animates the scroll itself, so the
+          // browser's native "move focus to the target fragment" behavior
+          // never runs. Move it manually once the scroll settles so keyboard
+          // and screen-reader users land in the right place, not just
+          // sighted mouse users.
+          lenis!.scrollTo(href, {
+            offset: -72,
+            onComplete: () => target.focus({ preventScroll: true }),
+          })
         }
       }
       document.addEventListener("click", onClick)
