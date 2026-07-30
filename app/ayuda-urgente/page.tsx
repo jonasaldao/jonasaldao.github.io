@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Ayuda urgente — Amira",
   description:
     "Recursos de ayuda para situaciones de crisis o riesgo inmediato en salud mental en Argentina.",
+  alternates: { canonical: "/ayuda-urgente" },
 }
 
 const MESES = [

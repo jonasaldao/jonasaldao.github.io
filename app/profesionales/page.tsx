@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "agenda online",
     "bienestar emocional",
   ],
+  alternates: { canonical: "/profesionales" },
 }
 
 const proLinks = [

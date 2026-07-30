@@ -1,16 +1,39 @@
-"use client"
-
+import type { Metadata } from "next"
 import { LandingFX } from "@/components/amira/landing-fx"
 import { Navbar } from "@/components/amira/navbar"
 import { Hero } from "@/components/amira/hero"
 import { Identification } from "@/components/amira/identification"
+import { Insight } from "@/components/amira/insight"
 import { Presentation } from "@/components/amira/presentation"
 import { Directory } from "@/components/amira/directory"
 import { Differentiator } from "@/components/amira/differentiator"
 import { HowItWorks } from "@/components/amira/how-it-works"
 import { Pricing } from "@/components/amira/pricing"
+import { ProfessionalCTA } from "@/components/amira/professional-cta"
 import { FAQ } from "@/components/amira/faq"
 import { Footer } from "@/components/amira/footer"
+
+export const metadata: Metadata = {
+  title: "Amira | Una nueva forma de cuidar tu bienestar emocional",
+  description:
+    "Registrá cómo te sentís, conversá, explorá herramientas de bienestar y encontrá profesionales en un espacio digital pensado para personas mayores de 18 años.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Amira | Una nueva forma de cuidar tu bienestar emocional",
+    description:
+      "Registrá cómo te sentís, conversá, explorá herramientas de bienestar y encontrá profesionales en un espacio digital pensado para personas mayores de 18 años.",
+    url: "/",
+    siteName: "Amira",
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Amira | Una nueva forma de cuidar tu bienestar emocional",
+    description:
+      "Registrá cómo te sentís, conversá, explorá herramientas de bienestar y encontrá profesionales en un espacio digital pensado para personas mayores de 18 años.",
+  },
+}
 
 export default function AmiraLandingPage() {
   return (
@@ -22,30 +45,36 @@ export default function AmiraLandingPage() {
       {/* Block 1 - Hero */}
       <Hero />
 
-      {/* Block 2 - Identificación */}
+      {/* Block 2 - Identificación (problema) */}
       <Identification />
 
-      {/* Block 3 - Qué podés hacer */}
+      {/* Block 3 - Propuesta de valor */}
+      <Insight />
+
+      {/* Block 4 - Qué podés hacer (funciones principales) */}
       <Presentation />
 
-      {/* Block 4 - Cómo Funciona */}
+      {/* Block 5 - Cómo Funciona */}
       <HowItWorks />
 
-      {/* Block 5 - Directorio de profesionales.
+      {/* Block 6 - Directorio de profesionales.
           Sits right before the Differentiator: the directory is the bridge that
           "no reemplaza a un profesional, lo acerca" is talking about. */}
       <Directory />
 
-      {/* Block 6 - Confianza y límites */}
+      {/* Block 7 - Confianza y límites */}
       <Differentiator />
 
-      {/* Block 7 - FAQs */}
+      {/* Block 8 - FAQs */}
       <FAQ />
 
-      {/* Block 8 - Cierre: beta + link a profesionales */}
+      {/* Block 9 - Fase beta y formulario */}
       <Pricing />
 
-      {/* Footer */}
+      {/* Block 10 - CTA destacado para profesionales */}
+      <ProfessionalCTA />
+
+      {/* Footer legal */}
       <Footer />
     </div>
   )

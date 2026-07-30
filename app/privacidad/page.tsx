@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Política de privacidad — Amira",
   description:
     "Cómo Amira trata tus datos: qué recolectamos, qué hacemos con tus conversaciones y registros, y por qué la plataforma profesional no accede a ellos.",
+  alternates: { canonical: "/privacidad" },
+  // Borrador sin revisión legal — no indexar hasta su aprobación.
+  robots: { index: false, follow: true },
 }
 
 export default function PrivacidadPage() {
