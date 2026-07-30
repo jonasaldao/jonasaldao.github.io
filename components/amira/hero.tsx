@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Check, ArrowDown } from "lucide-react"
 import { AuroraCanvas } from "./aurora-canvas"
+import { CheckinScale } from "./checkin-scale"
 
 const trustSignals = [
   "Para mayores de 18 años",
@@ -10,7 +11,7 @@ const trustSignals = [
 
 const marqueeItems = [
   "Acompañamiento emocional",
-  "Disponible 24/7",
+  "Accedé cuando quieras",
   "Diseñada y auditada por profesionales de la salud mental",
   "Tu espacio cuando lo necesitás",
 ]
@@ -28,7 +29,14 @@ export function Hero() {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-8 items-center">
           {/* Copy */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.25rem] font-semibold text-white leading-[1.04] text-balance">
+            <span
+              className="hero-rise inline-block bg-white/10 text-menta font-semibold text-xs uppercase tracking-widest px-4 py-2 rounded-full ring-1 ring-white/15"
+              style={{ "--rise-delay": "0.05s" } as React.CSSProperties}
+            >
+              Tu espacio, cuando lo necesitás
+            </span>
+
+            <h1 className="mt-7 text-5xl sm:text-6xl md:text-7xl xl:text-[5.25rem] font-semibold text-white leading-[1.04] text-balance">
               <span data-split="chars" data-delay="0.1" className="block">
                 Una nueva forma de cuidar
               </span>
@@ -37,7 +45,7 @@ export function Hero() {
                 data-delay="0.35"
                 className="block accent-italic text-menta"
               >
-                el bienestar emocional
+                tu bienestar emocional
               </span>
             </h1>
 
@@ -45,9 +53,9 @@ export function Hero() {
               className="hero-rise mt-7 text-sm sm:text-base text-white/70 max-w-xl mx-auto lg:mx-0 text-pretty leading-relaxed"
               style={{ "--rise-delay": "0.8s" } as React.CSSProperties}
             >
-              Recursos para usuarios y soluciones digitales para profesionales
-              de la salud mental, dentro de una experiencia simple, cercana y
-              segura.
+              Un espacio digital para registrar cómo te sentís, conversar,
+              encontrar herramientas para tu día a día y acercarte a
+              profesionales cuando quieras dar ese paso.
             </p>
 
             <div
@@ -60,14 +68,14 @@ export function Hero() {
                 data-magnetic
                 className="bg-verde-profundo hover:bg-menta hover:text-verde-profundo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/30 transition-colors duration-300"
               >
-                <a href="#pricing">Sumarme a la beta</a>
+                <a href="#como-funciona">Descubrí cómo funciona</a>
               </Button>
 
               <a
-                href="#como-funciona"
-                className="group lg:hidden inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium py-3"
+                href="#que-podes-hacer"
+                className="group inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-medium py-3"
               >
-                Conocer cómo funciona
+                Conocé qué ofrece Amira
                 <ArrowDown
                   size={15}
                   className="transition-transform group-hover:translate-y-1"
@@ -89,10 +97,10 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Visual */}
+          {/* Visual — a single focal point: a neutral check-in card */}
           <div
             data-parallax="7"
-            className="hero-rise relative mx-auto w-full max-w-md lg:max-w-none"
+            className="hero-rise relative mx-auto w-full max-w-sm lg:max-w-none"
             style={{ "--rise-delay": "0.6s" } as React.CSSProperties}
           >
             {/* Breathing rings */}
@@ -104,24 +112,28 @@ export function Hero() {
               />
             </div>
 
-            <div className="blob-mask relative overflow-hidden shadow-2xl shadow-tinta ring-1 ring-white/15">
-              <img
-                src="/images/hero-young-person.png"
-                alt="Persona usando su celular en un momento tranquilo"
-                className="w-full aspect-[4/5] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-verde-profundo/40 via-transparent to-transparent" />
-            </div>
+            <div className="float-gentle relative bg-white/95 backdrop-blur-sm rounded-[2rem] shadow-2xl shadow-tinta ring-1 ring-white/15 p-7 sm:p-8">
+              <span className="inline-block bg-menta/60 text-verde-profundo font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
+                Check-in de hoy
+              </span>
 
-            {/* Floating chat bubble — embedded inside the image, bottom-right */}
-            <div className="float-gentle absolute z-10 right-4 bottom-5 sm:right-6 sm:bottom-7 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-5 py-3.5 max-w-[13rem] sm:max-w-[14rem]">
-              <p className="text-sm font-medium text-navy">¿Cómo estás hoy?</p>
-              <div className="mt-1.5 flex gap-1" aria-hidden="true">
-                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-verde" />
-                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-verde" />
-                <span className="typing-dot w-1.5 h-1.5 rounded-full bg-verde" />
+              <CheckinScale
+                legend="¿Cómo te sentís hoy?"
+                legendClassName="font-serif text-xl sm:text-2xl font-semibold text-navy mb-6 text-balance"
+                className="mt-5"
+              />
+
+              <div className="mt-6 flex items-center gap-2 text-navy/40 text-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-verde" aria-hidden="true" />
+                Solo vos ves tu historial.
               </div>
             </div>
+
+            {/* Glow */}
+            <div
+              className="absolute -inset-8 bg-verde/20 rounded-[3rem] blur-2xl -z-10"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </div>
