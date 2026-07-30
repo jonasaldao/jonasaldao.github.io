@@ -1,4 +1,5 @@
-import { BadgeCheck, Video, Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { BadgeCheck, Video, Sparkles, Lock, ArrowRight } from "lucide-react"
 
 const listings = [
   {
@@ -46,7 +47,8 @@ export function Directory() {
   return (
     <section
       id="directorio"
-      className="relative py-16 md:py-24 bg-arena overflow-hidden"
+      tabIndex={-1}
+      className="relative py-16 md:py-24 bg-arena overflow-hidden scroll-mt-28 focus:outline-none"
     >
       <div
         data-parallax="12"
@@ -67,9 +69,9 @@ export function Directory() {
             </span>
 
             <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-semibold text-navy leading-tight text-balance">
-              <span data-split>Accedé al</span>{" "}
+              <span data-split>Si querés dar otro paso,</span>{" "}
               <span data-split className="accent-italic text-verde-profundo">
-                directorio de profesionales.
+                también podés encontrar profesionales.
               </span>
             </h2>
 
@@ -78,8 +80,8 @@ export function Directory() {
               data-delay="0.1"
               className="mt-6 text-lg sm:text-xl text-navy/65 leading-relaxed text-pretty"
             >
-              Elegí por enfoque, mirá el perfil y coordiná un turno cuando
-              quieras. Rápido y simple.
+              Explorá perfiles de profesionales independientes, conocé su
+              enfoque y disponibilidad, y elegí con quién comunicarte.
             </p>
 
             <div data-stagger className="mt-9 space-y-4">
@@ -93,6 +95,32 @@ export function Directory() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Privacy clarification — kept distinct from the guarantees above,
+                since it's a boundary claim, not a convenience feature. */}
+            <div
+              data-reveal
+              className="mt-7 flex items-start gap-3 bg-white/70 rounded-2xl px-4 py-3.5 ring-1 ring-verde/10"
+            >
+              <Lock className="w-4 h-4 text-verde mt-0.5 shrink-0" />
+              <p className="text-sm text-navy/70 leading-relaxed">
+                Tus conversaciones y check-ins no se comparten con los
+                profesionales del directorio.
+              </p>
+            </div>
+
+            <div data-reveal className="mt-8">
+              <Button
+                asChild
+                size="lg"
+                className="bg-verde-profundo hover:bg-verde-activo text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg shadow-verde/15 transition-colors duration-300"
+              >
+                <a href="#pricing" className="inline-flex items-center gap-2">
+                  Explorar el directorio
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
 
