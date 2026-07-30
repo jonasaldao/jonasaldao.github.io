@@ -28,7 +28,7 @@ const featured = [
 ]
 
 const topics = [
-  "Ansiedad",
+  "Calma",
   "Sueño",
   "Vínculos",
   "Autoestima",
