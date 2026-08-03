@@ -113,7 +113,7 @@ export function Hero() {
 
             <div className="blob-mask relative overflow-hidden shadow-2xl shadow-tinta ring-1 ring-white/15">
               <img
-                src="/images/hero-young-person.png"
+                src="/images/hero-young-person.webp"
                 alt="Persona usando su celular en un momento tranquilo"
                 className="w-full aspect-[4/5] object-cover"
               />
