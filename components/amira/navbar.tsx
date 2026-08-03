@@ -91,11 +91,14 @@ export function Navbar({
     <nav className="fixed top-0 left-0 right-0 z-50 [transform:translateZ(0)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative mt-3 h-16 rounded-full">
+          {/* The pill is mounted once with its final look and only its opacity
+              is animated. Toggling the backdrop-filter itself is what trips the
+              touch-Chrome repaint bug described above, so the blur class must
+              never enter or leave mid-scroll. It is also gated to fine pointers
+              — touchscreens get the opaque fill from .nav-pill-bg instead. */}
           <div
             aria-hidden="true"
-            className={`absolute inset-0 rounded-full transition-all duration-500 ${scrolled
-                ? "bg-white/75 backdrop-blur-xl shadow-lg shadow-verde/5 ring-1 ring-verde/10"
-                : "bg-white/0 shadow-none ring-1 ring-verde/0"
+            className={`absolute inset-0 rounded-full bg-white/75 nav-pill-bg [@media(pointer:fine)]:backdrop-blur-xl shadow-lg shadow-verde/5 ring-1 ring-verde/10 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
               }`}
           />
 

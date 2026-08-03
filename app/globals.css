@@ -238,17 +238,23 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* Mobile / Touchscreen Optimizations                                 */
+/* Navbar pill                                                         */
 /* ------------------------------------------------------------------ */
+/* The blur itself is applied in the component via Tailwind's
+   `[@media(pointer:fine)]:backdrop-blur-xl` — hand-written backdrop-filter
+   rules do not survive the build here: Lightning CSS collapses the pair down
+   to the -webkit- prefix alone, which Chrome then ignores. That is exactly how
+   the previous `backdrop-filter: none` override for touchscreens died
+   silently. Tailwind's own utility emits both prefixes correctly, so the blur
+   is expressed there and only the opaque touch fallback lives here.
+
+   Touchscreens get no blur at all (touch Chrome has a repaint bug where a
+   position:fixed element carrying a backdrop-filter stops redrawing
+   mid-scroll), so the bar needs a near-opaque fill to stay legible over the
+   dark hero. */
 @media (pointer: coarse) {
-  /* Disable backdrop-filter blur on touchscreens to fix repaint bugs in Chrome on Android and boost performance */
-  .backdrop-blur-xl {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  /* Increase navbar opacity on touchscreens for readability without backdrop blur */
-  .bg-white\/75 {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+  .nav-pill-bg {
+    background-color: rgb(255 255 255 / 0.97);
   }
 }
 
