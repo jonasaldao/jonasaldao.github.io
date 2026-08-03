@@ -98,7 +98,7 @@ export function Navbar({
               — touchscreens get the opaque fill from .nav-pill-bg instead. */}
           <div
             aria-hidden="true"
-            className={`absolute inset-0 rounded-full bg-white/75 nav-pill-bg [@media(pointer:fine)]:backdrop-blur-xl shadow-lg shadow-verde/5 ring-1 ring-verde/10 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 rounded-full bg-white/75 nav-pill-bg [@media(pointer:fine)]:backdrop-blur-xl shadow-lg shadow-verde/10 ring-1 ring-verde/40 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
               }`}
           />
 
