@@ -105,8 +105,8 @@ export function Directory() {
             >
               <Lock className="w-4 h-4 text-verde mt-0.5 shrink-0" />
               <p className="text-sm text-navy/70 leading-relaxed">
-                Tus conversaciones y check-ins no se comparten con los
-                profesionales del directorio.
+                Nada de lo que registrás en Amira se comparte sin que vos lo
+                decidas.
               </p>
             </div>
 

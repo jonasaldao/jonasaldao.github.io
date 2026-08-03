@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Check, ArrowDown } from "lucide-react"
 import { AuroraCanvas } from "./aurora-canvas"
-import { CheckinScale } from "./checkin-scale"
 
 const trustSignals = [
   "Para mayores de 18 años",
@@ -97,10 +96,10 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Visual — a single focal point: a neutral check-in card */}
+          {/* Visual — a single focal point, kept modest in size on purpose */}
           <div
             data-parallax="7"
-            className="hero-rise relative mx-auto w-full max-w-sm lg:max-w-none"
+            className="hero-rise relative mx-auto w-full max-w-[13rem] sm:max-w-xs lg:max-w-sm"
             style={{ "--rise-delay": "0.6s" } as React.CSSProperties}
           >
             {/* Breathing rings */}
@@ -112,20 +111,22 @@ export function Hero() {
               />
             </div>
 
-            <div className="float-gentle relative bg-white/95 backdrop-blur-sm rounded-[2rem] shadow-2xl shadow-tinta ring-1 ring-white/15 p-7 sm:p-8">
-              <span className="inline-block bg-menta/60 text-verde-profundo font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full">
-                Check-in de hoy
-              </span>
-
-              <CheckinScale
-                legend="¿Cómo te sentís hoy?"
-                legendClassName="font-serif text-xl sm:text-2xl font-semibold text-navy mb-6 text-balance"
-                className="mt-5"
+            <div className="blob-mask relative overflow-hidden shadow-2xl shadow-tinta ring-1 ring-white/15">
+              <img
+                src="/images/hero-young-person.png"
+                alt="Persona usando su celular en un momento tranquilo"
+                className="w-full aspect-[4/5] object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-verde-profundo/40 via-transparent to-transparent" />
+            </div>
 
-              <div className="mt-6 flex items-center gap-2 text-navy/40 text-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-verde" aria-hidden="true" />
-                Solo vos ves tu historial.
+            {/* Floating chat bubble — embedded inside the image, bottom-right */}
+            <div className="float-gentle absolute z-10 right-3 bottom-4 sm:right-4 sm:bottom-5 bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl px-3.5 py-2.5 max-w-[8.5rem] sm:max-w-[9.5rem]">
+              <p className="text-xs font-medium text-navy">¿Cómo estás hoy?</p>
+              <div className="mt-1 flex gap-1" aria-hidden="true">
+                <span className="typing-dot w-1 h-1 rounded-full bg-verde" />
+                <span className="typing-dot w-1 h-1 rounded-full bg-verde" />
+                <span className="typing-dot w-1 h-1 rounded-full bg-verde" />
               </div>
             </div>
 
