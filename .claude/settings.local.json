@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(winget --version)",
+      "PowerShell(winget list --id OpenJS.NodeJS 2>&1)",
+      "PowerShell(winget list --id Python.Python.3.12 2>&1)",
+      "PowerShell(winget list --id OpenJS.NodeJS.LTS --source winget 2>&1)",
+      "PowerShell(winget install --id OpenJS.NodeJS.LTS --source winget --accept-package-agreements --accept-source-agreements --silent 2>&1)",
+      "PowerShell(winget install --id Python.Python.3.12 --source winget --accept-package-agreements --accept-source-agreements --silent 2>&1)",
+      "PowerShell(Get-Command pnpm -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
