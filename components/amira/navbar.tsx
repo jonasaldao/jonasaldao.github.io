@@ -103,7 +103,7 @@ export function Navbar({
               as a shadow rather than a glow. */}
           <div
             aria-hidden="true"
-            className={`absolute inset-0 rounded-full bg-white/75 nav-pill-bg [@media(pointer:fine)]:backdrop-blur-xl shadow-[0_0_18px_rgb(8_127_106_/_0.16),0_6px_16px_-4px_rgb(8_127_106_/_0.14)] ring-1 ring-verde/40 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 rounded-full bg-white/75 nav-pill-bg [@media(pointer:fine)]:backdrop-blur-xl shadow-[0_0_30px_rgb(8_127_106_/_0.26),0_10px_24px_-5px_rgb(8_127_106_/_0.20)] ring-1 ring-verde/40 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
               }`}
           />
 
