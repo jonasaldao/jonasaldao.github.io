@@ -17,7 +17,7 @@ export function ProPricing() {
       >
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-navy text-balance">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-tinta text-balance">
               <span data-split>Un plan,</span>{" "}
               <span data-split className="accent-italic text-verde-profundo">
                 todo incluido.
@@ -26,16 +26,16 @@ export function ProPricing() {
             <p
               data-reveal
               data-delay="0.1"
-              className="mt-5 text-lg text-navy/60"
+              className="mt-5 text-lg text-tinta/60"
             >
-              Estamos en fase beta. Primeros 3 meses gratuitos al lanzar.
+              Estamos en fase beta. Acceso sin cargo mientras dure esta etapa.
             </p>
           </div>
 
           <div data-reveal="scale" className="max-w-md mx-auto">
             <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-verde via-menta to-coral/60 shadow-xl shadow-verde/15">
               <div className="bg-white rounded-[calc(2rem-2px)] p-7 md:p-9">
-                <h3 className="font-serif text-2xl font-semibold text-navy mb-2">
+                <h3 className="font-serif text-2xl font-semibold text-tinta mb-2">
                   Suscripción profesional
                 </h3>
                 <p className="text-muted-foreground mb-7">
@@ -48,7 +48,7 @@ export function ProPricing() {
                       <span className="w-5 h-5 shrink-0 rounded-full bg-menta flex items-center justify-center mt-0.5">
                         <Check className="w-3 h-3 text-verde-profundo" />
                       </span>
-                      <span className="text-navy/75">{feature}</span>
+                      <span className="text-tinta/75">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -62,10 +62,10 @@ export function ProPricing() {
 
           <p
             data-reveal
-            className="text-center text-navy/45 text-sm mt-12 max-w-lg mx-auto leading-relaxed"
+            className="text-center text-tinta/45 text-sm mt-12 max-w-lg mx-auto leading-relaxed"
           >
             Los honorarios de tus consultas los definís vos y los cobrás
-            íntegramente. Amira no toma parte de la sesión.
+            íntegramente. Amira no toma parte del turno.
           </p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export function ProPricing() {
               data-magnetic
               className="bg-white hover:bg-menta text-verde-profundo rounded-full px-10 py-7 text-lg font-semibold shadow-2xl shadow-tinta/30 transition-colors duration-300"
             >
-              <a href="#signup-pro">Sumarme a la beta</a>
+              <a href="#signup-pro">Sumarme a la beta profesional</a>
             </Button>
           </div>
 

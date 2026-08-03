@@ -18,10 +18,6 @@
       "reason": "Disclaimer estándar del sector."
     },
     {
-      "text": "tus conversaciones y check-ins no se comparten con los profesionales del directorio",
-      "reason": "Afirmación verdadera bajo la arquitectura del MVP."
-    },
-    {
       "text": "Las conversaciones no se leen en tiempo real",
       "reason": "Aclaración obligatoria junto al claim de auditoría profesional."
     },
@@ -78,10 +74,6 @@
       "reason": "Administrativo (pro-value)."
     },
     {
-      "text": "el enlace de tu propia sala de videollamada",
-      "reason": "La sala es del profesional; Amira solo guarda el enlace como dato de agenda. No es teleasistencia (pro-how)."
-    },
-    {
       "text": "no\r\n          implica lectura de conversaciones en tiempo real ni seguimiento\r\n          individual de ninguna persona usuaria",
       "reason": "Negación legítima en la política de privacidad (sección 05)."
     },
@@ -116,6 +108,14 @@
     {
       "text": "abordaje clínico y\n          no supervisa tu ejercicio profesional",
       "reason": "Negación: Amira declara que no define el abordaje ni supervisa al profesional independiente (terminos/profesionales, sección 04)."
+    },
+    {
+      "text": "no un panel de seguimiento.",
+      "reason": "Negación en el encabezado de la sección de alcance y límites de /profesionales: aclara que Amira Profesionales es una herramienta de gestión, no de monitoreo (pro-scope)."
+    },
+    {
+      "text": "y su tratamiento queda bajo tu responsabilidad\n          profesional",
+      "reason": "\"Tratamiento\" en sentido de tratamiento de datos (como en \"tratamiento de datos personales\" de la Ley 25.326), no tratamiento médico — describe qué hace el profesional con la información que la persona usuaria decide compartirle (terminos/profesionales, sección 05)."
     }
   ]
 }

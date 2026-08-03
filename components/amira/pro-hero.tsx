@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { CalendarDays, Video, CreditCard, ArrowDown } from "lucide-react"
+import { CalendarDays, Video, CreditCard, ArrowRight } from "lucide-react"
 import { AuroraCanvas } from "./aurora-canvas"
 
 const highlights = [
@@ -58,8 +58,8 @@ export function ProHero() {
               className="hero-rise mt-7 text-lg sm:text-xl text-white/70 max-w-xl mx-auto lg:mx-0 text-pretty leading-relaxed"
               style={{ "--rise-delay": "0.8s" } as React.CSSProperties}
             >
-              Centralizá tu perfil, agenda, turnos, recordatorios y cobros en
-              un solo lugar.
+              Tu perfil, agenda, turnos, recordatorios y cobros, centralizados
+              en un solo lugar.
             </p>
 
             <div
@@ -72,16 +72,16 @@ export function ProHero() {
                 data-magnetic
                 className="bg-verde-profundo hover:bg-menta hover:text-verde-profundo text-white rounded-full px-9 py-7 text-lg font-semibold shadow-xl shadow-verde/30 transition-colors duration-300"
               >
-                <a href="#plan-pro">Sumarme a la beta</a>
+                <a href="#plan-pro">Sumarme a la beta profesional</a>
               </Button>
               <a
-                href="#beneficios"
+                href="/"
                 className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-medium py-3"
               >
-                Ver cómo funciona
-                <ArrowDown
+                Conocer Amira para vos
+                <ArrowRight
                   size={15}
-                  className="transition-transform group-hover:translate-y-0.5"
+                  className="transition-transform group-hover:translate-x-0.5"
                 />
               </a>
             </div>
