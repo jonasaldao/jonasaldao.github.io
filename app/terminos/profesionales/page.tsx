@@ -75,12 +75,12 @@ export default function TerminosProfesionalesPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n="05" title="Separación de datos con la app de usuarios">
+      <LegalSection n="05" title="Información de las personas usuarias">
         <p>
-          La plataforma profesional no accede a las conversaciones ni a los
-          registros emocionales de la app de usuarios. Lo que una persona
-          usuaria decide compartir con vos al coordinar o realizar una
-          consulta, lo comparte de forma explícita y por fuera de Amira.
+          Hoy, Amira Profesionales gestiona turnos, recordatorios y cobros.
+          Lo que una persona usuaria decida compartir con vos lo comparte de
+          forma explícita, y su tratamiento queda bajo tu responsabilidad
+          profesional.
         </p>
         <p>
           Solicitar un turno a través del directorio no vincula la cuenta de
@@ -97,8 +97,8 @@ export default function TerminosProfesionalesPage() {
 
       <LegalSection n="06" title="Cobros y honorarios">
         <p>
-          Definís y cobrás tus honorarios directamente. Amira no toma parte de
-          la sesión ni de lo que cobrás por ella.
+          Definís y cobrás tus honorarios directamente. Amira no toma parte
+          del turno ni de lo que cobrás por él.
         </p>
         <p>
           Durante la etapa de beta, el acceso a Amira Profesionales es sin

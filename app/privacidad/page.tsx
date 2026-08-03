@@ -4,7 +4,7 @@ import { LegalShell, LegalSection } from "@/components/amira/legal-shell"
 export const metadata: Metadata = {
   title: "Política de privacidad — Amira",
   description:
-    "Cómo Amira trata tus datos: qué recolectamos, qué hacemos con tus conversaciones y registros, y por qué la plataforma profesional no accede a ellos.",
+    "Cómo Amira trata tus datos: qué recolectamos, qué hacemos con tus conversaciones y registros, y cómo se comparte información con un profesional.",
   alternates: { canonical: "/privacidad" },
   // Borrador sin revisión legal — no indexar hasta su aprobación.
   robots: { index: false, follow: true },
@@ -74,10 +74,12 @@ export default function PrivacidadPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n="04" title="Separación con la plataforma profesional">
+      <LegalSection n="04" title="Cómo se comparte información con un profesional">
         <p className="font-medium text-navy">
-          La plataforma que usan los profesionales no accede a tus conversaciones
-          ni a tus registros emocionales.
+          Hoy, la plataforma que usan los profesionales del directorio
+          gestiona únicamente turnos y cobros. Cualquier información de tu
+          espacio personal que llegue a un profesional requiere una decisión
+          explícita tuya.
         </p>
         <p>
           Solicitar un turno a través del directorio no vincula las cuentas ni le
