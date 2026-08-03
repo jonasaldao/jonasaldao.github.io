@@ -126,11 +126,7 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
       >
         <CheckCircle2 className="w-10 h-10 text-verde-profundo" aria-hidden="true" />
         <p className="font-serif text-xl font-semibold text-navy">
-          ¡Gracias por querer ser parte!
-        </p>
-        <p className="text-muted-foreground text-sm">
-          Registramos tus datos y te vamos a escribir cuando haya un lugar
-          disponible para probar Amira.
+          Listo. Ya podés entrar.
         </p>
       </div>
     )
@@ -157,8 +153,8 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
       </h3>
       <p className="text-muted-foreground text-sm mb-6">
         {variant === "usuarios"
-          ? "Contanos un poco sobre vos. Te escribimos por mail cuando tengas un lugar disponible."
-          : "Primeros 3 meses gratuitos para profesionales que se sumen a la beta."}
+          ? "Dejanos tus datos y empezá."
+          : "Acceso sin cargo mientras dure la beta. El modelo de suscripción se comunica antes de entrar en vigencia."}
       </p>
 
       <div className="space-y-4">
@@ -359,7 +355,7 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
         className="w-full mt-7 bg-verde-profundo hover:bg-verde-activo text-white rounded-full py-6 text-lg font-semibold shadow-lg shadow-verde/25 transition-colors duration-300"
       >
         {status === "submitting" && <Loader2 className="w-4 h-4 mr-2 animate-spin" aria-hidden="true" />}
-        {variant === "usuarios" ? "Quiero probar Amira" : "Sumarme a la beta"}
+        {variant === "usuarios" ? "Quiero probar Amira" : "Sumarme a la beta profesional"}
       </Button>
 
       {status === "error" && (
@@ -371,9 +367,7 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
       {status === "not-configured" && (
         <p className="mt-4 flex items-start gap-2 text-sm text-navy/60 text-left bg-arena rounded-xl px-4 py-3">
           <Clock className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-          Esta lista de espera todavía se está terminando de configurar: tu
-          información no se registró en ningún lado. Volvé a intentarlo más
-          adelante.
+          No pudimos enviar el formulario. Probá de nuevo en un momento.
         </p>
       )}
     </form>

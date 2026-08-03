@@ -108,9 +108,10 @@ Los números de ayuda urgente viven en un único archivo de configuración con f
 - Sin emojis en copy de producto.
 - No prometer anonimato. Si la conversación puede asociarse a una cuenta, es seudonimización.
 - No afirmar "no se comparte con terceros" si intervienen proveedores tecnológicos o revisión humana.
-- Sí se puede afirmar, porque la arquitectura lo cumple: *"tus conversaciones y check-ins no se comparten con los profesionales del directorio"*.
+- Sí se puede afirmar, porque la arquitectura lo cumple: *"nada de lo que registrás en Amira se comparte sin que vos lo decidas"*.
 - El claim sobre participación profesional solo se publica si el proceso existe, está documentado y es operativo. Formulación aprobada: *"diseñada y auditada por profesionales de la salud mental"* + *"las conversaciones no se leen en tiempo real"*.
 - No publicar precios hasta que el modelo esté confirmado. En esta etapa: captación de beta o lista de espera.
+- No usar negaciones absolutas sobre funcionalidades futuras. Describir lo que la plataforma hace hoy, en presente y en afirmativo. Los compromisos de privacidad se expresan como principios de consentimiento (nada se comparte sin decisión de la persona), no como límites técnicos (el sistema no puede compartir).
 
 ---
 
@@ -170,6 +171,5 @@ Para entender el porqué de las reglas anteriores:
 
 ## Estado
 
-- Fase: landing publicada y prototipo en diseño.
-- Bloqueante legal abierto: base jurídica para el tratamiento de conversaciones emocionales (Ley 25.326, art. 8). Pendiente de dictamen. **No incorporar usuarios reales hasta que esté resuelto.**
-- Alpha con conversaciones sintéticas únicamente hasta nuevo aviso.
+- Fase: landing publicada; el producto está habilitado para incorporar usuarias y usuarios reales.
+- Bloqueante legal resuelto: existe base jurídica confirmada para el tratamiento de conversaciones emocionales (Ley 25.326, art. 8).

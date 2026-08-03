@@ -40,15 +40,14 @@ export function Pricing() {
               data-reveal
               className="mt-5 text-white/70 text-lg leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              Estamos preparando la primera versión de Amira y vamos a invitar
-              a un grupo limitado de personas a probarla. Su experiencia nos
-              va a ayudar a seguir mejorando la plataforma.
+              Ya podés crear tu cuenta y empezar a usar Amira. Tu experiencia
+              nos va a ayudar a seguir mejorando la plataforma.
             </p>
 
-            {/* What you'll be able to try */}
+            {/* What you can try */}
             <div className="mt-8 bg-white/[0.06] backdrop-blur-md rounded-3xl p-6 sm:p-7 ring-1 ring-white/12 text-left">
               <p className="text-xs font-semibold text-menta uppercase tracking-widest mb-4">
-                Durante esta etapa vas a poder probar:
+                Durante esta etapa podés probar:
               </p>
               <ul className="space-y-3">
                 {trialFeatures.map((f) => (
@@ -62,14 +61,11 @@ export function Pricing() {
               </ul>
             </div>
 
-            {/* What signing up does and doesn't mean */}
             <p
               data-reveal
               className="mt-6 text-white/50 text-sm leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              Registrarte en esta lista no implica un acceso inmediato. Te
-              vamos a contactar por email cuando haya un lugar disponible y te
-              explicaremos cómo participar.
+              Un email, confirmás que sos mayor de 18, y ya estás adentro.
             </p>
           </div>
 

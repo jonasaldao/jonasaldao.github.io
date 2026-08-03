@@ -12,10 +12,11 @@ import {
 type NavLink = { href: string; label: string }
 
 const defaultLinks: NavLink[] = [
-  { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#que-podes-hacer", label: "Qué podés hacer" },
+  { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#directorio", label: "Directorio" },
   { href: "#confianza", label: "Confianza" },
+  { href: "#pricing", label: "Sumarme" },
   { href: "/profesionales", label: "Para profesionales" },
 ]
 
