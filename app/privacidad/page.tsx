@@ -33,7 +33,7 @@ export default function PrivacidadPage() {
           {[
             {
               t: "Datos de cuenta",
-              d: "Lo mínimo para identificarte y darte acceso, con permisos limitados a lo estrictamente necesario.",
+              d: "Tu email, la contraseña o el método de autenticación que elijas —incluidos los datos básicos de identificación que nos comparta Google o Apple si entrás con esa cuenta— y tu declaración de mayoría de edad.",
             },
             {
               t: "Conversaciones con la IA",

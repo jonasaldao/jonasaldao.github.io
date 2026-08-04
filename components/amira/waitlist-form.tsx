@@ -55,7 +55,6 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
   const [mayoria, setMayoria] = useState(false)
   const [privacidad, setPrivacidad] = useState(false)
   const [terminos, setTerminos] = useState(false)
-  const [novedades, setNovedades] = useState(false)
 
   function toggleFuncion(label: string) {
     setFunciones((prev) =>
@@ -96,7 +95,6 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
       funciones.forEach((f) => data.append("funciones", f))
       data.set("mayor_18", mayoria ? "si" : "no")
       data.set("leyo_privacidad", privacidad ? "si" : "no")
-      data.set("novedades", novedades ? "si" : "no")
     }
 
     if (!isConfigured(variant)) {
@@ -157,6 +155,30 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
           : "Acceso sin cargo mientras dure la beta. El modelo de suscripción se comunica antes de entrar en vigencia."}
       </p>
 
+      {/* Adelanto visual del login social — todavía no hay backend de
+          cuentas ni integración OAuth real, así que quedan deshabilitados
+          en vez de simular un click que no hace nada. */}
+      {variant === "usuarios" && (
+        <div className="mb-5">
+          <div className="grid grid-cols-2 gap-3">
+            <Button type="button" variant="outline" disabled className="w-full">
+              Continuar con Google
+            </Button>
+            <Button type="button" variant="outline" disabled className="w-full">
+              Continuar con Apple
+            </Button>
+          </div>
+          <p className="mt-2 text-xs text-muted-foreground text-center">
+            Disponible pronto. Por ahora, completá tus datos abajo.
+          </p>
+          <div className="mt-5 flex items-center gap-3 text-xs text-muted-foreground">
+            <span className="h-px flex-1 bg-border" />
+            o completá tus datos
+            <span className="h-px flex-1 bg-border" />
+          </div>
+        </div>
+      )}
+
       <div className="space-y-4">
         {variant === "usuarios" && (
           <div>
@@ -186,6 +208,22 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
           />
           {fieldError("email", `${variant}-email-error`)}
         </div>
+
+        {variant === "usuarios" && (
+          <div>
+            <Label htmlFor="usuarios-password">Contraseña</Label>
+            {/* Sin `name`: no viaja en el FormData ni se envía a Formspree.
+                Todavía no hay backend de cuentas que la reciba y almacene de
+                forma segura, así que por ahora es solo el adelanto visual
+                del campo — no se valida ni se manda a ningún lado. */}
+            <Input
+              id="usuarios-password"
+              type="password"
+              autoComplete="new-password"
+              className="mt-1.5"
+            />
+          </div>
+        )}
 
         {variant === "usuarios" && (
           <div>
@@ -270,44 +308,6 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
           </>
         )}
 
-        {variant === "usuarios" && (
-          <div className="flex items-start gap-3">
-            <Checkbox
-              id="mayoria"
-              checked={mayoria}
-              onCheckedChange={(v) => setMayoria(v === true)}
-              aria-invalid={!!errors.mayoria || undefined}
-              aria-describedby={describedBy("mayoria", "mayoria-error")}
-              className="mt-0.5"
-            />
-            <Label htmlFor="mayoria" className="font-normal leading-snug">
-              Confirmo que soy mayor de 18 años.
-            </Label>
-          </div>
-        )}
-        {variant === "usuarios" && fieldError("mayoria", "mayoria-error")}
-
-        {variant === "usuarios" && (
-          <div className="flex items-start gap-3">
-            <Checkbox
-              id="privacidad"
-              checked={privacidad}
-              onCheckedChange={(v) => setPrivacidad(v === true)}
-              aria-invalid={!!errors.privacidad || undefined}
-              aria-describedby={describedBy("privacidad", "privacidad-error")}
-              className="mt-0.5"
-            />
-            <Label htmlFor="privacidad" className="font-normal leading-snug">
-              Leí la{" "}
-              <Link href="/privacidad" className="underline underline-offset-2 hover:text-verde-profundo">
-                Política de Privacidad
-              </Link>
-              .
-            </Label>
-          </div>
-        )}
-        {variant === "usuarios" && fieldError("privacidad", "privacidad-error")}
-
         {variant === "profesionales" && (
           <div className="flex items-start gap-3">
             <Checkbox
@@ -332,21 +332,45 @@ export function WaitlistForm({ variant, id }: { variant: Variant; id?: string })
           </div>
         )}
         {variant === "profesionales" && fieldError("terminos", "pro-terminos-error")}
+      </div>
 
-        {variant === "usuarios" && (
-          <div className="flex items-start gap-3">
+      {variant === "usuarios" && (
+        <div className="mt-5 space-y-2.5 border-t border-border pt-5">
+          <div className="flex items-start gap-2.5">
             <Checkbox
-              id="novedades"
-              checked={novedades}
-              onCheckedChange={(v) => setNovedades(v === true)}
+              id="mayoria"
+              checked={mayoria}
+              onCheckedChange={(v) => setMayoria(v === true)}
+              aria-invalid={!!errors.mayoria || undefined}
+              aria-describedby={describedBy("mayoria", "mayoria-error")}
               className="mt-0.5"
             />
-            <Label htmlFor="novedades" className="font-normal leading-snug">
-              Quiero recibir novedades de Amira por email.
+            <Label htmlFor="mayoria" className="font-normal leading-snug text-xs text-muted-foreground">
+              Confirmo que soy mayor de 18 años.
             </Label>
           </div>
-        )}
-      </div>
+          {fieldError("mayoria", "mayoria-error")}
+
+          <div className="flex items-start gap-2.5">
+            <Checkbox
+              id="privacidad"
+              checked={privacidad}
+              onCheckedChange={(v) => setPrivacidad(v === true)}
+              aria-invalid={!!errors.privacidad || undefined}
+              aria-describedby={describedBy("privacidad", "privacidad-error")}
+              className="mt-0.5"
+            />
+            <Label htmlFor="privacidad" className="font-normal leading-snug text-xs text-muted-foreground">
+              Leí la{" "}
+              <Link href="/privacidad" className="underline underline-offset-2 hover:text-verde-profundo">
+                Política de Privacidad
+              </Link>
+              .
+            </Label>
+          </div>
+          {fieldError("privacidad", "privacidad-error")}
+        </div>
+      )}
 
       <Button
         type="submit"

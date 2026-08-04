@@ -60,13 +60,6 @@ export function Pricing() {
                 ))}
               </ul>
             </div>
-
-            <p
-              data-reveal
-              className="mt-6 text-white/50 text-sm leading-relaxed max-w-lg mx-auto lg:mx-0"
-            >
-              Un email, confirmás que sos mayor de 18, y ya estás adentro.
-            </p>
           </div>
 
           {/* Right — sign-up form */}

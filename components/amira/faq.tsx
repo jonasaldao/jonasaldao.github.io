@@ -40,7 +40,7 @@ const faqs = [
   {
     question: "¿Qué datos me piden para empezar?",
     answer:
-      "Nombre, email, tu rango de edad, qué funciones te interesaría probar y la confirmación de que sos mayor de 18. Nada más que eso.",
+      "Tu email, una contraseña y que confirmes que sos mayor de 18. También podés entrar directo con tu cuenta de Google o Apple.",
   },
   {
     question: "¿Cuánto cuesta?",
