@@ -42,11 +42,11 @@ export function Presentation() {
         {/* Editorial bento — two larger primary blocks, two smaller complementary ones */}
         <div
           data-stagger
-          className="grid sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-5 items-start"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-5 items-start lg:items-stretch"
         >
           {/* Block 1 — Check-in (large, wide) */}
-          <div className="group sm:col-span-2 lg:col-span-2 lg:row-span-1 bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-7 sm:p-9 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20">
-            <div className="flex flex-col md:flex-row md:items-center gap-7">
+          <div className="group sm:col-span-2 lg:col-span-2 lg:row-span-1 lg:h-full bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-7 sm:p-9 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20">
+            <div className="flex flex-col md:flex-row md:items-start gap-7">
               <div className="flex-1">
                 <span className="w-12 h-12 rounded-2xl bg-verde/25 ring-1 ring-menta/20 flex items-center justify-center">
                   <BarChart3 className="w-6 h-6 text-menta" />
@@ -60,9 +60,12 @@ export function Presentation() {
                 </p>
               </div>
 
-              {/* Interface fragment — plain mood scale, no score or interpretation */}
+              {/* Interface fragment — plain mood scale, no score or interpretation.
+                  md:mt-[4.25rem] matches the icon (3rem) + its bottom margin
+                  (mt-5, 1.25rem) so the card's top lines up with the heading
+                  instead of the icon above it. */}
               <div
-                className="shrink-0 w-full md:w-60 bg-white/95 rounded-2xl p-4 shadow-lg transition-transform duration-300 group-hover:-translate-y-1"
+                className="shrink-0 w-full md:w-60 md:mt-[4.25rem] bg-white/95 rounded-2xl p-4 shadow-lg transition-transform duration-300 group-hover:-translate-y-1"
               >
                 <CheckinScale
                   compact
@@ -74,7 +77,7 @@ export function Presentation() {
           </div>
 
           {/* Block 2 — Conversá (large, tall) */}
-          <div className="group lg:col-span-1 lg:row-span-2 bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-7 sm:p-9 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20 flex flex-col">
+          <div className="group lg:col-span-1 lg:row-span-2 lg:h-full bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-7 sm:p-9 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20 flex flex-col">
             <span className="w-12 h-12 rounded-2xl bg-verde/25 ring-1 ring-menta/20 flex items-center justify-center">
               <MessageCircle className="w-6 h-6 text-menta" />
             </span>
@@ -89,15 +92,16 @@ export function Presentation() {
             {/* Interface fragment — a complete phone screen, not a cropped
                 sliver: notch, status bar, app header, full chat thread and
                 an input bar, so it reads as "the app, open" rather than a
-                screenshot that ran out of room. Height is driven entirely
-                by its own content (no forced min-height), which is what
-                keeps it from ever clipping against the card. */}
+                screenshot that ran out of room. At lg the card is stretched
+                to match the two stacked cards beside it (see h-full above);
+                this wrapper is flex-1 + items-center so the phone centers in
+                whatever slack that leaves instead of sitting flush at top. */}
             <div
               aria-hidden="true"
-              className="mt-7 flex justify-center transition-transform duration-300 group-hover:-translate-y-1"
+              className="mt-7 flex-1 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1"
             >
-              <div className="w-40 sm:w-44 bg-tinta rounded-[2rem] p-2 shadow-xl ring-1 ring-white/15">
-                <div className="relative bg-arena rounded-[1.5rem] overflow-hidden flex flex-col">
+              <div className="w-36 sm:w-40 lg:w-44 bg-tinta rounded-[1.5rem] p-2 shadow-xl ring-1 ring-white/15">
+                <div className="relative bg-arena rounded-xl overflow-hidden flex flex-col">
                   {/* Notch */}
                   <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 h-2.5 bg-black/50 rounded-full z-10" />
 
@@ -129,8 +133,7 @@ export function Presentation() {
                   <div className="p-2.5 space-y-2">
                     <div className="flex justify-start">
                       <div className="bg-white text-tinta rounded-xl rounded-tl-sm px-2.5 py-1.5 max-w-[85%] shadow-sm text-[10px] leading-snug">
-                        Hola. Este es un espacio tranquilo para vos. ¿Cómo
-                        venís hoy?
+                        Hola, ¿cómo venís hoy?
                       </div>
                     </div>
                     <div className="flex justify-end">
@@ -166,7 +169,7 @@ export function Presentation() {
           </div>
 
           {/* Block 3 — Herramientas (complementary) */}
-          <div className="group lg:col-span-1 lg:row-span-1 bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-6 sm:p-7 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20">
+          <div className="group lg:col-span-1 lg:row-span-1 lg:h-full bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-6 sm:p-7 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20">
             <span className="w-11 h-11 rounded-2xl bg-verde/25 ring-1 ring-menta/20 flex items-center justify-center">
               <Leaf className="w-5 h-5 text-menta" />
             </span>
@@ -174,8 +177,8 @@ export function Presentation() {
               Explorá herramientas breves
             </h3>
             <p className="text-white/70 text-sm leading-relaxed mb-4">
-              Accedé a contenidos y ejercicios sobre estudio, trabajo,
-              vínculos, descanso, estrés y autocuidado.
+              Ejercicios breves para tu día a día. Elegí el que más te sirva
+              hoy.
             </p>
 
             <div aria-hidden="true" className="flex flex-wrap gap-1.5">
@@ -191,7 +194,7 @@ export function Presentation() {
           </div>
 
           {/* Block 4 — Directorio (complementary) */}
-          <div className="group lg:col-span-1 lg:row-span-1 bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-6 sm:p-7 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20">
+          <div className="group lg:col-span-1 lg:row-span-1 lg:h-full bg-white/[0.06] backdrop-blur-md rounded-[2rem] p-6 sm:p-7 ring-1 ring-white/12 transition-all duration-300 hover:bg-white/[0.09] hover:ring-white/20">
             <span className="w-11 h-11 rounded-2xl bg-verde/25 ring-1 ring-menta/20 flex items-center justify-center">
               <UserCheck className="w-5 h-5 text-menta" />
             </span>
@@ -199,8 +202,8 @@ export function Presentation() {
               Encontrá profesionales
             </h3>
             <p className="text-white/70 text-sm leading-relaxed mb-4">
-              Cuando quieras buscar acompañamiento profesional, explorá el
-              directorio y coordiná un turno cuando quieras.
+              Explorá el directorio de profesionales y coordiná un turno
+              cuando quieras.
             </p>
 
             {/* Interface fragment — a single standalone professional card */}
