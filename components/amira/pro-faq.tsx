@@ -9,9 +9,20 @@ import {
 
 const faqs = [
   {
-    question: "¿Puedo usar Amira si trabajo de forma independiente?",
-    answer:
-      "Sí. Amira está pensada para profesionales que manejan su propia práctica, no para centros o instituciones.",
+    question: "¿Sirve si trabajo por mi cuenta o en equipo?",
+    answer: (
+      <>
+        Amira está pensada para profesionales que manejan su propia
+        práctica. Si trabajás en equipo o formás parte de un centro,{" "}
+        <a
+          href="mailto:hola@amira.app"
+          className="text-verde-profundo underline underline-offset-2 hover:text-verde transition-colors"
+        >
+          escribinos
+        </a>{" "}
+        y lo vemos.
+      </>
+    ),
   },
   {
     question: "¿Cómo me registro?",
@@ -21,7 +32,7 @@ const faqs = [
   {
     question: "¿Tengo que migrar mi agenda actual?",
     answer:
-      "No. Definís tu disponibilidad desde cero en unos minutos. Lo que ya tenés agendado seguí manejándolo como hasta ahora.",
+      "No hace falta importar nada. Definís tu disponibilidad y compartís tu enlace de reservas: las personas que ya atendés sacan su turno desde ahí. Vos ves todo en un mismo lugar, sin cargar nada a mano.",
   },
   {
     question: "¿Cómo hago las consultas online?",
