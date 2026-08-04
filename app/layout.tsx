@@ -44,8 +44,17 @@ export const metadata: Metadata = {
  * The legal and contact pages open light instead; they carry a branded bar
  * rather than a seamless one, which is the usual trade for a single value.
  */
+/**
+ * Both schemes are declared on purpose. Chrome for Android picks the entry
+ * whose media query matches, and with only an unscoped value it will fall back
+ * to its own dark toolbar when the browser is themed dark — which reads as the
+ * tag doing nothing at all. The dark entry uses tinta, the hero's own base.
+ */
 export const viewport: Viewport = {
-  themeColor: '#075E52',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#075E52' },
+    { media: '(prefers-color-scheme: dark)', color: '#17312D' },
+  ],
 }
 
 export default function RootLayout({
