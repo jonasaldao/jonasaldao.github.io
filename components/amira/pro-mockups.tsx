@@ -178,7 +178,7 @@ export function ProfileCard() {
   )
 }
 
-const dias = ["Lun", "Mar", "Mié", "Jue"]
+const dias = ["Lun", "Mar", "Mié", "Jue", "Vie"]
 
 export function ConfigMockup() {
   return (
