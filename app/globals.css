@@ -88,7 +88,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Safari 26 dropped the theme-color meta tag: it still parses it but
+       ignores the value, and instead samples the background-color of any
+       fixed/sticky element pinned to the top edge, falling back to the body.
+       Both of this page's fixed elements — the scroll progress bar and the
+       navbar — are transparent by design, so the body is what Safari reads.
+       Painting it verde-profundo is what tints the toolbar and the
+       rubber-band overscroll; every section carries its own background, so
+       nothing else changes. theme-color stays for Chrome on Android and for
+       Safari 15 to 18. */
+    background-color: var(--verde-profundo);
   }
   /* Native smooth scroll fallback when Lenis is not active (e.g. on touchscreen devices) */
   html:not(.lenis) {

@@ -6,7 +6,12 @@ import { Hammer } from "lucide-react"
  */
 export function ProBetaNotice() {
   return (
-    <section className="py-14 md:py-16 bg-menta/40 overflow-hidden">
+    // Opaque on purpose. This was bg-menta/40, which let the body colour show
+    // through — fine while the body was near-white, but the body now carries
+    // verde-profundo so Safari 26 has something to tint its toolbar with, and
+    // a translucent panel over it turned dark green. #EEFCF8 is exactly what
+    // menta at 40% resolved to over the old background.
+    <section className="py-14 md:py-16 bg-[#EEFCF8] overflow-hidden">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span
           data-reveal
