@@ -24,11 +24,18 @@ export const metadata: Metadata = {
   description: 'Plataforma digital de bienestar emocional para personas mayores de 18 años en Argentina. Registrá cómo te sentís, conversá con una IA de acompañamiento y accedé a herramientas de bienestar.',
   keywords: ['bienestar emocional', 'acompañamiento emocional', 'check-in emocional', 'autocuidado', 'salud mental', 'IA'],
   robots: { index: true, follow: true },
+  // Order matters, and the first two entries are the ones every browser can
+  // use. Safari ignores `media` on a favicon link and its SVG support is
+  // uneven, so with only the scheme-scoped PNGs and the SVG below it found
+  // nothing it would accept and fell back to whatever it had cached — while
+  // /favicon.ico, which it requests by default, answered 404.
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
+      { url: '/icon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
       { url: '/icon-light-32x32.png', sizes: '32x32', media: '(prefers-color-scheme: light)' },
       { url: '/icon-dark-32x32.png', sizes: '32x32', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: [{ url: '/apple-icon.png' }],
   },
