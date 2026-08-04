@@ -91,11 +91,19 @@ export function Navbar({
     <nav className="fixed top-0 left-0 right-0 z-50 [transform:translateZ(0)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative mt-3 h-16 rounded-full">
+          {/* The pill is mounted once with its final look and only its opacity
+              is animated. Toggling the backdrop-filter itself is what trips the
+              touch-Chrome repaint bug described above, so the blur class must
+              never enter or leave mid-scroll. It is also gated to fine pointers
+              — touchscreens get the opaque fill from .nav-pill-bg instead. */}
+          {/* Tailwind's shadow-* scale is offset downward (shadow-xl is
+              `0 20px 25px -5px`), so it only ever pools under the bar. This is
+              a hand-rolled pair instead: an even halo at zero offset that wraps
+              the whole pill, plus a much smaller downward one so it still reads
+              as a shadow rather than a glow. */}
           <div
             aria-hidden="true"
-            className={`absolute inset-0 rounded-full transition-all duration-500 ${scrolled
-                ? "bg-white/75 backdrop-blur-xl shadow-lg shadow-verde/5 ring-1 ring-verde/10"
-                : "bg-white/0 shadow-none ring-1 ring-verde/0"
+            className={`absolute inset-0 rounded-full bg-white/75 nav-pill-bg [@media(pointer:fine)]:backdrop-blur-xl shadow-[0_0_30px_rgb(8_127_106_/_0.26),0_10px_24px_-5px_rgb(8_127_106_/_0.20)] ring-1 ring-verde/40 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"
               }`}
           />
 
@@ -125,8 +133,8 @@ export function Navbar({
                   key={link.href}
                   href={link.href}
                   className={`text-sm font-medium transition-colors duration-500 ${scrolled
-                      ? "text-navy/70 hover:text-verde-profundo"
-                      : "text-white/80 hover:text-white"
+                    ? "text-navy/70 hover:text-verde-profundo"
+                    : "text-white/80 hover:text-white"
                     }`}
                 >
                   {link.label}
@@ -142,8 +150,8 @@ export function Navbar({
                     type="button"
                     aria-label="Abrir menú"
                     className={`inline-flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-500 ${scrolled
-                        ? "text-verde-profundo"
-                        : "text-white"
+                      ? "text-verde-profundo"
+                      : "text-white"
                       }`}
                   >
                     <Menu size={22} />

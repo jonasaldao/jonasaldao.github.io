@@ -88,7 +88,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Safari 26 dropped the theme-color meta tag: it still parses it but
+       ignores the value, and instead samples the background-color of any
+       fixed/sticky element pinned to the top edge, falling back to the body.
+       Both of this page's fixed elements — the scroll progress bar and the
+       navbar — are transparent by design, so the body is what Safari reads.
+       Painting it verde-profundo is what tints the toolbar and the
+       rubber-band overscroll; every section carries its own background, so
+       nothing else changes. theme-color stays for Chrome on Android and for
+       Safari 15 to 18. */
+    background-color: var(--verde-profundo);
   }
   /* Native smooth scroll fallback when Lenis is not active (e.g. on touchscreen devices) */
   html:not(.lenis) {
@@ -238,17 +248,23 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* Mobile / Touchscreen Optimizations                                 */
+/* Navbar pill                                                         */
 /* ------------------------------------------------------------------ */
+/* The blur itself is applied in the component via Tailwind's
+   `[@media(pointer:fine)]:backdrop-blur-xl` — hand-written backdrop-filter
+   rules do not survive the build here: Lightning CSS collapses the pair down
+   to the -webkit- prefix alone, which Chrome then ignores. That is exactly how
+   the previous `backdrop-filter: none` override for touchscreens died
+   silently. Tailwind's own utility emits both prefixes correctly, so the blur
+   is expressed there and only the opaque touch fallback lives here.
+
+   Touchscreens get no blur at all (touch Chrome has a repaint bug where a
+   position:fixed element carrying a backdrop-filter stops redrawing
+   mid-scroll), so the bar needs a near-opaque fill to stay legible over the
+   dark hero. */
 @media (pointer: coarse) {
-  /* Disable backdrop-filter blur on touchscreens to fix repaint bugs in Chrome on Android and boost performance */
-  .backdrop-blur-xl {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  /* Increase navbar opacity on touchscreens for readability without backdrop blur */
-  .bg-white\/75 {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+  .nav-pill-bg {
+    background-color: rgb(255 255 255 / 0.97);
   }
 }
 
