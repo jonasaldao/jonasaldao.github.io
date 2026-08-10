@@ -1,13 +1,19 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu } from "lucide-react"
+import { ChevronDown, Menu } from "lucide-react"
 import {
   Sheet,
   SheetContent,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { LoginForm } from "@/components/amira/login-form"
 
 type NavLink = { href: string; label: string }
 
@@ -79,6 +85,8 @@ export function Navbar({
 } = {}) {
   const scrolled = useScrolledPast(24) || solid
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [loginOpen, setLoginOpen] = useState(false)
+  const [mobileLoginOpen, setMobileLoginOpen] = useState(false)
 
   return (
     // translateZ(0) promotes the bar to its own compositor layer up front.
@@ -126,7 +134,7 @@ export function Navbar({
               </span>
             </a>
 
-            {/* Desktop nav links */}
+            {/* Desktop nav links + ingreso */}
             <div className="hidden md:flex items-center gap-8">
               {links.map((link) => (
                 <a
@@ -140,6 +148,42 @@ export function Navbar({
                   {link.label}
                 </a>
               ))}
+
+              {/* El panel de ingreso cuelga del botón. Radix lo monta en un
+                  portal, así que no hereda el stacking context del pill ni su
+                  backdrop-filter. */}
+              <Popover open={loginOpen} onOpenChange={setLoginOpen}>
+                <PopoverTrigger asChild>
+                  <button
+                    type="button"
+                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${scrolled
+                      ? "bg-verde-profundo text-white hover:bg-verde"
+                      : "bg-white/15 text-white ring-1 ring-white/40 hover:bg-white/25"
+                      }`}
+                  >
+                    Ingresar
+                    <ChevronDown
+                      size={14}
+                      aria-hidden="true"
+                      className={`transition-transform duration-200 motion-reduce:transition-none ${loginOpen ? "rotate-180" : ""
+                        }`}
+                    />
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent
+                  align="end"
+                  sideOffset={12}
+                  className="w-80 rounded-2xl border-navy/10 bg-white p-6 shadow-2xl shadow-verde/20"
+                >
+                  <h2 className="font-serif text-xl font-semibold text-navy">
+                    Entrá a tu cuenta
+                  </h2>
+                  <p className="mt-1 mb-5 text-sm text-navy/60">
+                    Tu espacio en Amira, con tus registros y tus conversaciones.
+                  </p>
+                  <LoginForm onDone={() => setLoginOpen(false)} />
+                </PopoverContent>
+              </Popover>
             </div>
 
             {/* Mobile hamburger */}
@@ -157,9 +201,12 @@ export function Navbar({
                     <Menu size={22} />
                   </button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-3/4 sm:max-w-xs">
+                <SheetContent
+                  side="right"
+                  className="w-3/4 overflow-y-auto sm:max-w-xs"
+                >
                   <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
-                  <div className="flex flex-col gap-1 px-6 pt-14">
+                  <div className="flex flex-col gap-1 px-6 pt-14 pb-8">
                     {links.map((link) => (
                       <a
                         key={link.href}
@@ -170,6 +217,34 @@ export function Navbar({
                         {link.label}
                       </a>
                     ))}
+
+                    {/* En mobile el ingreso vive dentro del menú: un popover
+                        flotante sobre un panel deslizable pelea con el foco y
+                        con el teclado virtual. */}
+                    <button
+                      type="button"
+                      onClick={() => setMobileLoginOpen((v) => !v)}
+                      aria-expanded={mobileLoginOpen}
+                      aria-controls="nav-mobile-login"
+                      className="mt-5 flex items-center justify-between rounded-full bg-verde-profundo px-5 py-3 text-lg font-medium text-white shadow-lg shadow-verde/25 hover:bg-verde"
+                    >
+                      Ingresar
+                      <ChevronDown
+                        size={18}
+                        aria-hidden="true"
+                        className={`transition-transform duration-200 motion-reduce:transition-none ${mobileLoginOpen ? "rotate-180" : ""
+                          }`}
+                      />
+                    </button>
+
+                    {mobileLoginOpen && (
+                      <div
+                        id="nav-mobile-login"
+                        className="mt-3 rounded-2xl bg-arena/60 p-4"
+                      >
+                        <LoginForm onDone={() => setMobileOpen(false)} />
+                      </div>
+                    )}
                   </div>
                 </SheetContent>
               </Sheet>
