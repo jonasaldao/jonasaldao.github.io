@@ -64,8 +64,9 @@ export function ProPricing() {
             data-reveal
             className="text-center text-tinta/45 text-sm mt-12 max-w-lg mx-auto leading-relaxed"
           >
-            Los honorarios de tus consultas los definís vos y los cobrás
-            íntegramente. Amira no toma parte del turno.
+            Los honorarios de tus consultas los definís vos y se acreditan
+            directamente en tu cuenta. Durante la beta no retenemos comisión
+            sobre los turnos.
           </p>
         </div>
       </section>
