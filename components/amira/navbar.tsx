@@ -21,7 +21,6 @@ const defaultLinks: NavLink[] = [
   { href: "#que-podes-hacer", label: "Qué podés hacer" },
   { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#directorio", label: "Directorio" },
-  { href: "#confianza", label: "Confianza" },
   { href: "#pricing", label: "Sumarme" },
   { href: "/profesionales", label: "Para profesionales" },
   { href: "/ayuda-urgente", label: "Ayuda urgente" },
@@ -152,14 +151,15 @@ export function Navbar({
 
               {/* El panel de ingreso cuelga del botón. Radix lo monta en un
                   portal, así que no hereda el stacking context del pill ni su
-                  backdrop-filter. */}
+                  backdrop-filter. Es la acción primaria de la barra: por eso
+                  lleva sombra y más peso que los links de texto plano. */}
               <Popover open={loginOpen} onOpenChange={setLoginOpen}>
                 <PopoverTrigger asChild>
                   <button
                     type="button"
-                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${scrolled
-                      ? "bg-verde-profundo text-white hover:bg-verde"
-                      : "bg-white/15 text-white ring-1 ring-white/40 hover:bg-white/25"
+                    className={`inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-semibold shadow-md transition-colors duration-500 ${scrolled
+                      ? "bg-verde-profundo text-white shadow-verde/25 hover:bg-verde"
+                      : "bg-white text-verde-profundo shadow-black/10 hover:bg-menta"
                       }`}
                   >
                     Ingresar
@@ -221,13 +221,14 @@ export function Navbar({
 
                     {/* En mobile el ingreso vive dentro del menú: un popover
                         flotante sobre un panel deslizable pelea con el foco y
-                        con el teclado virtual. */}
+                        con el teclado virtual. Es la acción primaria, por eso
+                        es el único botón sólido de la lista. */}
                     <button
                       type="button"
                       onClick={() => setMobileLoginOpen((v) => !v)}
                       aria-expanded={mobileLoginOpen}
                       aria-controls="nav-mobile-login"
-                      className="mt-5 flex items-center justify-between rounded-full bg-verde-profundo px-5 py-3 text-lg font-medium text-white shadow-lg shadow-verde/25 hover:bg-verde"
+                      className="mt-5 flex items-center justify-between rounded-full bg-verde-profundo px-5 py-3 text-lg font-semibold text-white shadow-lg shadow-verde/25 hover:bg-verde"
                     >
                       Ingresar
                       <ChevronDown
