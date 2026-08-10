@@ -38,6 +38,7 @@ export function Footer({ subpage = false }: { subpage?: boolean } = {}) {
         { href: "/privacidad", label: "Política de Privacidad" },
         { href: "/terminos/usuarios", label: "Términos de Uso para usuarios" },
         { href: "/terminos/profesionales", label: "Términos para profesionales" },
+        { href: "/arrepentimiento", label: "Botón de arrepentimiento" },
       ],
     },
   ]
