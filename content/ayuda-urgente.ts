@@ -4,7 +4,7 @@
  * componentes. Revalidar contra la fuente oficial según `revalidarCada`.
  */
 export const ayudaUrgente = {
-  verificadoAl: "2026-07-27",
+  verificadoAl: "2026-08-10",
   revalidarCada: "6 meses",
   recursos: [
     {
@@ -37,6 +37,11 @@ export const ayudaUrgente = {
       nombre: "Salud Mental CABA",
       numero: "0800-333-1665",
       alcance: "Ciudad de Buenos Aires",
+    },
+    {
+      nombre: "Emergencias",
+      numero: "911",
+      alcance: "Nacional",
     },
   ],
 } as const
