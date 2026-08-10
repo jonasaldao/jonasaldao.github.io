@@ -110,7 +110,7 @@ Los números de ayuda urgente viven en un único archivo de configuración con f
 - No afirmar "no se comparte con terceros" si intervienen proveedores tecnológicos o revisión humana.
 - Sí se puede afirmar, porque la arquitectura lo cumple: *"nada de lo que registrás en Amira se comparte sin que vos lo decidas"*.
 - El claim sobre participación profesional solo se publica si el proceso existe, está documentado y es operativo. Formulación aprobada: *"diseñada y auditada por profesionales de la salud mental"* + *"las conversaciones no se leen en tiempo real"*.
-- No publicar precios hasta que el modelo esté confirmado. En esta etapa: captación de beta o lista de espera.
+- No publicar precios de los planes de Amira hasta que el modelo esté confirmado. En esta etapa: captación de beta o lista de espera. Para los honorarios de los profesionales rige además la regla del directorio (ver "Modelo de cobros"), que es independiente de esta.
 - No usar negaciones absolutas sobre funcionalidades futuras. Describir lo que la plataforma hace hoy, en presente y en afirmativo. Los compromisos de privacidad se expresan como principios de consentimiento (nada se comparte sin decisión de la persona), no como límites técnicos (el sistema no puede compartir).
 - Evitar adjetivos con género referidos a la persona usuaria, sin recurrir a lenguaje inclusivo con "x" ni "e". Se resuelve con formas verbales y construcciones impersonales: "si trabajás por tu cuenta" en lugar de "si trabajás solo" o "sola".
 
@@ -122,6 +122,36 @@ Los números de ayuda urgente viven en un único archivo de configuración con f
 - Si no hay texto aprobado, generar solo la estructura con el marcador `PENDIENTE_REVISION_LEGAL`.
 - No afirmar "cumple con todos los estándares", "100% seguro", "certificado" ni equivalentes.
 - Las páginas legales son rutas reales, no anclas.
+
+---
+
+## Modelo de cobros
+
+**Decisión tomada: split de pagos. Amira nunca retiene fondos de terceros.**
+
+El profesional vincula **su propia cuenta** en el proveedor de pagos (previsiblemente Mercado Pago, modo marketplace). Cuando la persona usuaria abona por la Plataforma, el proveedor descuenta sus costos de procesamiento, retiene la comisión de Amira (`marketplace_fee`) y acredita el saldo **directamente en la cuenta del profesional**, según los plazos del proveedor.
+
+Reglas derivadas, no negociables:
+
+1. **No implementar custodia de fondos.** Nada de recibir el total en una cuenta de Amira y transferir después. Abre exposición impositiva sobre el bruto y la pregunta de si Amira es proveedor de servicios de pago ante el BCRA.
+2. **No existe liquidación periódica.** No hay ciclo, ni fecha de pago, ni saldo pendiente. Si aparece un concepto de "liquidación" en el código o en el copy, está mal modelado.
+3. **La comisión se retiene en la operación**, nunca se factura después.
+4. **Durante la beta la comisión se configura en cero.** Es un valor de configuración, no una funcionalidad ausente: el circuito se construye completo desde el inicio.
+5. **Vincular la cuenta del proveedor de pagos es requisito** para habilitar el cobro por la Plataforma. Es obligación del profesional y debe estar en el onboarding.
+6. Los plazos de acreditación y las retenciones impositivas son del proveedor. Amira no los controla ni los garantiza — no prometerlos en copy.
+7. Facturación: el profesional emite el comprobante por su honorario a la persona usuaria; Amira emite el comprobante por la comisión al profesional.
+
+### Honorarios en el directorio
+
+El Código de Ética de Fe.P.R.A. obliga a los profesionales a **abstenerse de publicitar honorarios** (norma 6.1.1.1) y les prohíbe usar el precio o la gratuidad como propaganda (6.1.1.3). Publicar el honorario como atributo del perfil pondría a cada profesional del directorio en tensión con su propio código.
+
+Regla adoptada, en tres partes:
+
+1. **El honorario se muestra en la ficha individual del profesional**, una vez que la persona entró a su perfil. Así se entera antes de invertir tiempo en la reserva.
+2. **No aparece en las tarjetas del listado del directorio**, ni como filtro, ni como criterio de ordenamiento, ni en ningún lugar que lo convierta en eje de comparación entre profesionales. Nada de "desde $X", "los más accesibles" ni rangos de precio.
+3. La misma norma 6.1.1.1 exige que la publicidad incluya **nombre y matrícula**: el número de matrícula es un campo visible del perfil, no solo un dato de verificación interna.
+
+**Por qué, además del código de ética.** Las plataformas que sí publican precio en el listado (Mundopsicólogos, Doctoralia) monetizan por suscripción: les da igual que el honorario promedio baje. Amira cobra un porcentaje del honorario, así que inducir competencia por precio en el directorio le baja los ingresos. El incentivo de Amira es el opuesto al de ellas — no copiar su decisión de producto.
 
 ---
 
@@ -167,6 +197,7 @@ Para entender el porqué de las reglas anteriores:
 - **Ley 25.326**, arts. 7 y 8: los datos de salud son sensibles; su tratamiento está reservado a establecimientos sanitarios y profesionales de la salud. Este es el bloqueante legal abierto del proyecto.
 - **Ley 26.529**: historia clínica, guarda y custodia.
 - **Ley 24.240**: la publicidad integra la oferta y obliga al proveedor.
+- **Código de Ética Fe.P.R.A.** (rev. 2013): norma 3.1.3, el psicólogo no percibe otra retribución que sus honorarios; normas 6.1.1.1 y 6.1.1.3, abstenerse de publicitar honorarios y no usar el precio como propaganda; 6.1.1.1 exige nombre y matrícula en toda publicidad. Rige el diseño del directorio.
 
 ---
 
