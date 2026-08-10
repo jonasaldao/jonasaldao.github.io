@@ -24,6 +24,7 @@ const defaultLinks: NavLink[] = [
   { href: "#confianza", label: "Confianza" },
   { href: "#pricing", label: "Sumarme" },
   { href: "/profesionales", label: "Para profesionales" },
+  { href: "/ayuda-urgente", label: "Ayuda urgente" },
 ]
 
 /**

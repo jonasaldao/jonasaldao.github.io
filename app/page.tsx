@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import Link from "next/link"
+import { Undo2 } from "lucide-react"
 import { LandingFX } from "@/components/amira/landing-fx"
 import { Navbar } from "@/components/amira/navbar"
 import { Hero } from "@/components/amira/hero"
@@ -73,6 +75,21 @@ export default function AmiraLandingPage() {
 
       {/* Block 10 - CTA destacado para profesionales */}
       <ProfessionalCTA />
+
+      {/* Botón de arrepentimiento — acceso directo y destacado exigido por la
+          Res. 424/2020 de la Secretaría de Comercio Interior: tiene que verse
+          desde el inicio, sin registración previa. */}
+      <section className="bg-off-white py-10 border-t border-navy/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/arrepentimiento"
+            className="flex items-center justify-center gap-3 rounded-2xl bg-white ring-1 ring-verde/15 shadow-sm px-6 py-5 text-lg sm:text-xl font-semibold text-navy hover:text-verde-profundo hover:ring-verde/40 transition-colors text-center"
+          >
+            <Undo2 className="w-6 h-6 shrink-0 text-verde-profundo" aria-hidden="true" />
+            Botón de arrepentimiento
+          </Link>
+        </div>
+      </section>
 
       {/* Footer legal */}
       <Footer />

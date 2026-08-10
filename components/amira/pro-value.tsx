@@ -53,10 +53,11 @@ export function ProValue() {
                     Una agenda que se maneja sola
                   </h3>
                   <p className="text-tinta/65 leading-relaxed">
-                    Definís tu disponibilidad una vez. Las personas reservan
-                    solas y los recordatorios salen automáticamente. Estamos
-                    trabajando en la sincronización con Google Calendar y en
-                    los recordatorios por mail y WhatsApp.
+                    Definís tu disponibilidad una vez y compartís tu enlace de
+                    reservas. Las personas reservan solas desde ahí y los
+                    recordatorios salen automáticamente. Estamos trabajando en
+                    la sincronización con Google Calendar y en los
+                    recordatorios por mail y WhatsApp.
                   </p>
                 </div>
                 <div className="shrink-0">

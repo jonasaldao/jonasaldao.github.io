@@ -1,27 +1,39 @@
 import { Button } from "@/components/ui/button"
 import { BadgeCheck, Video, Sparkles, Lock, ArrowRight } from "lucide-react"
 
+/**
+ * Restricción de diseño — Código de Ética Fe.P.R.A. 6.1.1.1 y 6.1.1.3.
+ * El honorario NO se exhibe en las tarjetas del listado, ni como
+ * filtro, ni como criterio de ordenamiento, ni como gancho
+ * ("desde $X", "los más accesibles"). Solo puede mostrarse en la
+ * ficha individual del profesional, una vez que la persona entró a
+ * su perfil. Ver CLAUDE.md, sección "Modelo de cobros".
+ */
 const listings = [
   {
     nombre: "Lic. Camila Ferreyra",
+    matricula: "M.N. 24681",
     disciplina: "Psicología",
     enfoque: "Enfoque cognitivo-conductual",
     especialidad: "Manejo del estrés",
   },
   {
     nombre: "Lic. Tomás Aguirre",
+    matricula: "M.P. 15937",
     disciplina: "Psicología",
     enfoque: "Enfoque cognitivo-conductual",
     especialidad: "Vínculos y parejas",
   },
   {
     nombre: "Lic. Julieta Bianchi",
+    matricula: "M.N. 31204",
     disciplina: "Psicología",
     enfoque: "Enfoque cognitivo-conductual",
     especialidad: "Hábitos y descanso",
   },
   {
     nombre: "Dr. Nicolás Bertone",
+    matricula: "M.P. 8452",
     disciplina: "Psiquiatría",
     enfoque: "Adultos",
     especialidad: "Primera consulta y controles",
@@ -155,6 +167,9 @@ export function Directory() {
                     <div className="min-w-0 flex-1">
                       <p className="font-serif font-semibold text-navy leading-snug">
                         {item.nombre}
+                      </p>
+                      <p className="text-xs text-muted-foreground/80 mt-0.5">
+                        {item.matricula}
                       </p>
                       <p className="text-sm text-verde-profundo/80 font-medium mt-0.5">
                         {item.disciplina} · {item.enfoque}
